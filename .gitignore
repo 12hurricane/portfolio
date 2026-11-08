@@ -17,6 +17,9 @@
 .DS_Store
 *.pem
 *.zip
+*.base64.txt
+/.agents/
+skills-lock.json
 
 # Debug
 npm-debug.log*

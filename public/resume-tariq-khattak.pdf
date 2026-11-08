@@ -1,91 +1,291 @@
 %PDF-1.4
 1 0 obj
-<< /Title (Tariq Khattak - AI Engineer Resume)
-   /Author (Tariq Khattak)
-   /Creator (Tariq Khattak Portfolio)
-   /Producer (Next.js Portfolio Generator)
->>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Catalog
-   /Pages 3 0 R
->>
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Pages
-   /Kids [4 0 R]
-   /Count 1
->>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
 endobj
 4 0 obj
-<< /Type /Page
-   /Parent 3 0 R
-   /MediaBox [0 0 612 792]
-   /Resources << /Font << /F1 5 0 R >> >>
-   /Contents 6 0 R
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Type /Font
-   /Subtype /Type1
-   /BaseFont /Helvetica
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 6 0 obj
-<< /Length 720 >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+7 0 obj
+<< /Length 6627 >>
 stream
+0.2 0.25 0.28 rg
+45 745 522 1.5 re f
+0 0 0 rg
+
 BT
-/F1 18 Tf
-50 740 Td
-(Tariq Khattak) Tj
-/F1 11 Tf
-0 -22 Td
-(AI Engineer | Generative AI | Intelligent Applications) Tj
-0 -16 Td
-(Peshawar, Pakistan | Email: tariqjm143@gmail.com | GitHub: github.com/12hurricane) Tj
-0 -28 Td
-/F1 13 Tf
+/F2 19 Tf
+45 754 Td
+(TARIQ KHATTAK) Tj
+ET
+
+BT
+/F2 9.5 Tf
+0.21 0.71 0.65 rg
+45 730 Td
+(AI ENGINEER  |  GENERATIVE AI  |  LLM APPLICATIONS) Tj
+0 0 0 rg
+/F1 8.5 Tf
+0.3 0.35 0.38 rg
+45 718 Td
+(Peshawar, Pakistan   |   Email: tariqjm143@gmail.com   |   LinkedIn: in/tariq-khattak-43b923257   |   GitHub: github.com/12hurricane) Tj
+0 0 0 rg
+ET
+
+0.8 0.82 0.85 rg
+45 708 522 0.75 re f
+0 0 0 rg
+
+BT
+/F2 10 Tf
+0.1 0.15 0.18 rg
+45 693 Td
+(PROFESSIONAL SUMMARY) Tj
+0 0 0 rg
+/F1 8.5 Tf
+0.2 0.25 0.28 rg
+45 680 Td
+(Undergraduate Software Engineering student and AI Engineer Intern focused on developing practical, reliable AI-powered) Tj
+45 669 Td
+(applications using Python, machine learning, large language models, and modern backend architectures. Dedicated to building) Tj
+45 658 Td
+(verifiable systems with deterministic safety constraints, structured retrieval (RAG), and scalable agentic workflows.) Tj
+ET
+
+0.8 0.82 0.85 rg
+45 647 522 0.75 re f
+0 0 0 rg
+
+BT
+/F2 10 Tf
+0.1 0.15 0.18 rg
+45 632 Td
 (EDUCATION) Tj
-/F1 10 Tf
-0 -16 Td
-(B.S. in Software Engineering - CECOS University, Peshawar \(Expected 2027\)) Tj
-0 -28 Td
-/F1 13 Tf
-(EXPERIENCE) Tj
-/F1 10 Tf
-0 -16 Td
-(AI Engineer Intern - TechCitySoft \(Remote / Pakistan\)) Tj
-0 -14 Td
-(- Developing AI application workflows and backend API integrations) Tj
-0 -14 Td
-(- Evaluating AI safety, deterministic validation, and LLM orchestration) Tj
-0 -28 Td
-/F1 13 Tf
-(FEATURED PROJECTS) Tj
-/F1 10 Tf
-0 -16 Td
-(SafeSight-AI: Smart Glasses for Visually Impaired Persons \(FYP / Prototype\)) Tj
-0 -14 Td
-(MediAssist: AI-Assisted Medication Management with Deterministic Safety Logic) Tj
-0 -14 Td
-(Requirements-to-Test Traceability System: AI-Assisted Software Engineering) Tj
+0 0 0 rg
+/F2 9 Tf
+45 619 Td
+(Bachelor of Science in Software Engineering) Tj
+/F3 8.5 Tf
+0.3 0.35 0.38 rg
+45 608 Td
+(CECOS University, Peshawar, Pakistan   |   Expected Graduation: 2027   |   Status: Undergraduate Student) Tj
+/F1 8.2 Tf
+0.25 0.28 0.30 rg
+45 596 Td
+(Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems,) Tj
+45 586 Td
+(Software Engineering Methodologies, Artificial Intelligence Fundamentals, Operating Systems & Networks.) Tj
+ET
+
+0.8 0.82 0.85 rg
+45 575 522 0.75 re f
+0 0 0 rg
+
+BT
+/F2 10 Tf
+0.1 0.15 0.18 rg
+45 560 Td
+(PROFESSIONAL EXPERIENCE) Tj
+0 0 0 rg
+/F2 9 Tf
+45 547 Td
+(AI Engineer Intern) Tj
+/F3 8.5 Tf
+0.3 0.35 0.38 rg
+145 547 Td
+(-- TechCitySoft  (Remote / Pakistan)) Tj
+415 547 Td
+([Active Internship]) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+45 534 Td
+(- Developing and integrating practical AI application components, LLM-based processing pipelines, and backend APIs.) Tj
+45 523 Td
+(- Designing modular software components using Python, FastAPI, and asynchronous backend services.) Tj
+45 512 Td
+(- Implementing deterministic validation boundaries and safety checks to ensure reliable, non-hallucinatory AI execution.) Tj
+45 501 Td
+(- Testing, profiling, and documenting intelligent system workflows and data persistence schemas.) Tj
+ET
+
+0.8 0.82 0.85 rg
+45 490 522 0.75 re f
+0 0 0 rg
+
+BT
+/F2 10 Tf
+0.1 0.15 0.18 rg
+45 475 Td
+(TECHNICAL PROJECTS) Tj
+0 0 0 rg
+/F2 8.8 Tf
+45 462 Td
+(SafeSight-AI: Smart Glasses for Visually Impaired Persons) Tj
+/F3 8 Tf
+0.3 0.35 0.38 rg
+330 462 Td
+([Final Year Project / Prototype Development]) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+45 450 Td
+(- Assistive vision system leveraging camera-based environmental perception and directional audio feedback alerts.) Tj
+45 440 Td
+(- Implemented lightweight YOLO-based object detection and spatial classification on video streams and camera frames.) Tj
+45 430 Td
+(- Developing controlled distance estimation heuristics; offloading inference to smartphone to optimize wearable thermal budget.) Tj
+45 420 Td
+(- Hardware design in progress: ESP32 spectacle frame integration and inertial measurement unit (IMU) orientation sensing.) Tj
+
+/F2 8.8 Tf
+0 0 0 rg
+45 405 Td
+(MediAssist: AI-Assisted Medication Management System) Tj
+/F3 8 Tf
+0.3 0.35 0.38 rg
+330 405 Td
+([Research Prototype / Development]) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+45 393 Td
+(- AI-assisted healthcare application organizing prescriptions, medication intake schedules, adherence logs, and alerts.) Tj
+45 383 Td
+(- Engineered deterministic scheduling math engine to isolate clinical dosage safety from stochastic LLM generation.) Tj
+45 373 Td
+(- Developed asynchronous RESTful backend endpoints in FastAPI backed by structured PostgreSQL relational persistence.) Tj
+45 363 Td
+(- Integrating RAG retrieval across verified pharmaceutical documents for conversational patient query answering.) Tj
+
+/F2 8.8 Tf
+0 0 0 rg
+45 348 Td
+(Requirements-to-Test Traceability System) Tj
+/F3 8 Tf
+0.3 0.35 0.38 rg
+330 348 Td
+([Research Prototype]) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+45 336 Td
+(- Explored automated extraction of atomic requirements from software specification documents using LLM workflows.) Tj
+45 326 Td
+(- Generated structured acceptance criteria (Given-When-Then) and bidirectional requirements-to-test traceability matrices.) Tj
+
+/F2 8.8 Tf
+0 0 0 rg
+45 311 Td
+(Machine Learning & Software Engineering Lab Projects) Tj
+/F3 8 Tf
+0.3 0.35 0.38 rg
+330 311 Td
+([Academic Repositories]) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+45 299 Td
+(- AI Loan Eligibility Prediction: Exploratory data analysis, feature engineering, and classification models (github.com/12hurricane/AI-lab-project).) Tj
+45 289 Td
+(- Movie Recommendation System: Content-based and collaborative filtering recommendation engine (github.com/12hurricane/movie-recommendation-).) Tj
+45 279 Td
+(- Flutter Contact Management App: Clean architecture mobile contact manager with local storage (github.com/12hurricane/flutter-lab-project).) Tj
+ET
+
+0.8 0.82 0.85 rg
+45 268 522 0.75 re f
+0 0 0 rg
+
+BT
+/F2 10 Tf
+0.1 0.15 0.18 rg
+45 253 Td
+(TECHNICAL SKILLS) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 240 Td
+(Programming Languages:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 240 Td
+(Python, Dart, C++, JavaScript, HTML, CSS) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 228 Td
+(AI & Machine Learning:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 228 Td
+(Generative AI, Large Language Models (LLMs), RAG, Machine Learning, Prompt Engineering,) Tj
+160 218 Td
+(AI Application Architecture, Agentic AI, Ollama (Local LLMs), OpenAI API, Vector Embeddings) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 206 Td
+(Backend & Database:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 206 Td
+(FastAPI, Django, Django Channels (WebSockets), RESTful API Design, PostgreSQL, Firebase) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 194 Td
+(Mobile Development:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 194 Td
+(Flutter, Dart, Android Application Development, Reactive State Management) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 182 Td
+(Development & Tools:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 182 Td
+(Git, GitHub, VS Code, Docker (Containerization), Linux CLI) Tj
+0 0 0 rg
+/F2 8.2 Tf
+45 170 Td
+(Specialization Areas:) Tj
+/F1 8.2 Tf
+0.2 0.25 0.28 rg
+160 170 Td
+(Agentic AI, Multi-Agent Systems, MLOps, Distributed Systems, AI Safety & Verification) Tj
+ET
+
+0.8 0.82 0.85 rg
+45 155 522 0.75 re f
+0 0 0 rg
+
+BT
+/F3 7.8 Tf
+0.4 0.45 0.48 rg
+45 140 Td
+(Note: All information reflects verified academic standing at CECOS University and active engineering internship at TechCitySoft.) Tj
+45 130 Td
+(Portfolio & Live Systems: tariqkhattak.dev   |   GitHub: github.com/12hurricane) Tj
 ET
 endstream
 endobj
 xref
-0 7
+0 8
 0000000000 65535 f 
 0000000009 00000 n 
-0000000160 00000 n 
-0000000217 00000 n 
-0000000276 00000 n 
-0000000392 00000 n 
-0000000465 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000261 00000 n 
+0000000331 00000 n 
+0000000406 00000 n 
+0000000484 00000 n 
 trailer
-<< /Size 7
-   /Root 2 0 R
-   /Info 1 0 R
->>
+<< /Size 8 /Root 1 0 R >>
 startxref
-1238
+7163
 %%EOF

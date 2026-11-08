@@ -13,7 +13,6 @@ import {
   ExternalLink,
   MessageSquare,
   AlertCircle,
-  FileText,
 } from "lucide-react";
 
 export default function Contact() {
@@ -26,32 +25,70 @@ export default function Contact() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [emailCopyError, setEmailCopyError] = useState(false);
   const [actionStatus, setActionStatus] = useState<{
     type: "clipboard" | "mailto" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
 
+  const handleInputChange = (
+    field: "name" | "email" | "subject" | "message",
+    value: string
+  ) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    // Reset stale action status when form values change
+    if (actionStatus.type !== null) {
+      setActionStatus({ type: null, message: "" });
+    }
+    // Clear field error as user types
+    if (errors[field]) {
+      setErrors((prev) => {
+        const updated = { ...prev };
+        delete updated[field];
+        return updated;
+      });
+    }
+  };
+
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters.";
+    }
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
       newErrors.email = "Please enter a valid email address.";
     }
+
     if (!formData.message.trim()) {
       newErrors.message = "Message cannot be empty.";
     } else if (formData.message.trim().length < 15) {
       newErrors.message = "Please provide at least 15 characters describing your inquiry.";
     }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleCopyEmailAddress = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2500);
+  const handleCopyEmailAddress = async () => {
+    try {
+      if (typeof navigator !== "undefined" && navigator.clipboard) {
+        await navigator.clipboard.writeText(personalInfo.email);
+        setCopiedEmail(true);
+        setEmailCopyError(false);
+        setTimeout(() => setCopiedEmail(false), 2500);
+      } else {
+        throw new Error("Clipboard API unavailable");
+      }
+    } catch {
+      setEmailCopyError(true);
+      setCopiedEmail(false);
+      setTimeout(() => setEmailCopyError(false), 3500);
+    }
   };
 
   const handleOpenMailto = (e: React.FormEvent) => {
@@ -59,10 +96,10 @@ export default function Contact() {
     if (!validate()) return;
 
     const subjectEncoded = encodeURIComponent(
-      formData.subject.trim() || `Inquiry from ${formData.name}`
+      formData.subject.trim() || `Inquiry from ${formData.name.trim()}`
     );
     const bodyEncoded = encodeURIComponent(
-      `Hello Tariq,\n\n${formData.message}\n\n---\nSender Name: ${formData.name}\nSender Email: ${formData.email}`
+      `Hello Tariq,\n\n${formData.message.trim()}\n\n---\nSender: ${formData.name.trim()} (${formData.email.trim()})`
     );
 
     const mailtoUrl = `mailto:${personalInfo.email}?subject=${subjectEncoded}&body=${bodyEncoded}`;
@@ -74,19 +111,31 @@ export default function Contact() {
     });
   };
 
-  const handleCopyToClipboard = () => {
+  const handleCopyToClipboard = async () => {
     if (!validate()) return;
 
     const formatted = `To: ${personalInfo.email}\nSubject: ${
-      formData.subject || `Inquiry from ${formData.name}`
-    }\n\nMessage:\n${formData.message}\n\n---\nFrom: ${formData.name} (${formData.email})`;
+      formData.subject.trim() || `Inquiry from ${formData.name.trim()}`
+    }\n\nMessage:\n${formData.message.trim()}\n\n---\nFrom: ${formData.name.trim()} (${formData.email.trim()})`;
 
-    navigator.clipboard.writeText(formatted);
-    setActionStatus({
-      type: "clipboard",
-      message:
-        "Draft copied to clipboard! You can paste it directly into Gmail, Outlook, or your preferred client.",
-    });
+    try {
+      if (typeof navigator !== "undefined" && navigator.clipboard) {
+        await navigator.clipboard.writeText(formatted);
+        setActionStatus({
+          type: "clipboard",
+          message:
+            "Draft successfully copied to clipboard! You can paste it directly into Gmail, Outlook, or your preferred webmail.",
+        });
+      } else {
+        throw new Error("Clipboard API unavailable");
+      }
+    } catch {
+      setActionStatus({
+        type: "error",
+        message:
+          "Clipboard access was blocked or unavailable in this browser environment. Please use 'Open in Email Client' or email directly.",
+      });
+    }
   };
 
   return (
@@ -139,11 +188,17 @@ export default function Contact() {
                   onClick={handleCopyEmailAddress}
                   className="px-2.5 py-1.5 rounded bg-[#252F34] border border-[#354147] text-xs font-mono text-[#A8B5B2] hover:text-[#35B6A5] hover:border-[#35B6A5] flex items-center gap-1.5 transition-colors"
                   title="Copy email address"
+                  aria-label="Copy email address to clipboard"
                 >
                   {copiedEmail ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-[#35B6A5]" />
                       <span className="text-[#35B6A5]">Copied</span>
+                    </>
+                  ) : emailCopyError ? (
+                    <>
+                      <AlertCircle className="w-3.5 h-3.5 text-yellow-400" />
+                      <span className="text-yellow-400">Failed</span>
                     </>
                   ) : (
                     <>
@@ -160,6 +215,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center justify-between hover:border-[#35B6A5] transition-colors group"
+                aria-label="Tariq Khattak LinkedIn profile"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
@@ -183,6 +239,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center justify-between hover:border-[#35B6A5] transition-colors group"
+                aria-label="Tariq Khattak GitHub profile"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
@@ -232,27 +289,36 @@ export default function Contact() {
                 </span>
               </div>
 
-              <form onSubmit={handleOpenMailto} className="space-y-4">
+              <form onSubmit={handleOpenMailto} className="space-y-4" noValidate>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name */}
                   <div>
-                    <label htmlFor="contact-name" className="block text-xs font-mono text-[#A8B5B2] mb-1.5">
+                    <label
+                      htmlFor="contact-name"
+                      className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                    >
                       Your Name <span className="text-[#35B6A5]">*</span>
                     </label>
                     <input
                       id="contact-name"
                       name="name"
                       type="text"
+                      required
+                      minLength={2}
+                      maxLength={100}
                       autoComplete="name"
                       placeholder="e.g. Alex Chen"
                       value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? "name-error" : undefined}
                       className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
                     />
                     {errors.name && (
-                      <p className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                      <p
+                        id="name-error"
+                        className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                      >
                         <AlertCircle className="w-3 h-3" /> {errors.name}
                       </p>
                     )}
@@ -260,23 +326,31 @@ export default function Contact() {
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="contact-email" className="block text-xs font-mono text-[#A8B5B2] mb-1.5">
+                    <label
+                      htmlFor="contact-email"
+                      className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                    >
                       Your Email Address <span className="text-[#35B6A5]">*</span>
                     </label>
                     <input
                       id="contact-email"
                       name="email"
                       type="email"
+                      required
+                      maxLength={100}
                       autoComplete="email"
                       placeholder="alex@organization.com"
                       value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? "email-error" : undefined}
                       className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
                     />
                     {errors.email && (
-                      <p className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                      <p
+                        id="email-error"
+                        className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                      >
                         <AlertCircle className="w-3 h-3" /> {errors.email}
                       </p>
                     )}
@@ -285,40 +359,51 @@ export default function Contact() {
 
                 {/* Subject */}
                 <div>
-                  <label htmlFor="contact-subject" className="block text-xs font-mono text-[#A8B5B2] mb-1.5">
+                  <label
+                    htmlFor="contact-subject"
+                    className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                  >
                     Subject / Discussion Topic
                   </label>
                   <input
                     id="contact-subject"
                     name="subject"
                     type="text"
+                    maxLength={150}
                     placeholder="e.g. Collaboration on AI Architecture / MediAssist"
                     value={formData.subject}
-                    onChange={(e) =>
-                      setFormData({ ...formData, subject: e.target.value })
-                    }
+                    onChange={(e) => handleInputChange("subject", e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="contact-message" className="block text-xs font-mono text-[#A8B5B2] mb-1.5">
+                  <label
+                    htmlFor="contact-message"
+                    className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                  >
                     Your Message <span className="text-[#35B6A5]">*</span>
                   </label>
                   <textarea
                     id="contact-message"
                     name="message"
                     rows={5}
+                    required
+                    minLength={15}
+                    maxLength={3000}
                     placeholder="Describe your inquiry, project scope, or technical questions..."
                     value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
+                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? "message-error" : undefined}
                     className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5] resize-none"
                   />
                   {errors.message && (
-                    <p className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                    <p
+                      id="message-error"
+                      className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                    >
                       <AlertCircle className="w-3 h-3" /> {errors.message}
                     </p>
                   )}
@@ -330,10 +415,16 @@ export default function Contact() {
                     className={`p-3 rounded-lg text-xs font-mono border flex items-center gap-2 ${
                       actionStatus.type === "clipboard" || actionStatus.type === "mailto"
                         ? "bg-[#252F34] text-[#35B6A5] border-[#35B6A5]/40"
-                        : "bg-red-950/30 text-red-400 border-red-800"
+                        : "bg-red-950/40 text-red-400 border-red-800"
                     }`}
+                    role="status"
+                    aria-live="polite"
                   >
-                    <Check className="w-4 h-4 shrink-0" />
+                    {actionStatus.type === "error" ? (
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
+                    ) : (
+                      <Check className="w-4 h-4 shrink-0 text-[#35B6A5]" />
+                    )}
                     <span>{actionStatus.message}</span>
                   </div>
                 )}
@@ -360,7 +451,7 @@ export default function Contact() {
 
                 {/* Engineering Notice: No Fake Submission */}
                 <p className="text-[11px] font-mono text-[#A8B5B2] pt-2">
-                  * Note: This form prepares your email directly or copies it to your clipboard. No messages are sent through opaque third-party trackers.
+                  * Note: Prepares your message directly in your local email client or copies it to your clipboard. No unauthenticated database writes or third-party tracking.
                 </p>
               </form>
             </div>

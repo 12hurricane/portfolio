@@ -76,6 +76,15 @@ export default function Navbar() {
           {/* Actions: Resume + Connect */}
           <div className="hidden md:flex items-center space-x-3">
             <a
+              href="/resume-tariq-khattak.pdf"
+              download="Tariq_Khattak_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-medium text-[#A8B5B2] hover:text-[#35B6A5] border border-[#354147] hover:border-[#35B6A5] transition-colors"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Resume</span>
+            </a>
+
+            <a
               href="#contact"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold bg-[#35B6A5] text-[#171C20] hover:bg-[#75C9BB] transition-colors shadow-sm"
             >
@@ -112,6 +121,15 @@ export default function Navbar() {
             </a>
           ))}
           <div className="pt-4 border-t border-[#354147] flex flex-col gap-2">
+            <a
+              href="/resume-tariq-khattak.pdf"
+              download="Tariq_Khattak_Resume.pdf"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center py-2 px-4 rounded-md text-sm font-mono text-[#A8B5B2] hover:text-[#35B6A5] border border-[#354147] flex items-center justify-center gap-2"
+            >
+              <FileText className="w-4 h-4" />
+              <span>Download Resume</span>
+            </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}

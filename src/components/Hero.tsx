@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { personalInfo } from "@/data/portfolioData";
-import { Github, Linkedin, Mail, Check, Copy, ArrowRight, MapPin, Terminal, Cpu } from "lucide-react";
+import { Github, Linkedin, Mail, Check, Copy, ArrowRight, MapPin, Terminal, Cpu, FileText } from "lucide-react";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -69,6 +69,15 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#20282D] text-[#F1F5F4] border border-[#354147] hover:border-[#35B6A5] hover:text-[#35B6A5] transition-all"
               >
                 <span>Let&apos;s Connect</span>
+              </a>
+
+              <a
+                href="/resume-tariq-khattak.pdf"
+                download="Tariq_Khattak_Resume.pdf"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm font-mono text-[#A8B5B2] hover:text-[#35B6A5] border border-[#354147] hover:border-[#35B6A5] transition-all"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Download CV</span>
               </a>
             </div>
 

@@ -1,0 +1,91 @@
+%PDF-1.4
+1 0 obj
+<< /Title (Tariq Khattak - AI Engineer Resume)
+   /Author (Tariq Khattak)
+   /Creator (Tariq Khattak Portfolio)
+   /Producer (Next.js Portfolio Generator)
+>>
+endobj
+2 0 obj
+<< /Type /Catalog
+   /Pages 3 0 R
+>>
+endobj
+3 0 obj
+<< /Type /Pages
+   /Kids [4 0 R]
+   /Count 1
+>>
+endobj
+4 0 obj
+<< /Type /Page
+   /Parent 3 0 R
+   /MediaBox [0 0 612 792]
+   /Resources << /Font << /F1 5 0 R >> >>
+   /Contents 6 0 R
+>>
+endobj
+5 0 obj
+<< /Type /Font
+   /Subtype /Type1
+   /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<< /Length 720 >>
+stream
+BT
+/F1 18 Tf
+50 740 Td
+(Tariq Khattak) Tj
+/F1 11 Tf
+0 -22 Td
+(AI Engineer | Generative AI | Intelligent Applications) Tj
+0 -16 Td
+(Peshawar, Pakistan | Email: tariqjm143@gmail.com | GitHub: github.com/12hurricane) Tj
+0 -28 Td
+/F1 13 Tf
+(EDUCATION) Tj
+/F1 10 Tf
+0 -16 Td
+(B.S. in Software Engineering - CECOS University, Peshawar \(Expected 2027\)) Tj
+0 -28 Td
+/F1 13 Tf
+(EXPERIENCE) Tj
+/F1 10 Tf
+0 -16 Td
+(AI Engineer Intern - TechCitySoft \(Remote / Pakistan\)) Tj
+0 -14 Td
+(- Developing AI application workflows and backend API integrations) Tj
+0 -14 Td
+(- Evaluating AI safety, deterministic validation, and LLM orchestration) Tj
+0 -28 Td
+/F1 13 Tf
+(FEATURED PROJECTS) Tj
+/F1 10 Tf
+0 -16 Td
+(SafeSight-AI: Smart Glasses for Visually Impaired Persons \(FYP / Prototype\)) Tj
+0 -14 Td
+(MediAssist: AI-Assisted Medication Management with Deterministic Safety Logic) Tj
+0 -14 Td
+(Requirements-to-Test Traceability System: AI-Assisted Software Engineering) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000160 00000 n 
+0000000217 00000 n 
+0000000276 00000 n 
+0000000392 00000 n 
+0000000465 00000 n 
+trailer
+<< /Size 7
+   /Root 2 0 R
+   /Info 1 0 R
+>>
+startxref
+1238
+%%EOF

@@ -169,7 +169,7 @@ export default function Hero() {
                   Aspiring AI Engineer
                 </p>
                 <p className="text-[11px] text-[#A8B5B2] mt-2 max-w-xs">
-                  [Profile photo placeholder — to be updated with portrait]
+                  Generative AI &bull; LLMs &amp; RAG &bull; System Architecture
                 </p>
               </div>
 

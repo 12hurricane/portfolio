@@ -55,8 +55,8 @@ export default function ExperienceEducation() {
 
               {/* Verified Responsibilities */}
               <div className="mt-5 space-y-2.5">
-                <p className="text-xs font-mono font-semibold text-[#F1F5F4] tracking-wide uppercase">
-                  Verified Responsibilities & Workflows:
+                <p className="text-xs font-mono font-medium text-[#F1F5F4] tracking-normal">
+                  Verified responsibilities &amp; workflows:
                 </p>
                 <ul className="space-y-2">
                   {experienceInfo.responsibilities.map((resp, idx) => (
@@ -111,9 +111,9 @@ export default function ExperienceEducation() {
 
               {/* Relevant Coursework */}
               <div className="mt-4">
-                <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-[#F1F5F4] uppercase mb-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-[#F1F5F4] mb-2.5">
                   <BookOpen className="w-3.5 h-3.5 text-[#35B6A5]" />
-                  <span>Relevant Academic Coursework</span>
+                  <span>Relevant academic coursework</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {educationInfo.coursework.map((course, idx) => (

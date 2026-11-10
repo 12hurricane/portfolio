@@ -138,8 +138,8 @@ export default function Projects() {
 
                     {/* Problem Statement Box */}
                     <div className="p-4 rounded-lg bg-[#252F34] border border-[#354147]">
-                      <h4 className="text-xs font-mono uppercase text-[#35B6A5] font-semibold mb-1">
-                        Problem Being Solved:
+                      <h4 className="text-xs font-mono text-[#35B6A5] font-medium mb-1">
+                        Problem being solved:
                       </h4>
                       <p className="text-xs sm:text-sm text-[#A8B5B2] leading-relaxed">
                         {project.problemStatement}
@@ -148,8 +148,8 @@ export default function Projects() {
 
                     {/* Technical Approach */}
                     <div>
-                      <h4 className="text-xs font-mono uppercase text-[#F1F5F4] font-semibold mb-1">
-                        Technical Approach:
+                      <h4 className="text-xs font-mono text-[#F1F5F4] font-medium mb-1">
+                        Technical approach:
                       </h4>
                       <p className="text-xs sm:text-sm text-[#A8B5B2] leading-relaxed">
                         {project.technicalApproach}
@@ -161,8 +161,8 @@ export default function Projects() {
                       <div className="p-3.5 rounded-lg bg-[#252F34]/80 border-l-2 border-[#35B6A5] flex items-start gap-3">
                         <ShieldAlert className="w-5 h-5 text-[#35B6A5] shrink-0 mt-0.5" />
                         <div>
-                          <span className="text-xs font-mono font-semibold text-[#F1F5F4] uppercase block">
-                            System Safety Architecture:
+                          <span className="text-xs font-mono font-medium text-[#F1F5F4] block">
+                            System safety architecture:
                           </span>
                           <p className="text-xs text-[#A8B5B2] mt-0.5 leading-relaxed">
                             {project.safetyArchitectureNote}
@@ -309,8 +309,8 @@ export default function Projects() {
                     {/* Components Preview if Available */}
                     {project.components && project.components.length > 0 && (
                       <div className="mb-4 p-2.5 rounded bg-[#252F34] border border-[#354147]/60 text-[11px] space-y-1">
-                        <span className="text-[10px] font-mono text-[#F1F5F4] uppercase font-semibold block mb-1">
-                          Key Subsystems:
+                        <span className="text-[10px] font-mono text-[#F1F5F4] font-medium block mb-1">
+                          Key subsystems:
                         </span>
                         {project.components.slice(0, 3).map((c, i) => (
                           <div key={i} className="flex items-center justify-between text-[#A8B5B2]">

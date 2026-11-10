@@ -81,20 +81,18 @@ export interface ExperienceInfo {
 
 export const personalInfo: PersonalInfo = {
   fullName: "Tariq Khattak",
-  title: "AI Engineer | Generative AI | Intelligent Applications",
-  headline: "Building Intelligent Applications with AI, Machine Learning and Modern Software Engineering.",
+  title: "AI Engineer Intern · Systems & Applied AI",
+  headline: "Architecting Assistive Edge Vision & Deterministic Safety Boundaries for LLMs.",
   supportingDescription:
-    "I am an AI Engineer focused on developing practical AI-powered applications using Python, machine learning, large language models, and modern backend technologies. I enjoy transforming complex problems into useful, scalable software systems.",
+    "AI Engineer Intern at TechCitySoft and Software Engineering undergraduate at CECOS University. I engineer practical AI systems: low-latency edge computer vision for assistive navigation in SafeSight-AI, and deterministic, zero-hallucination validation pipelines for clinical AI in MediAssist.",
   location: "Peshawar, Khyber Pakhtunkhwa, Pakistan",
   email: "tariqjm143@gmail.com",
   linkedInUrl: "https://www.linkedin.com/in/tariq-khattak-43b923257/",
   gitHubUrl: "https://github.com/12hurricane",
   aboutBio: [
-    "I am a Software Engineering student and AI Engineer Intern interested in building intelligent software systems that solve practical problems.",
-    "My work and learning focus on Python-based AI development, machine learning, Generative AI, LLM integrations, retrieval-augmented generation, and backend engineering.",
-    "I enjoy working across the AI application lifecycle, from understanding a problem and designing its architecture to developing, integrating, testing, and deploying the solution.",
-    "I am particularly interested in Agentic AI, Multi-Agent Systems, Distributed Computing, MLOps, and scalable AI infrastructure.",
-    "My long-term goal is to become a strong AI Systems Engineer capable of designing and deploying reliable intelligent applications.",
+    "I am a Software Engineering undergraduate at CECOS University and an AI Engineer Intern at TechCitySoft, building systems where machine learning meets practical hardware and backend reliability.",
+    "Rather than treating AI as an isolated prompt or black box, I focus on system boundaries: isolating stochastic language model outputs with deterministic safety schemas, optimizing computer vision inference on constrained edge devices, and developing robust backend services.",
+    "My hands-on engineering is centered around two core case studies: SafeSight-AI, a wearable assistive vision prototype providing spatial obstacle awareness for visually impaired individuals, and MediAssist, a medication management system engineered with strict algorithmic isolation between generative LLMs and clinical dosage logic.",
   ],
   focusAreas: [
     {

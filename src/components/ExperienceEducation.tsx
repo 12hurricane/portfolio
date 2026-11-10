@@ -4,132 +4,103 @@ import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, BookOpen } fr
 
 export default function ExperienceEducation() {
   return (
-    <section id="experience" className="py-20 md:py-28 bg-[#20282D] relative">
+    <section id="experience" className="py-20 md:py-28 bg-[#1B2125] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-12">
+        <div className="flex items-center gap-3 mb-16">
           <span className="font-mono text-sm text-[#35B6A5]">02.</span>
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#F1F5F4] tracking-tight">
-            Experience & Education
+            Experience &amp; Education
           </h2>
           <div className="h-[1px] bg-[#354147] flex-grow ml-4 max-w-xs" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Professional Experience */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-2 pb-2">
-              <Briefcase className="w-5 h-5 text-[#35B6A5]" />
-              <h3 className="font-heading font-bold text-lg text-[#F1F5F4]">
-                Professional Experience
-              </h3>
+        {/* Editorial Timeline (Replaces repetitive boxed cards with an architectural timeline) */}
+        <div className="relative pl-6 sm:pl-8 border-l border-[#354147] space-y-16 max-w-4xl">
+          {/* Item 1: Active Internship at TechCitySoft */}
+          <div className="relative group">
+            {/* Timeline Dot */}
+            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#1B2125] border-2 border-[#35B6A5] flex items-center justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#35B6A5] animate-ping" />
             </div>
 
-            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-colors hover:border-[#35B6A5]/50">
-              {/* Header Info */}
-              <div className="flex flex-wrap items-start justify-between gap-2 pb-4 border-b border-[#354147]">
-                <div>
-                  <h4 className="font-heading font-bold text-lg text-[#F1F5F4]">
-                    {experienceInfo.role}
-                  </h4>
-                  <p className="text-sm font-medium text-[#35B6A5] mt-0.5">
-                    {experienceInfo.organization}
-                  </p>
-                </div>
-                <div className="flex flex-col items-end">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono bg-[#20282D] text-[#35B6A5] border border-[#354147]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#35B6A5] animate-pulse" />
-                    {experienceInfo.status}
-                  </span>
-                  <span className="text-[11px] font-mono text-[#A8B5B2] mt-1 flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-[#35B6A5]" />
-                    {experienceInfo.arrangement}
-                  </span>
-                </div>
-              </div>
+            <div className="flex flex-wrap items-baseline gap-3 mb-2">
+              <span className="text-xs font-mono text-[#35B6A5] bg-[#35B6A5]/10 px-2.5 py-0.5 rounded border border-[#35B6A5]/30">
+                2026 — Present · Active Internship
+              </span>
+              <span className="text-xs font-mono text-[#A8B5B2] flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-[#35B6A5]" />
+                {experienceInfo.arrangement}
+              </span>
+            </div>
 
-              {/* Summary */}
-              <p className="text-xs sm:text-sm text-[#A8B5B2] mt-4 leading-relaxed">
-                {experienceInfo.summary}
-              </p>
+            <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#F1F5F4]">
+              {experienceInfo.role}
+              <span className="text-[#35B6A5] font-normal"> @ {experienceInfo.organization}</span>
+            </h3>
 
-              {/* Verified Responsibilities */}
-              <div className="mt-5 space-y-2.5">
-                <p className="text-xs font-mono font-medium text-[#F1F5F4] tracking-normal">
-                  Verified responsibilities &amp; workflows:
-                </p>
-                <ul className="space-y-2">
-                  {experienceInfo.responsibilities.map((resp, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#A8B5B2]">
-                      <CheckCircle2 className="w-4 h-4 text-[#35B6A5] shrink-0 mt-0.5" />
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <p className="text-sm text-[#A8B5B2] mt-3 leading-relaxed max-w-3xl">
+              {experienceInfo.summary}
+            </p>
 
-              {/* Grounded Note */}
-              <div className="mt-5 pt-4 border-t border-[#354147] flex items-center justify-between text-[11px] font-mono text-[#A8B5B2]">
-                <span>Engineering Focus: AI Safety & Backend API Integration</span>
-                <span className="text-[#35B6A5]">Active Work</span>
-              </div>
+            {/* Verified Workflows List */}
+            <div className="mt-5 space-y-2 max-w-3xl">
+              <span className="text-xs font-mono text-[#F1F5F4] block font-medium">
+                Verified responsibilities &amp; workflows:
+              </span>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                {experienceInfo.responsibilities.map((resp, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-[#A8B5B2]">
+                    <CheckCircle2 className="w-4 h-4 text-[#35B6A5] shrink-0 mt-0.5" />
+                    <span>{resp}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* Right Column: Education */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="flex items-center gap-2 pb-2">
-              <GraduationCap className="w-5 h-5 text-[#35B6A5]" />
-              <h3 className="font-heading font-bold text-lg text-[#F1F5F4]">
-                Education
-              </h3>
+          {/* Item 2: B.S. Software Engineering at CECOS University */}
+          <div className="relative group">
+            {/* Timeline Dot */}
+            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#1B2125] border-2 border-[#75C9BB] flex items-center justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#75C9BB]" />
             </div>
 
-            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-colors hover:border-[#35B6A5]/50">
-              <div className="flex items-start justify-between gap-2 pb-4 border-b border-[#354147]">
-                <div>
-                  <h4 className="font-heading font-bold text-base text-[#F1F5F4]">
-                    {educationInfo.degree}
-                  </h4>
-                  <p className="text-sm font-semibold text-[#35B6A5] mt-0.5">
-                    {educationInfo.institution}
-                  </p>
-                  <p className="text-xs text-[#A8B5B2] flex items-center gap-1 mt-0.5">
-                    <MapPin className="w-3 h-3 text-[#35B6A5]" />
-                    {educationInfo.location}
-                  </p>
-                </div>
-                <div className="flex flex-col items-end">
-                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#20282D] text-[#F1F5F4] border border-[#354147]">
-                    Exp. {educationInfo.expectedGraduation}
-                  </span>
-                  <span className="text-[11px] font-mono text-[#35B6A5] mt-1">
-                    {educationInfo.status}
-                  </span>
-                </div>
-              </div>
+            <div className="flex flex-wrap items-baseline gap-3 mb-2">
+              <span className="text-xs font-mono text-[#A8B5B2] bg-[#20282D] px-2.5 py-0.5 rounded border border-[#354147]">
+                2023 — 2027 · Expected Graduation
+              </span>
+              <span className="text-xs font-mono text-[#A8B5B2] flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-[#35B6A5]" />
+                {educationInfo.location}
+              </span>
+            </div>
 
-              {/* Relevant Coursework */}
-              <div className="mt-4">
-                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-[#F1F5F4] mb-2.5">
-                  <BookOpen className="w-3.5 h-3.5 text-[#35B6A5]" />
-                  <span>Relevant academic coursework</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {educationInfo.coursework.map((course, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-1 rounded bg-[#20282D] text-[11px] font-mono text-[#A8B5B2] border border-[#354147]"
-                    >
-                      {course}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#F1F5F4]">
+              {educationInfo.degree}
+              <span className="text-[#75C9BB] font-normal"> @ {educationInfo.institution}</span>
+            </h3>
 
-              <p className="text-xs text-[#A8B5B2] mt-4 pt-3 border-t border-[#354147] leading-relaxed">
-                {educationInfo.academicNote}
-              </p>
+            <p className="text-sm text-[#A8B5B2] mt-3 leading-relaxed max-w-3xl">
+              {educationInfo.academicNote}
+            </p>
+
+            {/* Coursework Tags */}
+            <div className="mt-5 space-y-2 max-w-3xl">
+              <div className="flex items-center gap-1.5 text-xs font-mono text-[#F1F5F4] font-medium">
+                <BookOpen className="w-3.5 h-3.5 text-[#35B6A5]" />
+                <span>Foundational systems &amp; software coursework:</span>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {educationInfo.coursework.map((course, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2.5 py-1 rounded bg-[#20282D] text-xs font-mono text-[#A8B5B2] border border-[#354147]"
+                  >
+                    {course}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

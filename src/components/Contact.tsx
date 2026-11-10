@@ -143,7 +143,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-10">
-          <span className="font-mono text-sm text-[#35B6A5]">07.</span>
+          <span className="font-mono text-sm text-[#35B6A5]">05.</span>
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#F1F5F4] tracking-tight">
             Get in Touch
           </h2>

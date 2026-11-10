@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import { personalInfo } from "@/data/portfolioData";
-import { Github, Linkedin, Mail, Check, Copy, ArrowRight, MapPin, Terminal, Cpu, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, Check, Copy, ArrowRight, MapPin, Terminal, Cpu, FileText, ShieldCheck, AlertTriangle, Layers, Play } from "lucide-react";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
+  const [activeStep, setActiveStep] = useState<1 | 2 | 3>(2);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(personalInfo.email);
@@ -60,7 +61,7 @@ export default function Hero() {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#35B6A5] text-[#171C20] hover:bg-[#75C9BB] transition-colors shadow-sm"
               >
-                <span>Explore My Projects</span>
+                <span>View Case Studies &amp; Architecture</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -137,69 +138,153 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Professional Profile / System Card */}
+          {/* Right Column: Interactive System Architecture Proof Console */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-md rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-xl relative overflow-hidden">
+            <div className="w-full max-w-lg rounded-xl bg-[#20282D] border border-[#354147] p-5 shadow-2xl relative overflow-hidden">
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#35B6A5] to-transparent" />
 
-              {/* Terminal Header */}
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#354147]">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#354147]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#354147]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#35B6A5]/50" />
-                  <span className="ml-2 text-xs font-mono text-[#A8B5B2]">engineer.profile</span>
+              {/* Console Header */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#354147]">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#354147]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#354147]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#35B6A5]" />
+                  </div>
+                  <span className="font-mono text-xs text-[#A8B5B2]">mediassist.safety_gateway</span>
                 </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#20282D] text-[#35B6A5] border border-[#354147]">
-                  v2026.1
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#252F34] text-[#35B6A5] border border-[#354147]">
+                  Architecture Inspection
                 </span>
               </div>
 
-              {/* Profile Avatar Placeholder with Engineering Motif */}
-              <div className="flex flex-col items-center justify-center p-6 rounded-lg bg-[#20282D] border border-[#354147] text-center my-2">
-                <div className="relative w-24 h-24 rounded-full bg-[#171C20] border-2 border-[#354147] flex items-center justify-center group mb-4">
-                  <Cpu className="w-10 h-10 text-[#35B6A5] opacity-80" />
-                  <div className="absolute inset-0 rounded-full border border-[#35B6A5]/30 animate-pulse" />
-                </div>
-                <h3 className="font-heading font-bold text-lg text-[#F1F5F4]">
-                  Tariq Khattak
-                </h3>
-                <p className="text-xs font-mono text-[#35B6A5] mt-0.5">
-                  Aspiring AI Engineer
-                </p>
-                <p className="text-[11px] text-[#A8B5B2] mt-2 max-w-xs">
-                  Generative AI &bull; LLMs &amp; RAG &bull; System Architecture
-                </p>
+              {/* Interactive Pipeline Step Selector */}
+              <div className="grid grid-cols-3 gap-1.5 mb-4 p-1 rounded-lg bg-[#171C20] border border-[#354147]">
+                <button
+                  type="button"
+                  onClick={() => setActiveStep(1)}
+                  className={`py-1.5 px-2 rounded text-[11px] font-mono transition-colors text-center ${
+                    activeStep === 1
+                      ? "bg-[#252F34] text-[#35B6A5] font-semibold"
+                      : "text-[#A8B5B2] hover:text-[#F1F5F4]"
+                  }`}
+                >
+                  1. LLM Extract
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveStep(2)}
+                  className={`py-1.5 px-2 rounded text-[11px] font-mono transition-colors text-center ${
+                    activeStep === 2
+                      ? "bg-[#252F34] text-[#35B6A5] font-semibold"
+                      : "text-[#A8B5B2] hover:text-[#F1F5F4]"
+                  }`}
+                >
+                  2. Safety Gate
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveStep(3)}
+                  className={`py-1.5 px-2 rounded text-[11px] font-mono transition-colors text-center ${
+                    activeStep === 3
+                      ? "bg-[#252F34] text-[#35B6A5] font-semibold"
+                      : "text-[#A8B5B2] hover:text-[#F1F5F4]"
+                  }`}
+                >
+                  3. Postgres State
+                </button>
               </div>
 
-              {/* Verified Identity Metrics - Realistic & Grounded */}
-              <div className="mt-4 space-y-2.5 font-mono text-xs">
-                <div className="flex items-center justify-between p-2 rounded bg-[#20282D]/70 border border-[#354147]/50">
-                  <span className="text-[#A8B5B2]">Current Role</span>
-                  <span className="text-[#F1F5F4] font-medium">AI Engineer Intern</span>
-                </div>
-                <div className="flex items-center justify-between p-2 rounded bg-[#20282D]/70 border border-[#354147]/50">
-                  <span className="text-[#A8B5B2]">Organization</span>
-                  <span className="text-[#F1F5F4] font-medium">TechCitySoft</span>
-                </div>
-                <div className="flex items-center justify-between p-2 rounded bg-[#20282D]/70 border border-[#354147]/50">
-                  <span className="text-[#A8B5B2]">Education</span>
-                  <span className="text-[#F1F5F4] font-medium">B.S. Software Eng (2027)</span>
-                </div>
-                <div className="flex items-center justify-between p-2 rounded bg-[#20282D]/70 border border-[#354147]/50">
-                  <span className="text-[#A8B5B2]">Institution</span>
-                  <span className="text-[#35B6A5] font-medium">CECOS University, Peshawar</span>
-                </div>
+              {/* Step Display */}
+              <div className="space-y-3 font-mono text-xs">
+                {activeStep === 1 && (
+                  <div className="space-y-2.5">
+                    <div className="p-3 rounded bg-[#171C20] border border-[#354147]">
+                      <span className="text-[10px] text-[#A8B5B2] block mb-1">Incoming Unstructured OCR / Prescription:</span>
+                      <p className="text-[#F1F5F4] text-xs font-mono">&ldquo;Amoxicillin 500mg capsules, take one orally three times daily with meals for 7 days.&rdquo;</p>
+                    </div>
+                    <div className="p-3 rounded bg-[#171C20] border border-[#354147]">
+                      <div className="flex items-center justify-between text-[10px] text-[#35B6A5] mb-1">
+                        <span>Local LLM Schema Parsing (Ollama):</span>
+                        <span className="text-yellow-400">Stochastic Extraction</span>
+                      </div>
+                      <pre className="text-[11px] text-[#A8B5B2] overflow-x-auto leading-relaxed">
+{`{
+  "drug_candidate": "Amoxicillin",
+  "dosage_mg": 500,
+  "frequency_str": "TID",
+  "course_days": 7
+}`}
+                      </pre>
+                    </div>
+                    <p className="text-[10px] text-[#A8B5B2] leading-relaxed">
+                      * Principle: LLMs extract candidate parameters from unstructured text, but are never trusted to calculate dosage schedules directly.
+                    </p>
+                  </div>
+                )}
+
+                {activeStep === 2 && (
+                  <div className="space-y-2.5">
+                    <div className="p-3 rounded bg-[#171C20] border border-[#354147]">
+                      <div className="flex items-center justify-between text-[10px] text-[#35B6A5] mb-2">
+                        <span className="flex items-center gap-1 font-semibold">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#35B6A5]" /> Deterministic Safety Filter (Zero LLM)
+                        </span>
+                        <span className="text-[#35B6A5] bg-[#35B6A5]/10 px-1.5 py-0.5 rounded text-[9px]">100% Algorithmic</span>
+                      </div>
+                      <div className="space-y-1.5 text-[11px]">
+                        <div className="flex items-center justify-between text-[#A8B5B2]">
+                          <span>Dose Bound Check: 500mg &le; 1000mg limit</span>
+                          <span className="text-[#35B6A5] font-semibold">PASS [0ms]</span>
+                        </div>
+                        <div className="flex items-center justify-between text-[#A8B5B2]">
+                          <span>Contraindication Matrix (142 checks)</span>
+                          <span className="text-[#35B6A5] font-semibold">0 CONFLICTS</span>
+                        </div>
+                        <div className="flex items-center justify-between text-[#A8B5B2]">
+                          <span>Timestamp Math (TID &rarr; 8h delta)</span>
+                          <span className="text-[#35B6A5] font-semibold">CALCULATED</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-2.5 rounded bg-[#35B6A5]/10 border border-[#35B6A5]/30 text-[11px] text-[#35B6A5] flex items-center justify-between">
+                      <span className="flex items-center gap-1.5">
+                        <Check className="w-3.5 h-3.5" /> Clinical Safety Gate Cleared
+                      </span>
+                      <span className="text-[10px] text-[#F1F5F4]">Zero Hallucination Risk</span>
+                    </div>
+                  </div>
+                )}
+
+                {activeStep === 3 && (
+                  <div className="space-y-2.5">
+                    <div className="p-3 rounded bg-[#171C20] border border-[#354147]">
+                      <span className="text-[10px] text-[#35B6A5] block mb-1">PostgreSQL Relational Persistence:</span>
+                      <pre className="text-[11px] text-[#A8B5B2] overflow-x-auto leading-relaxed">
+{`INSERT INTO patient_schedules (
+  patient_id, medication, interval_hrs,
+  timestamps, confirmed_by_gate
+) VALUES (
+  'p-804', 'Amoxicillin 500mg', 8,
+  ARRAY['08:00', '16:00', '00:00'], TRUE
+);`}
+                      </pre>
+                    </div>
+                    <p className="text-[10px] text-[#A8B5B2] leading-relaxed">
+                      * Relational state guarantees reproducible cron triggers and adherence logs without dependent AI token generation.
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {/* Engineering Focus Micro-tags */}
-              <div className="mt-4 pt-3 border-t border-[#354147] flex flex-wrap gap-1.5">
-                <span className="tech-chip text-[10px]">Python</span>
-                <span className="tech-chip text-[10px]">LLMs & RAG</span>
-                <span className="tech-chip text-[10px]">FastAPI</span>
-                <span className="tech-chip text-[10px]">Flutter</span>
-                <span className="tech-chip text-[10px]">Deterministic Safety</span>
+              {/* Verified Identity Footnote */}
+              <div className="mt-4 pt-3 border-t border-[#354147] flex items-center justify-between text-[11px] font-mono text-[#A8B5B2]">
+                <span className="flex items-center gap-1.5">
+                  <Cpu className="w-3.5 h-3.5 text-[#35B6A5]" />
+                  <span>TechCitySoft AI Intern · CECOS 2027</span>
+                </span>
+                <span className="text-[#35B6A5]">Peshawar, PK</span>
               </div>
             </div>
           </div>

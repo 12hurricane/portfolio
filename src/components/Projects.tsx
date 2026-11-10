@@ -31,46 +31,46 @@ export default function Projects() {
     {
       id: 0,
       title: "1. Camera Input",
-      badge: "30 FPS",
-      tech: "ESP32-CAM / Mobile Camera",
-      description: "Ingests raw 640x480 video stream under varying ambient lighting conditions.",
-      latency: "Real-time stream",
+      badge: "Input Stream",
+      tech: "Camera Stream / Video Input",
+      description: "Ingests test video frames under varying ambient lighting conditions.",
+      latency: "Active input stream",
       status: "Bench Tested",
     },
     {
       id: 1,
       title: "2. OpenCV Preprocess",
-      badge: "<12ms",
+      badge: "Normalization",
       tech: "Python / OpenCV",
-      description: "Frame normalization, resizing to 416x416, contrast equalization, and color space conversion.",
-      latency: "8-12ms budget",
+      description: "Frame normalization, resizing, contrast equalization, and color space conversion.",
+      latency: "OpenCV pipeline",
       status: "Implemented",
     },
     {
       id: 2,
-      title: "3. YOLO Spatial Inference",
-      badge: "<65ms",
-      tech: "YOLOv8-Nano / Edge AI",
-      description: "Generates localized bounding boxes and classification for high-risk obstacles (stairs, vehicles, pedestrians, doors).",
-      latency: "45-65ms on mobile edge",
+      title: "3. Object Detection",
+      badge: "Bounding Boxes",
+      tech: "YOLO Architecture",
+      description: "Generates localized bounding boxes and classification for high-risk obstacle candidates (stairs, vehicles, pedestrians).",
+      latency: "Model inference",
       status: "Implemented",
     },
     {
       id: 3,
       title: "4. Distance Estimation",
-      badge: "Heuristic",
+      badge: "Geometry Heuristic",
       tech: "Geometric Bounding Math",
-      description: "Calculates spatial bounding-box vertical ratio and focal calibration to categorize hazard as Immediate, Near, or Distant.",
-      latency: "<3ms algorithmic",
+      description: "Calculates spatial bounding-box vertical ratio and focal heuristics to categorize hazard proximity.",
+      latency: "Heuristic calculation",
       status: "In Development",
     },
     {
       id: 4,
       title: "5. Directional Audio",
-      badge: "Stereo Cues",
+      badge: "Audio Cues",
       tech: "Audio Synthesis Dispatch",
-      description: "Dispatches low-latency directional audio tones (panned Left/Center/Right) informing the user of relative hazard vectors.",
-      latency: "<15ms dispatch",
+      description: "Dispatches directional audio cues alerting the user of relative hazard vectors.",
+      latency: "Cue dispatch",
       status: "In Development",
     },
   ];
@@ -332,7 +332,7 @@ export default function Projects() {
 
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono text-accent-primary bg-accent-surface px-3 py-1.5 rounded border border-accent-primary/20 font-medium">
-                Safety Principle: Zero-Hallucination Core
+                Safety Principle: Rule-Based Validation Core
               </span>
             </div>
           </div>

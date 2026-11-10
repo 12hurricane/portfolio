@@ -92,10 +92,10 @@ export default function Navbar() {
 
             {/* Right Action Bar */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              {/* Active Users / Status Pill */}
+              {/* Availability Status Pill */}
               <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-secondary border border-border-subtle text-xs font-mono text-text-secondary shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="tracking-wide">2 systems live</span>
+                <span className="tracking-wide">Open to opportunities</span>
               </div>
 
               {/* Messages / Contact Pill */}

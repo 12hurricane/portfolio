@@ -11,7 +11,6 @@ import {
   ChevronUp,
   FileEdit,
   HelpCircle,
-  Sparkles,
 } from "lucide-react";
 
 export default function Blog() {
@@ -62,7 +61,7 @@ export default function Blog() {
             return (
               <div
                 key={article.id}
-                className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-sm hover:border-[#35B6A5]/50 transition-all flex flex-col justify-between"
+                className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-sm hover:border-[#35B6A5]/50 transition-colors flex flex-col justify-between"
               >
                 <div>
                   {/* Status & Reading Time */}
@@ -88,9 +87,9 @@ export default function Blog() {
                   {/* Expanded Content: Core Architectural Questions */}
                   {isExpanded && (
                     <div className="mt-4 pt-4 border-t border-[#354147] bg-[#20282D] -mx-6 px-6 py-4 space-y-3">
-                      <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-[#35B6A5] uppercase">
+                      <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-[#35B6A5]">
                         <HelpCircle className="w-3.5 h-3.5" />
-                        <span>Core Engineering Questions Explored:</span>
+                        <span>Core engineering questions explored:</span>
                       </div>
                       <ul className="space-y-2">
                         {article.coreEngineeringQuestions.map((q, idx) => (

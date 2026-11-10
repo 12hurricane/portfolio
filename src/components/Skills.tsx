@@ -10,7 +10,6 @@ import {
   Smartphone,
   Wrench,
   Search,
-  Sparkles,
   CheckCircle2,
   Compass,
 } from "lucide-react";
@@ -92,7 +91,7 @@ export default function Skills() {
           <button
             type="button"
             onClick={() => setActiveTab("demonstrated")}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-mono font-medium transition-all ${
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-mono font-medium transition-colors ${
               activeTab === "demonstrated"
                 ? "bg-[#35B6A5] text-[#171C20] font-semibold shadow-sm"
                 : "text-[#A8B5B2] hover:text-[#F1F5F4] hover:bg-[#252F34]"
@@ -105,7 +104,7 @@ export default function Skills() {
           <button
             type="button"
             onClick={() => setActiveTab("exploring")}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-mono font-medium transition-all ${
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-mono font-medium transition-colors ${
               activeTab === "exploring"
                 ? "bg-[#35B6A5] text-[#171C20] font-semibold shadow-sm"
                 : "text-[#A8B5B2] hover:text-[#F1F5F4] hover:bg-[#252F34]"
@@ -165,7 +164,7 @@ export default function Skills() {
               >
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Sparkles className="w-4 h-4 text-[#35B6A5]" />
+                    <Compass className="w-4 h-4 text-[#35B6A5]" />
                     <h3 className="font-heading font-bold text-sm text-[#F1F5F4]">
                       {exp.title}
                     </h3>
@@ -176,8 +175,8 @@ export default function Skills() {
                 </div>
 
                 <div className="pt-3 border-t border-[#354147] bg-[#20282D] -mx-5 -mb-5 p-4 rounded-b-xl">
-                  <span className="text-[10px] font-mono text-[#35B6A5] uppercase font-semibold block mb-1">
-                    Current Focus:
+                  <span className="text-[10px] font-mono font-medium text-[#35B6A5] block mb-1">
+                    Current focus:
                   </span>
                   <p className="text-xs font-mono text-[#F1F5F4]">
                     {exp.currentFocus}

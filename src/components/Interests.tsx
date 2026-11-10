@@ -92,7 +92,7 @@ export default function Interests() {
           {interests.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-xl bg-[#20282D] border border-[#354147] p-5 shadow-sm hover:border-[#35B6A5] transition-all flex flex-col justify-between group"
+              className="rounded-xl bg-[#20282D] border border-[#354147] p-5 shadow-sm hover:border-[#35B6A5] transition-colors flex flex-col justify-between group"
             >
               <div>
                 <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center mb-4 group-hover:border-[#35B6A5] transition-colors">
@@ -107,8 +107,8 @@ export default function Interests() {
               </div>
 
               <div className="pt-3 border-t border-[#354147] text-[11px] font-mono text-[#A8B5B2]">
-                <span className="text-[#35B6A5] block text-[10px] uppercase font-semibold">
-                  Exploration Focus:
+                <span className="text-[#35B6A5] block text-[10px] font-medium mb-0.5">
+                  Exploration focus:
                 </span>
                 <span>{item.focusArea}</span>
               </div>

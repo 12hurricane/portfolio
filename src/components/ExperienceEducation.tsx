@@ -25,7 +25,7 @@ export default function ExperienceEducation() {
               </h3>
             </div>
 
-            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-all hover:border-[#35B6A5]/50">
+            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-colors hover:border-[#35B6A5]/50">
               {/* Header Info */}
               <div className="flex flex-wrap items-start justify-between gap-2 pb-4 border-b border-[#354147]">
                 <div>
@@ -85,7 +85,7 @@ export default function ExperienceEducation() {
               </h3>
             </div>
 
-            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-all hover:border-[#35B6A5]/50">
+            <div className="rounded-xl bg-[#252F34] border border-[#354147] p-6 shadow-md transition-colors hover:border-[#35B6A5]/50">
               <div className="flex items-start justify-between gap-2 pb-4 border-b border-[#354147]">
                 <div>
                   <h4 className="font-heading font-bold text-base text-[#F1F5F4]">

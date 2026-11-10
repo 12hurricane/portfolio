@@ -58,7 +58,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#35B6A5] text-[#171C20] hover:bg-[#75C9BB] transition-all transform active:scale-95 shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#35B6A5] text-[#171C20] hover:bg-[#75C9BB] transition-colors shadow-sm"
               >
                 <span>Explore My Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#20282D] text-[#F1F5F4] border border-[#354147] hover:border-[#35B6A5] hover:text-[#35B6A5] transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold bg-[#20282D] text-[#F1F5F4] border border-[#354147] hover:border-[#35B6A5] hover:text-[#35B6A5] transition-colors"
               >
                 <span>Let&apos;s Connect</span>
               </a>
@@ -74,7 +74,7 @@ export default function Hero() {
               <a
                 href="/resume-tariq-khattak.pdf"
                 download="Tariq_Khattak_Resume.pdf"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm font-mono text-[#A8B5B2] hover:text-[#35B6A5] border border-[#354147] hover:border-[#35B6A5] transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm font-mono text-[#A8B5B2] hover:text-[#35B6A5] border border-[#354147] hover:border-[#35B6A5] transition-colors"
               >
                 <FileText className="w-4 h-4" />
                 <span>Download CV</span>

@@ -84,7 +84,7 @@ export default function Projects() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-mono transition-colors ${
                   activeCategory === cat
                     ? "bg-[#35B6A5] text-[#171C20] font-semibold shadow-sm"
                     : "bg-[#20282D] text-[#A8B5B2] border border-[#354147] hover:border-[#35B6A5] hover:text-[#F1F5F4]"
@@ -282,7 +282,7 @@ export default function Projects() {
               {otherProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="rounded-xl bg-[#20282D] border border-[#354147] p-5 shadow-md flex flex-col justify-between hover:border-[#35B6A5]/50 transition-all group"
+                  className="rounded-xl bg-[#20282D] border border-[#354147] p-5 shadow-md flex flex-col justify-between hover:border-[#35B6A5]/50 transition-colors group"
                 >
                   <div>
                     {/* Category & Status */}

@@ -139,25 +139,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[#171C20] relative">
+    <section id="contact" className="py-20 md:py-28 bg-bg-primary relative transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-10">
-          <span className="font-mono text-sm text-[#35B6A5]">05.</span>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#F1F5F4] tracking-tight">
+          <span className="font-mono text-sm text-accent-primary font-semibold">05.</span>
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
             Get in Touch
           </h2>
-          <div className="h-[1px] bg-[#354147] flex-grow ml-4 max-w-xs" />
+          <div className="h-[1px] bg-border-subtle flex-grow ml-4 max-w-xs" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Direct Contact Info */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#F1F5F4] leading-snug">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary leading-snug">
                 Have an AI Project or an Interesting Problem to Solve?
               </h3>
-              <p className="mt-3 text-sm text-[#A8B5B2] leading-relaxed">
+              <p className="mt-3 text-sm text-text-secondary leading-relaxed">
                 I&apos;m interested in connecting with developers, researchers, founders, and organizations working on AI-powered applications and intelligent systems.
               </p>
             </div>
@@ -165,18 +165,18 @@ export default function Contact() {
             {/* Direct Channels */}
             <div className="space-y-3 pt-2">
               {/* Email Card */}
-              <div className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center justify-between">
+              <div className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
+                  <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-[#A8B5B2] block">
+                    <span className="text-[11px] font-mono text-text-muted block">
                       Direct Email
                     </span>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-xs sm:text-sm font-mono text-[#F1F5F4] hover:text-[#35B6A5] transition-colors"
+                      className="text-xs sm:text-sm font-mono text-text-primary hover:text-accent-primary transition-colors font-medium"
                     >
                       {personalInfo.email}
                     </a>
@@ -186,19 +186,19 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={handleCopyEmailAddress}
-                  className="px-2.5 py-1.5 rounded bg-[#252F34] border border-[#354147] text-xs font-mono text-[#A8B5B2] hover:text-[#35B6A5] hover:border-[#35B6A5] flex items-center gap-1.5 transition-colors"
+                  className="px-2.5 py-1.5 rounded bg-bg-subtle border border-border-subtle text-xs font-mono text-text-secondary hover:text-accent-primary hover:border-accent-primary flex items-center gap-1.5 transition-colors shadow-sm"
                   title="Copy email address"
                   aria-label="Copy email address to clipboard"
                 >
                   {copiedEmail ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-[#35B6A5]" />
-                      <span className="text-[#35B6A5]">Copied</span>
+                      <Check className="w-3.5 h-3.5 text-accent-primary" />
+                      <span className="text-accent-primary font-semibold">Copied</span>
                     </>
                   ) : emailCopyError ? (
                     <>
-                      <AlertCircle className="w-3.5 h-3.5 text-yellow-400" />
-                      <span className="text-yellow-400">Failed</span>
+                      <AlertCircle className="w-3.5 h-3.5 text-amber-600" />
+                      <span className="text-amber-600">Failed</span>
                     </>
                   ) : (
                     <>
@@ -214,23 +214,23 @@ export default function Contact() {
                 href={personalInfo.linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center justify-between hover:border-[#35B6A5] transition-colors group"
+                className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
                 aria-label="Tariq Khattak LinkedIn profile"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
+                  <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-[#A8B5B2] block">
+                    <span className="text-[11px] font-mono text-text-muted block">
                       LinkedIn Profile
                     </span>
-                    <span className="text-xs sm:text-sm font-mono text-[#F1F5F4] group-hover:text-[#35B6A5] transition-colors">
+                    <span className="text-xs sm:text-sm font-mono text-text-primary group-hover:text-accent-primary transition-colors font-medium">
                       in/tariq-khattak-43b923257
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-[#A8B5B2] group-hover:text-[#35B6A5]" />
+                <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-accent-primary" />
               </a>
 
               {/* GitHub Card */}
@@ -238,35 +238,35 @@ export default function Contact() {
                 href={personalInfo.gitHubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center justify-between hover:border-[#35B6A5] transition-colors group"
+                className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
                 aria-label="Tariq Khattak GitHub profile"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
+                  <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                     <Github className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-[#A8B5B2] block">
+                    <span className="text-[11px] font-mono text-text-muted block">
                       GitHub Repositories
                     </span>
-                    <span className="text-xs sm:text-sm font-mono text-[#F1F5F4] group-hover:text-[#35B6A5] transition-colors">
+                    <span className="text-xs sm:text-sm font-mono text-text-primary group-hover:text-accent-primary transition-colors font-medium">
                       github.com/12hurricane
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-[#A8B5B2] group-hover:text-[#35B6A5]" />
+                <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-accent-primary" />
               </a>
 
               {/* Location Card */}
-              <div className="p-4 rounded-xl bg-[#20282D] border border-[#354147] flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#252F34] border border-[#354147] flex items-center justify-center text-[#35B6A5]">
+              <div className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center gap-3 shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-[#A8B5B2] block">
+                  <span className="text-[11px] font-mono text-text-muted block">
                     Location
                   </span>
-                  <span className="text-xs sm:text-sm text-[#F1F5F4]">
+                  <span className="text-xs sm:text-sm text-text-primary font-medium">
                     {personalInfo.location}
                   </span>
                 </div>
@@ -276,15 +276,15 @@ export default function Contact() {
 
           {/* Right Column: Transparent Message Composer */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-[#20282D] border border-[#354147] p-6 sm:p-8 shadow-xl">
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#354147]">
+            <div className="rounded-2xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 shadow-md">
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-border-subtle">
                 <div className="flex items-center gap-2">
-                  <MessageSquare className="w-4 h-4 text-[#35B6A5]" />
-                  <h4 className="font-heading font-bold text-base text-[#F1F5F4]">
+                  <MessageSquare className="w-4 h-4 text-accent-primary" />
+                  <h4 className="font-heading font-bold text-base text-text-primary">
                     Send a Message
                   </h4>
                 </div>
-                <span className="text-[11px] font-mono text-[#A8B5B2]">
+                <span className="text-[11px] font-mono text-text-muted">
                   Direct Dispatch
                 </span>
               </div>
@@ -295,9 +295,9 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="contact-name"
-                      className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                      className="block text-xs font-mono text-text-secondary mb-1.5"
                     >
-                      Your Name <span className="text-[#35B6A5]">*</span>
+                      Your Name <span className="text-accent-primary">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -312,12 +312,12 @@ export default function Contact() {
                       onChange={(e) => handleInputChange("name", e.target.value)}
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "name-error" : undefined}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                     />
                     {errors.name && (
                       <p
                         id="name-error"
-                        className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                        className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
                       >
                         <AlertCircle className="w-3 h-3" /> {errors.name}
                       </p>
@@ -328,9 +328,9 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="contact-email"
-                      className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                      className="block text-xs font-mono text-text-secondary mb-1.5"
                     >
-                      Your Email Address <span className="text-[#35B6A5]">*</span>
+                      Your Email Address <span className="text-accent-primary">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -344,12 +344,12 @@ export default function Contact() {
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-error" : undefined}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                     />
                     {errors.email && (
                       <p
                         id="email-error"
-                        className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                        className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
                       >
                         <AlertCircle className="w-3 h-3" /> {errors.email}
                       </p>
@@ -361,7 +361,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="contact-subject"
-                    className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                    className="block text-xs font-mono text-text-secondary mb-1.5"
                   >
                     Subject / Discussion Topic
                   </label>
@@ -373,7 +373,7 @@ export default function Contact() {
                     placeholder="e.g. Collaboration on AI Architecture / MediAssist"
                     value={formData.subject}
                     onChange={(e) => handleInputChange("subject", e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5]"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                   />
                 </div>
 
@@ -381,9 +381,9 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="block text-xs font-mono text-[#A8B5B2] mb-1.5"
+                    className="block text-xs font-mono text-text-secondary mb-1.5"
                   >
-                    Your Message <span className="text-[#35B6A5]">*</span>
+                    Your Message <span className="text-accent-primary">*</span>
                   </label>
                   <textarea
                     id="contact-message"
@@ -397,12 +397,12 @@ export default function Contact() {
                     onChange={(e) => handleInputChange("message", e.target.value)}
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "message-error" : undefined}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#252F34] border border-[#354147] text-sm text-[#F1F5F4] placeholder-[#A8B5B2]/50 focus:outline-none focus:border-[#35B6A5] resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary resize-none"
                   />
                   {errors.message && (
                     <p
                       id="message-error"
-                      className="text-[11px] text-red-400 mt-1 flex items-center gap-1"
+                      className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
                     >
                       <AlertCircle className="w-3 h-3" /> {errors.message}
                     </p>
@@ -414,16 +414,16 @@ export default function Contact() {
                   <div
                     className={`p-3 rounded-lg text-xs font-mono border flex items-center gap-2 ${
                       actionStatus.type === "clipboard" || actionStatus.type === "mailto"
-                        ? "bg-[#252F34] text-[#35B6A5] border-[#35B6A5]/40"
-                        : "bg-red-950/40 text-red-400 border-red-800"
+                        ? "bg-accent-surface text-accent-primary border-accent-primary/30"
+                        : "bg-red-50 text-red-600 border-red-200"
                     }`}
                     role="status"
                     aria-live="polite"
                   >
                     {actionStatus.type === "error" ? (
-                      <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
                     ) : (
-                      <Check className="w-4 h-4 shrink-0 text-[#35B6A5]" />
+                      <Check className="w-4 h-4 shrink-0 text-accent-primary" />
                     )}
                     <span>{actionStatus.message}</span>
                   </div>
@@ -433,7 +433,7 @@ export default function Contact() {
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs sm:text-sm font-semibold bg-[#35B6A5] text-[#171C20] hover:bg-[#75C9BB] transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs sm:text-sm font-semibold bg-accent-primary text-white hover:bg-accent-secondary transition-colors shadow-sm"
                   >
                     <Send className="w-4 h-4" />
                     <span>Open in Email Client</span>
@@ -442,7 +442,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={handleCopyToClipboard}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-xs sm:text-sm font-medium bg-[#252F34] text-[#F1F5F4] border border-[#354147] hover:border-[#35B6A5] hover:text-[#35B6A5] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-xs sm:text-sm font-medium bg-bg-subtle text-text-primary border border-border-subtle hover:border-accent-primary hover:text-accent-primary transition-colors shadow-sm"
                   >
                     <Copy className="w-4 h-4" />
                     <span>Copy Formatted Message</span>
@@ -450,7 +450,7 @@ export default function Contact() {
                 </div>
 
                 {/* Engineering Notice: No Fake Submission */}
-                <p className="text-[11px] font-mono text-[#A8B5B2] pt-2">
+                <p className="text-[11px] font-mono text-text-muted pt-2">
                   * Note: Prepares your message directly in your local email client or copies it to your clipboard. No unauthenticated database writes or third-party tracking.
                 </p>
               </form>

@@ -20,12 +20,12 @@ export default function Skills() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const categoryIcons: Record<string, React.ReactNode> = {
-    "Programming Languages": <Code className="w-4 h-4 text-[#35B6A5]" />,
-    "AI & Machine Learning": <Brain className="w-4 h-4 text-[#35B6A5]" />,
-    "LLM Technologies & Frameworks": <Cpu className="w-4 h-4 text-[#35B6A5]" />,
-    "Backend Development": <Server className="w-4 h-4 text-[#35B6A5]" />,
-    "Mobile Development": <Smartphone className="w-4 h-4 text-[#35B6A5]" />,
-    "Development Tools & Environment": <Wrench className="w-4 h-4 text-[#35B6A5]" />,
+    "Programming Languages": <Code className="w-4 h-4 text-accent-primary" />,
+    "AI & Machine Learning": <Brain className="w-4 h-4 text-accent-primary" />,
+    "LLM Technologies & Frameworks": <Cpu className="w-4 h-4 text-accent-primary" />,
+    "Backend Development": <Server className="w-4 h-4 text-accent-primary" />,
+    "Mobile Development": <Smartphone className="w-4 h-4 text-accent-primary" />,
+    "Development Tools & Environment": <Wrench className="w-4 h-4 text-accent-primary" />,
   };
 
   const filteredDemonstrated = demonstratedSkills
@@ -46,36 +46,36 @@ export default function Skills() {
   const getLevelBadge = (level: string) => {
     switch (level) {
       case "Core":
-        return "text-[#35B6A5] bg-[#35B6A5]/10 border-[#35B6A5]/30";
+        return "text-accent-primary bg-accent-surface border-accent-primary/30 font-semibold";
       case "Proficient":
-        return "text-[#75C9BB] bg-[#75C9BB]/10 border-[#75C9BB]/20";
+        return "text-text-primary bg-bg-secondary border-border-subtle";
       case "Working Knowledge":
-        return "text-[#A8B5B2] bg-[#20282D] border-[#354147]";
+        return "text-text-muted bg-bg-secondary border-border-subtle";
       default:
-        return "text-[#A8B5B2] bg-[#20282D] border-[#354147]";
+        return "text-text-muted bg-bg-secondary border-border-subtle";
     }
   };
 
   return (
-    <section id="skills" className="py-20 md:py-28 bg-[#171C20] relative">
+    <section id="skills" className="py-20 md:py-28 bg-bg-primary relative transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-mono text-sm text-[#35B6A5]">04.</span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#F1F5F4] tracking-tight">
+              <span className="font-mono text-sm text-accent-primary font-semibold">04.</span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
                 Technical Capabilities Index
               </h2>
             </div>
-            <p className="text-sm text-[#A8B5B2] max-w-2xl leading-relaxed">
+            <p className="text-sm text-text-secondary max-w-2xl leading-relaxed">
               Code-verified competencies structured by engineering discipline. Concrete, evidence-backed capabilities without arbitrary percentage bars.
             </p>
           </div>
 
           {/* Search Filter */}
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-[#A8B5B2] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               id="skills-search"
               name="skillsSearch"
@@ -84,20 +84,20 @@ export default function Skills() {
               placeholder="Filter e.g. Python, FastAPI, YOLO..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-3.5 py-2 rounded-lg bg-[#20282D] border border-[#354147] text-xs font-mono text-[#F1F5F4] placeholder-[#A8B5B2]/60 focus:outline-none focus:border-[#35B6A5]"
+              className="w-full pl-10 pr-3.5 py-2 rounded-lg bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary shadow-sm"
             />
           </div>
         </div>
 
         {/* Tab Toggle */}
-        <div className="flex items-center gap-4 mb-8 border-b border-[#354147] pb-3 text-xs font-mono">
+        <div className="flex items-center gap-4 mb-8 border-b border-border-subtle pb-3 text-xs font-mono">
           <button
             type="button"
             onClick={() => setActiveTab("demonstrated")}
             className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
               activeTab === "demonstrated"
-                ? "border-[#35B6A5] text-[#35B6A5] font-semibold"
-                : "border-transparent text-[#A8B5B2] hover:text-[#F1F5F4]"
+                ? "border-accent-primary text-accent-primary font-semibold"
+                : "border-transparent text-text-muted hover:text-text-primary"
             }`}
           >
             <CheckCircle2 className="w-4 h-4" />
@@ -109,8 +109,8 @@ export default function Skills() {
             onClick={() => setActiveTab("exploring")}
             className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
               activeTab === "exploring"
-                ? "border-[#35B6A5] text-[#35B6A5] font-semibold"
-                : "border-transparent text-[#A8B5B2] hover:text-[#F1F5F4]"
+                ? "border-accent-primary text-accent-primary font-semibold"
+                : "border-transparent text-text-muted hover:text-text-primary"
             }`}
           >
             <Compass className="w-4 h-4" />
@@ -118,10 +118,10 @@ export default function Skills() {
           </button>
         </div>
 
-        {/* Tab 1: Demonstrated Skills Table/Index (Eliminates repetitive card boxes) */}
+        {/* Tab 1: Demonstrated Skills Table/Index */}
         {activeTab === "demonstrated" && (
           <div className="space-y-8">
-            <div className="divide-y divide-[#354147] border-y border-[#354147]">
+            <div className="divide-y divide-border-subtle border-y border-border-subtle">
               {filteredDemonstrated.map((group, idx) => (
                 <div
                   key={idx}
@@ -129,14 +129,14 @@ export default function Skills() {
                 >
                   {/* Category Title & Icon */}
                   <div className="md:col-span-4 flex items-center gap-2.5">
-                    <span className="p-2 rounded bg-[#20282D] border border-[#354147]">
-                      {categoryIcons[group.category] || <Layers className="w-4 h-4 text-[#35B6A5]" />}
+                    <span className="p-2 rounded bg-bg-secondary border border-border-subtle shadow-sm">
+                      {categoryIcons[group.category] || <Layers className="w-4 h-4 text-accent-primary" />}
                     </span>
                     <div>
-                      <h3 className="font-heading font-semibold text-sm sm:text-base text-[#F1F5F4]">
+                      <h3 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
                         {group.category}
                       </h3>
-                      <span className="text-[11px] font-mono text-[#A8B5B2]">
+                      <span className="text-[11px] font-mono text-text-muted">
                         {group.skills.length} verified technologies
                       </span>
                     </div>
@@ -147,9 +147,9 @@ export default function Skills() {
                     {group.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#20282D] border border-[#354147] hover:border-[#35B6A5]/50 transition-colors"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors shadow-sm"
                       >
-                        <span className="text-xs font-mono font-medium text-[#F1F5F4]">
+                        <span className="text-xs font-mono font-medium text-text-primary">
                           {skill.name}
                         </span>
                         <span
@@ -174,19 +174,19 @@ export default function Skills() {
             {filteredExploring.map((exp, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-xl bg-[#20282D] border border-[#354147] space-y-3"
+                className="p-5 rounded-xl bg-bg-secondary border border-border-subtle space-y-3 shadow-sm"
               >
                 <div className="flex items-center gap-2">
-                  <Compass className="w-4 h-4 text-[#35B6A5]" />
-                  <h3 className="font-heading font-semibold text-sm sm:text-base text-[#F1F5F4]">
+                  <Compass className="w-4 h-4 text-accent-primary" />
+                  <h3 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
                     {exp.title}
                   </h3>
                 </div>
-                <p className="text-xs text-[#A8B5B2] leading-relaxed">
+                <p className="text-xs text-text-secondary leading-relaxed">
                   {exp.description}
                 </p>
-                <div className="pt-3 border-t border-[#354147] text-[11px] font-mono text-[#A8B5B2]">
-                  <span className="text-[#35B6A5] block font-medium mb-0.5">
+                <div className="pt-3 border-t border-border-subtle text-[11px] font-mono text-text-muted">
+                  <span className="text-accent-primary block font-medium mb-0.5">
                     Current focus:
                   </span>
                   <span>{exp.currentFocus}</span>
@@ -197,9 +197,9 @@ export default function Skills() {
         )}
 
         {/* Footnote: Verifiable Standards */}
-        <div className="mt-8 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-[#A8B5B2] gap-2 border-t border-[#354147]/60">
-          <span>Proficiency Levels: <strong className="text-[#35B6A5]">Core</strong> (production / primary architecture), <strong className="text-[#75C9BB]">Proficient</strong> (active codebase integration), <strong className="text-[#F1F5F4]">Working Knowledge</strong> (functional use).</span>
-          <span className="text-[#35B6A5]">Evaluated in Source Repos</span>
+        <div className="mt-8 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-text-muted gap-2 border-t border-border-subtle">
+          <span>Proficiency Levels: <strong className="text-accent-primary">Core</strong> (production / primary architecture), <strong className="text-text-primary">Proficient</strong> (active codebase integration), <strong className="text-text-muted">Working Knowledge</strong> (functional use).</span>
+          <span className="text-accent-primary font-medium">Evaluated in Source Repos</span>
         </div>
       </div>
     </section>

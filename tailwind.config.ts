@@ -10,24 +10,25 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          primary: "#171C20",
-          secondary: "#20282D",
-          card: "#252F34",
-          subtle: "#1C2328",
+          primary: "var(--bg-primary)",
+          secondary: "var(--bg-secondary)",
+          card: "var(--bg-card)",
+          subtle: "var(--bg-subtle)",
         },
         border: {
-          subtle: "#354147",
-          accent: "#35B6A5",
+          subtle: "var(--border-color)",
+          accent: "var(--accent-primary)",
         },
         accent: {
-          primary: "#35B6A5",
-          secondary: "#75C9BB",
-          glow: "rgba(53, 182, 165, 0.15)",
+          primary: "var(--accent-primary)",
+          secondary: "var(--accent-secondary)",
+          surface: "var(--accent-surface)",
+          glow: "var(--accent-surface)",
         },
         text: {
-          primary: "#F1F5F4",
-          secondary: "#A8B5B2",
-          muted: "#7A8A87",
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
       },
       fontFamily: {

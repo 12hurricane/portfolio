@@ -96,29 +96,29 @@ export const personalInfo: PersonalInfo = {
   ],
   focusAreas: [
     {
-      title: "AI Application Engineering",
-      description: "Developing robust, production-grade applications that integrate intelligent models with clean backend services.",
+      title: "Generative AI & LLM Applications",
+      description: "Building practical applications with language models, structured output parsing, and evaluation pipelines.",
       icon: "Cpu",
     },
     {
-      title: "LLM Integration & RAG",
-      description: "Connecting local and cloud LLMs with vector search, embeddings, and structured retrieval pipelines.",
+      title: "RAG & Vector Search",
+      description: "Connecting local and cloud LLMs with vector embeddings, semantic retrieval, and verified document context.",
       icon: "Database",
     },
     {
-      title: "Intelligent Agents",
-      description: "Exploring agentic workflows, multi-step tool use, and orchestration with frameworks like LangGraph.",
-      icon: "Workflow",
+      title: "Computer Vision",
+      description: "Working with YOLO object detection, OpenCV preprocessing, and spatial heuristics on camera feeds.",
+      icon: "Eye",
     },
     {
-      title: "Backend Systems",
-      description: "Building scalable APIs with FastAPI, Django, PostgreSQL, and asynchronous communication protocols.",
+      title: "Backend Engineering",
+      description: "Developing clean, performant APIs with FastAPI, PostgreSQL, asynchronous tasks, and robust data schemas.",
       icon: "Server",
     },
     {
-      title: "AI Deployment & Optimization",
-      description: "Running local LLMs with Ollama, Docker containerization, and optimizing inference for constrained devices.",
-      icon: "Terminal",
+      title: "Agentic Workflows",
+      description: "Exploring multi-step tool use, state machines, and structured orchestration with LangGraph.",
+      icon: "Workflow",
     },
   ],
 };
@@ -143,18 +143,17 @@ export const educationInfo: EducationInfo = {
 export const experienceInfo: ExperienceInfo = {
   role: "AI Engineer Intern",
   organization: "TechCitySoft",
-  location: "Pakistan",
-  arrangement: "Remote / Pakistan",
+  location: "Peshawar, Pakistan",
+  arrangement: "Remote / Hybrid",
   status: "Active Internship",
   summary:
-    "Working on AI engineering tasks involving the development and integration of intelligent application components, AI safety architecture, and practical AI-powered software solutions.",
+    "Developing AI features and backend integration pipelines, focusing on modular software components, API design, and reliable application logic.",
   responsibilities: [
-    "Developing practical AI-powered application features and workflows.",
-    "Designing and implementing modular AI-related software components.",
-    "Integrating LLM-based processing pipelines with backend application logic.",
-    "Building and connecting RESTful APIs using Python backend frameworks.",
-    "Evaluating AI safety, deterministic validation, and reliability considerations.",
-    "Testing, profiling, and documenting intelligent system components.",
+    "Building and testing practical application features with Python and FastAPI.",
+    "Integrating LLM extraction pipelines with backend application logic.",
+    "Designing structured validation schemas for model inputs and outputs.",
+    "Evaluating API performance, error handling, and data contracts.",
+    "Documenting system workflows and component architectures.",
   ],
 };
 
@@ -234,9 +233,9 @@ export const projects: Project[] = [
     problemStatement:
       "Medication non-adherence and polypharmacy complications lead to preventable hospitalizations. Patients frequently struggle with complex multi-drug schedules, illegible prescription instructions, and confusing pharmacological terminology.",
     technicalApproach:
-      "MediAssist bridges patient usability with clinical rigor. It uses local LLMs and RAG strictly for document retrieval and plain-language explanation, while isolating all dosage math, schedule validation, and drug interaction verification inside deterministic, rule-based algorithmic safety checks.",
+      "MediAssist separates unstructured text processing from safety-critical validation. It uses local LLMs for structured document extraction and plain-language explanation, while isolating dosage math, schedule validation, and drug interaction checks in deterministic, rule-based modules.",
     safetyArchitectureNote:
-      "Strict Clinical Safety Constraint: Medication calculations, dosage bounds, and interaction warnings are computed exclusively via deterministic, rule-based logic. LLMs are strictly quarantined to plain-language summarization and cannot alter prescription parameters or override clinical rules.",
+      "Prototype Safety Design: Medication calculations, dosage bounds, and interaction warnings are evaluated by rule-based algorithmic checks. Language models are restricted to unstructured text extraction and plain-language summarization, and do not make clinical decisions.",
     components: [
       {
         name: "Prescription Parsing & Extraction (Regex / LLM Schema)",
@@ -246,7 +245,7 @@ export const projects: Project[] = [
       {
         name: "Deterministic Medication Scheduling Engine",
         status: "Implemented",
-        description: "Deterministic math engine calculating intake timestamps with zero non-deterministic hallucination risk.",
+        description: "Rule-based engine calculating intake timestamps according to fixed daily intervals.",
       },
       {
         name: "Relational Persistence Schema (PostgreSQL)",

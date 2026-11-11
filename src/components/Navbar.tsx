@@ -6,7 +6,6 @@ import { personalInfo } from "@/data/portfolioData";
 import {
   Menu,
   X,
-  ArrowUpRight,
   FileText,
   Sun,
   Moon,
@@ -63,11 +62,11 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { number: "01", name: "ABOUT", href: "#about" },
-    { number: "02", name: "EXPERIENCE", href: "#experience" },
-    { number: "03", name: "CASE STUDIES", href: "#projects" },
-    { number: "04", name: "CAPABILITIES", href: "#skills" },
-    { number: "05", name: "CONTACT", href: "#contact" },
+    { number: "01", name: "About", href: "#about" },
+    { number: "02", name: "Experience & Education", href: "#experience" },
+    { number: "03", name: "Case Studies", href: "#projects" },
+    { number: "04", name: "Capabilities", href: "#skills" },
+    { number: "05", name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -75,59 +74,59 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
           isScrolled
-            ? "bg-bg-primary/95 backdrop-blur-md border-b border-border-subtle py-3.5 shadow-sm"
-            : "bg-transparent py-5 sm:py-7"
+            ? "bg-bg-primary/95 backdrop-blur-md border-b border-border-subtle py-3 shadow-sm"
+            : "bg-transparent py-5 sm:py-6"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Left Brand - Roman Caseres Minimalist Monogram/Wordmark */}
+            {/* Left Brand Wordmark */}
             <Link
               href="#"
-              className="font-heading font-black text-lg sm:text-xl tracking-tight text-text-primary hover:text-accent-primary transition-colors focus:outline-none"
+              className="font-heading font-bold text-lg tracking-tight text-text-primary hover:text-accent-primary transition-colors focus:outline-none"
               aria-label="Tariq Khattak Portfolio"
             >
-              TariqKhattak
+              Tariq Khattak
             </Link>
 
             {/* Right Action Bar */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              {/* Availability Status Pill */}
-              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-secondary border border-border-subtle text-xs font-mono text-text-secondary shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="tracking-wide">Open to opportunities</span>
+              {/* Availability Status */}
+              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle text-xs font-mono text-text-secondary">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span>Open to opportunities</span>
               </div>
 
-              {/* Messages / Contact Pill */}
+              {/* Messages / Contact Link */}
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono font-medium text-text-primary hover:text-accent-primary transition-colors shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-accent-primary" />
-                <span className="tracking-wide">MESSAGES</span>
+                <span>Contact</span>
               </a>
 
-              {/* GitHub Pill */}
+              {/* GitHub Link */}
               <a
                 href={personalInfo.gitHubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono font-medium text-text-primary hover:text-accent-primary transition-colors shadow-sm"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
                 aria-label="GitHub Repository"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span className="tracking-wide">GITHUB ↗</span>
+                <span>GitHub</span>
               </a>
 
               {/* Minimalist Hamburger Button */}
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="p-2 sm:px-2.5 rounded-full text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors shadow-sm focus:outline-none"
+                className="p-2 rounded-md text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors focus:outline-none"
                 aria-label="Open Navigation Drawer"
                 aria-expanded={drawerOpen}
               >
-                <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Menu className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -144,22 +143,22 @@ export default function Navbar() {
           />
 
           {/* Drawer Content */}
-          <div className="relative w-full max-w-md bg-bg-secondary h-full border-l border-border-subtle p-6 sm:p-8 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+          <div className="relative w-full max-w-md bg-bg-secondary h-full border-l border-border-subtle p-6 sm:p-8 flex flex-col justify-between shadow-xl z-10 overflow-y-auto">
             {/* Top Bar of Drawer */}
             <div>
               <div className="flex items-center justify-between border-b border-border-subtle pb-6 mb-8">
                 <div className="flex flex-col">
-                  <span className="font-heading font-black text-lg tracking-tight text-text-primary">
-                    TARIQ KHATTAK
+                  <span className="font-heading font-bold text-lg text-text-primary">
+                    Tariq Khattak
                   </span>
-                  <span className="font-mono text-xs text-accent-primary tracking-wider uppercase">
-                    AI SYSTEMS &amp; PERCEPTION
+                  <span className="font-mono text-xs text-text-muted">
+                    AI Engineer Intern · Applied AI
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setDrawerOpen(false)}
-                  className="p-2 rounded-full border border-border-subtle text-text-secondary hover:text-text-primary hover:border-accent-primary transition-colors"
+                  className="p-1.5 rounded-md border border-border-subtle text-text-secondary hover:text-text-primary hover:border-accent-primary transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="w-4 h-4" />
@@ -173,13 +172,13 @@ export default function Navbar() {
                     key={item.number}
                     href={item.href}
                     onClick={() => setDrawerOpen(false)}
-                    className="flex items-baseline justify-between group py-2 border-b border-border-subtle/40 hover:border-accent-primary transition-colors"
+                    className="flex items-baseline justify-between group py-2 border-b border-border-subtle/50 hover:border-accent-primary transition-colors"
                   >
-                    <span className="text-xl sm:text-2xl font-heading font-bold text-text-primary group-hover:text-accent-primary tracking-tight transition-colors">
+                    <span className="text-lg font-heading font-semibold text-text-primary group-hover:text-accent-primary transition-colors">
                       {item.name}
                     </span>
                     <span className="font-mono text-xs text-text-muted group-hover:text-accent-primary transition-colors">
-                      {item.number} ↗
+                      {item.number}
                     </span>
                   </a>
                 ))}
@@ -191,10 +190,10 @@ export default function Navbar() {
                   href="/resume-tariq-khattak.pdf"
                   download="Tariq_Khattak_Resume.pdf"
                   onClick={() => setDrawerOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md text-xs font-mono font-semibold tracking-wider uppercase bg-accent-surface text-accent-primary border border-accent-primary/20 hover:bg-accent-primary hover:text-white transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-xs font-mono font-medium bg-accent-surface text-accent-primary border border-accent-primary/20 hover:bg-accent-primary hover:text-white transition-colors"
                 >
                   <FileText className="w-4 h-4" />
-                  <span>Download Full CV (PDF)</span>
+                  <span>Download CV (PDF)</span>
                 </a>
               </div>
             </div>
@@ -203,13 +202,13 @@ export default function Navbar() {
             <div className="pt-8 border-t border-border-subtle space-y-6">
               {/* Theme Toggle in Drawer */}
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-text-secondary uppercase tracking-wider">
-                  Color Mode
+                <span className="font-mono text-xs text-text-secondary">
+                  Color mode
                 </span>
                 <button
                   type="button"
                   onClick={toggleTheme}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-bg-primary border border-border-subtle text-text-secondary hover:text-text-primary hover:border-accent-primary transition-colors"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-bg-primary border border-border-subtle text-text-secondary hover:text-text-primary hover:border-accent-primary transition-colors"
                 >
                   {theme === "editorial" ? (
                     <>
@@ -226,7 +225,7 @@ export default function Navbar() {
               </div>
 
               {/* Social Channels */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <a
                   href={personalInfo.gitHubUrl}
                   target="_blank"
@@ -255,8 +254,8 @@ export default function Navbar() {
               </div>
 
               {/* Location Tag */}
-              <div className="font-mono text-[11px] text-text-muted tracking-widest uppercase">
-                PESHAWAR, PAKISTAN · UTC+5
+              <div className="font-mono text-xs text-text-muted">
+                Peshawar, Pakistan · UTC+5
               </div>
             </div>
           </div>

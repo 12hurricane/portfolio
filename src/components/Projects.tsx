@@ -1,23 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { projects, Project, ComponentStatus } from "@/data/portfolioData";
+import { projects, ComponentStatus } from "@/data/portfolioData";
 import {
   ExternalLink,
   Github,
-  Layers,
-  ArrowRight,
-  ShieldCheck,
-  ShieldAlert,
   CheckCircle,
   Clock,
   CircleDot,
   FileCode,
-  Eye,
-  Cpu,
-  Database,
+  ShieldCheck,
+  ShieldAlert,
   Terminal,
-  SlidersHorizontal,
+  FileText,
 } from "lucide-react";
 
 export default function Projects() {
@@ -106,55 +101,46 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-mono text-sm text-accent-primary font-semibold">03.</span>
+              <span className="font-mono text-xs text-accent-primary font-medium">03</span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
-                Case Studies &amp; Systems Architecture
+                Case Studies &amp; Architecture
               </h2>
             </div>
             <p className="text-sm text-text-secondary max-w-2xl leading-relaxed">
-              In-depth architectural breakdowns of systems I am actively engineering. Proving component boundaries, edge inference budgets, and deterministic safety rules.
+              Architectural breakdowns of core projects: exploring computer vision for assistive perception, and rule-based safety boundaries for clinical LLM workflows.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 text-xs font-mono text-text-muted">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-bg-secondary border border-border-subtle shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-accent-primary" />
-              2 Flagship Systems Under Evaluation
+          <div className="flex items-center gap-2 text-xs font-mono text-text-muted">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-bg-secondary border border-border-subtle">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
+              <span>2 flagship case studies</span>
             </span>
           </div>
         </div>
 
         {/* CASE STUDY 1: SafeSight-AI */}
-        <div className="mb-20 rounded-2xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-md relative overflow-hidden">
-          {/* Top Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-primary via-accent-secondary to-transparent" />
-
+        <div className="mb-20 rounded-xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-sm relative">
           {/* Header Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border-subtle">
             <div>
-              <div className="flex flex-wrap items-center gap-2.5 mb-2">
-                <span className="px-3 py-0.5 rounded text-xs font-mono bg-accent-surface text-accent-primary border border-accent-primary/20 font-medium">
-                  Flagship Case Study 01
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-accent-surface text-accent-primary border border-accent-primary/20">
+                  Case study 01
                 </span>
-                <span className="px-3 py-0.5 rounded text-xs font-mono bg-bg-subtle text-amber-700 dark:text-yellow-400 border border-amber-500/20">
+                <span className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-bg-subtle text-text-secondary border border-border-subtle">
                   {safesight.statusBadge}
                 </span>
                 <span className="text-xs font-mono text-text-muted">
-                  Computer Vision &amp; Assistive IoT
+                  Computer Vision &amp; Assistive Perception
                 </span>
               </div>
-              <h3 className="text-3xl sm:text-4xl font-heading font-extrabold text-text-primary">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary">
                 {safesight.title}
               </h3>
-              <p className="text-sm sm:text-base font-mono text-accent-primary mt-1 font-medium">
+              <p className="text-sm sm:text-base font-mono text-accent-primary mt-1">
                 {safesight.subtitle}
               </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-text-muted bg-bg-subtle px-3 py-1.5 rounded border border-border-subtle">
-                Inference Target: &lt;80ms Edge Budget
-              </span>
             </div>
           </div>
 
@@ -163,7 +149,7 @@ export default function Projects() {
             <div className="lg:col-span-7 space-y-5">
               <div className="border-l-2 border-accent-primary pl-4">
                 <span className="text-xs font-mono font-medium text-accent-primary block mb-1">
-                  The Problem Solved:
+                  The Problem Solved
                 </span>
                 <p className="text-sm text-text-primary leading-relaxed">
                   {safesight.problemStatement}
@@ -172,18 +158,18 @@ export default function Projects() {
 
               <div>
                 <span className="text-xs font-mono font-medium text-text-primary block mb-1">
-                  Technical Approach:
+                  Technical Approach
                 </span>
-                <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                <p className="text-sm text-text-secondary leading-relaxed">
                   {safesight.technicalApproach}
                 </p>
               </div>
 
               {/* Safety Constraint Callout */}
-              <div className="p-4 rounded-xl bg-bg-subtle border border-border-subtle flex items-start gap-3">
-                <ShieldAlert className="w-5 h-5 text-accent-primary shrink-0 mt-0.5" />
+              <div className="p-4 rounded-lg bg-bg-subtle border border-border-subtle flex items-start gap-3">
+                <ShieldAlert className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
                 <div className="space-y-1">
-                  <span className="text-xs font-mono font-semibold text-text-primary block">
+                  <span className="text-xs font-mono font-medium text-text-primary block">
                     Assistive Scope &amp; Safety Boundary:
                   </span>
                   <p className="text-xs text-text-secondary leading-relaxed">
@@ -202,73 +188,57 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Right: Architectural Reality Checklist */}
-            <div className="lg:col-span-5 bg-bg-subtle rounded-xl border border-border-subtle p-5 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between pb-3 border-b border-border-subtle mb-3">
-                  <span className="text-xs font-heading font-bold text-text-primary flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-accent-primary" />
-                    <span>Component Implementation Matrix</span>
-                  </span>
-                  <span className="text-[10px] font-mono text-text-muted">
-                    Status Audit
-                  </span>
-                </div>
-
-                <div className="space-y-2 max-h-[300px] overflow-y-auto pr-1">
-                  {safesight.components?.map((c, i) => (
-                    <div key={i} className="p-2.5 rounded bg-bg-card border border-border-subtle text-xs">
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <span className="font-medium text-text-primary">{c.name}</span>
-                        <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full flex items-center gap-1 ${getStatusBadgeClass(c.status)}`}>
-                          {getStatusIcon(c.status)}
-                          {c.status}
+            {/* Architecture Matrix: Components Status */}
+            <div className="lg:col-span-5 flex flex-col justify-between">
+              <div className="rounded-lg bg-bg-primary border border-border-subtle p-5">
+                <span className="text-xs font-mono text-text-primary block font-medium mb-3">
+                  Subsystem implementation status:
+                </span>
+                <div className="divide-y divide-border-subtle">
+                  {safesight.components?.map((component, idx) => (
+                    <div key={idx} className="py-2.5 first:pt-0 last:pb-0">
+                      <div className="flex items-center justify-between text-xs mb-1">
+                        <span className="font-medium text-text-primary flex items-center gap-2">
+                          {getStatusIcon(component.status)}
+                          <span>{component.name}</span>
+                        </span>
+                        <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md ${getStatusBadgeClass(component.status)}`}>
+                          {component.status}
                         </span>
                       </div>
-                      <p className="text-[11px] text-text-secondary leading-snug">
-                        {c.description}
+                      <p className="text-[11px] text-text-secondary pl-5 leading-normal">
+                        {component.description}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
-
-              <div className="pt-3 border-t border-border-subtle text-[10px] font-mono text-text-muted flex items-center gap-1.5 mt-3">
-                <SlidersHorizontal className="w-3.5 h-3.5 text-accent-primary" />
-                <span>Bench-evaluated on test datasets and recorded video feeds.</span>
-              </div>
             </div>
           </div>
 
-          {/* Interactive Edge Perception Pipeline Visualizer */}
-          <div className="pt-6 border-t border-border-subtle">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-mono uppercase text-accent-primary tracking-wider flex items-center gap-2 font-semibold">
-                <Eye className="w-4 h-4" />
-                <span>Interactive Perception Pipeline (Click nodes to inspect latency &amp; hardware roles)</span>
-              </span>
-              <span className="text-[11px] font-mono text-text-muted">
-                Pipeline Stage {activePerceptionStep + 1} of 5
-              </span>
-            </div>
+          {/* SafeSight 5-Stage Spatial Perception Pipeline */}
+          <div className="mt-8 pt-8 border-t border-border-subtle space-y-4">
+            <span className="text-xs font-mono text-accent-primary block font-medium">
+              Spatial Perception Pipeline Architecture
+            </span>
 
-            {/* Stepper Node Rail */}
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 mb-4">
+            {/* Interactive Step Strip */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
               {perceptionSteps.map((step) => (
                 <button
-                  key={step.id}
                   type="button"
+                  key={step.id}
                   onClick={() => setActivePerceptionStep(step.id)}
                   className={`p-3 rounded-lg border text-left transition-colors ${
                     activePerceptionStep === step.id
-                      ? "bg-bg-card border-accent-primary shadow-sm"
-                      : "bg-bg-subtle border-border-subtle hover:border-accent-primary/50"
+                      ? "bg-accent-surface border-accent-primary"
+                      : "bg-bg-primary border-border-subtle hover:border-accent-primary"
                   }`}
                 >
-                  <span className="text-[10px] font-mono text-accent-primary block font-semibold">
+                  <span className="text-[10px] font-mono text-accent-primary block">
                     {step.badge}
                   </span>
-                  <span className="text-xs font-heading font-semibold text-text-primary block mt-0.5">
+                  <span className="text-xs font-heading font-medium text-text-primary block mt-0.5">
                     {step.title}
                   </span>
                   <span className="text-[10px] font-mono text-text-muted block mt-1">
@@ -279,14 +249,14 @@ export default function Projects() {
             </div>
 
             {/* Active Step Deep-Dive Inspector */}
-            <div className="p-4 rounded-xl bg-bg-card border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+            <div className="p-4 rounded-lg bg-bg-primary border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold text-accent-primary">
+                  <span className="text-xs font-mono font-semibold text-accent-primary">
                     {perceptionSteps[activePerceptionStep].title}
                   </span>
-                  <span className="text-[10px] font-mono text-text-muted px-2 py-0.5 rounded bg-bg-subtle border border-border-subtle">
-                    Target: {perceptionSteps[activePerceptionStep].tech}
+                  <span className="text-[10px] font-mono text-text-muted px-2 py-0.5 rounded bg-bg-secondary border border-border-subtle">
+                    {perceptionSteps[activePerceptionStep].tech}
                   </span>
                 </div>
                 <p className="text-xs text-text-secondary max-w-3xl leading-relaxed">
@@ -295,7 +265,7 @@ export default function Projects() {
               </div>
 
               <div className="shrink-0 flex items-center gap-3 text-xs font-mono">
-                <span className="text-accent-primary bg-accent-surface px-2.5 py-1 rounded border border-accent-primary/20 font-semibold">
+                <span className="text-accent-primary bg-accent-surface px-2.5 py-1 rounded-md border border-accent-primary/20 font-medium">
                   {perceptionSteps[activePerceptionStep].latency}
                 </span>
               </div>
@@ -304,136 +274,115 @@ export default function Projects() {
         </div>
 
         {/* CASE STUDY 2: MediAssist */}
-        <div className="mb-20 rounded-2xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-md relative overflow-hidden">
-          {/* Top Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-secondary via-accent-primary to-transparent" />
-
+        <div className="mb-20 rounded-xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-sm relative">
           {/* Header Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border-subtle">
             <div>
-              <div className="flex flex-wrap items-center gap-2.5 mb-2">
-                <span className="px-3 py-0.5 rounded text-xs font-mono bg-accent-surface text-accent-primary border border-accent-primary/20 font-medium">
-                  Flagship Case Study 02
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-accent-surface text-accent-primary border border-accent-primary/20">
+                  Case study 02
                 </span>
-                <span className="px-3 py-0.5 rounded text-xs font-mono bg-bg-subtle text-amber-700 dark:text-yellow-400 border border-amber-500/20">
+                <span className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-bg-subtle text-text-secondary border border-border-subtle">
                   {mediassist.statusBadge}
                 </span>
                 <span className="text-xs font-mono text-text-muted">
-                  Clinical AI &amp; Deterministic Safety
+                  Applied LLM &amp; Rule-Based Logic
                 </span>
               </div>
-              <h3 className="text-3xl sm:text-4xl font-heading font-extrabold text-text-primary">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary">
                 {mediassist.title}
               </h3>
-              <p className="text-sm sm:text-base font-mono text-accent-primary mt-1 font-medium">
+              <p className="text-sm sm:text-base font-mono text-accent-primary mt-1">
                 {mediassist.subtitle}
               </p>
             </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-accent-primary bg-accent-surface px-3 py-1.5 rounded border border-accent-primary/20 font-medium">
-                Safety Principle: Rule-Based Validation Core
-              </span>
-            </div>
           </div>
 
-          {/* THE CORE VISUAL PROOF: WHERE LLM IS USED VS. WHERE IT IS DELIBERATELY EXCLUDED */}
+          {/* THE CORE VISUAL PROOF: WHERE LLM IS USED VS. WHERE RULES GOVERN */}
           <div className="my-8 space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase text-accent-primary tracking-wider flex items-center gap-2 font-semibold">
-                <ShieldCheck className="w-4 h-4 text-accent-primary" />
-                <span>Architectural Isolation: Stochastic LLM Layer vs. Deterministic Algorithmic Core</span>
-              </span>
-              <span className="text-[11px] font-mono text-text-muted">
-                Critical Clinical Defense
-              </span>
-            </div>
+            <span className="text-xs font-mono text-accent-primary block font-medium">
+              Architecture Separation: Language Model Extraction vs. Rule-Based Validation
+            </span>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Box 1: Where LLMs ARE Used */}
-              <div className="p-5 rounded-xl bg-bg-card border border-border-subtle space-y-3 shadow-sm">
+              {/* Box 1: Where Language Models Are Used */}
+              <div className="p-5 rounded-lg bg-bg-primary border border-border-subtle space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
-                  <span className="text-xs font-mono font-bold text-amber-700 dark:text-yellow-400 flex items-center gap-1.5">
-                    <Terminal className="w-4 h-4" />
-                    <span>🟢 Where LLMs ARE Used (Stochastic Domain)</span>
+                  <span className="text-xs font-mono font-medium text-text-primary flex items-center gap-1.5">
+                    <FileText className="w-4 h-4 text-accent-primary" />
+                    <span>Language Model Layer (Text Extraction)</span>
                   </span>
                   <span className="text-[10px] font-mono text-text-muted">
-                    Candidate Drafter
+                    Candidate Parsing
                   </span>
                 </div>
                 <ul className="space-y-2.5 text-xs text-text-secondary">
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-600 dark:text-yellow-400 font-mono font-bold">›</span>
-                    <span><strong>Unstructured Prescription OCR Parsing:</strong> Local Ollama LLM ingests messy doctor notes and extracts candidate medication names, dosage frequencies, and notes.</span>
+                    <span className="text-accent-primary font-mono">›</span>
+                    <span><strong>Unstructured Note Parsing:</strong> Local Ollama model parses doctor notes and extracts candidate medication names, dosage frequencies, and notes.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-600 dark:text-yellow-400 font-mono font-bold">›</span>
-                    <span><strong>Plain-Language Explanation:</strong> Translating complex pharmacological jargon into patient-comprehensible dietary &amp; adherence instructions.</span>
+                    <span className="text-accent-primary font-mono">›</span>
+                    <span><strong>Plain-Language Explanation:</strong> Translates complex pharmacological phrasing into patient-friendly dietary and adherence instructions.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-600 dark:text-yellow-400 font-mono font-bold">›</span>
-                    <span><strong>Grounded RAG Document Retrieval:</strong> Vector search over verified open pharmaceutical literature for informational inquiries.</span>
+                    <span className="text-accent-primary font-mono">›</span>
+                    <span><strong>Grounded RAG Document Retrieval:</strong> Vector search over verified open pharmaceutical documentation for informational lookups.</span>
                   </li>
                 </ul>
-                <div className="p-2.5 rounded bg-bg-subtle border border-border-subtle text-[11px] text-amber-700 dark:text-yellow-400 font-mono">
-                  * Safety Rule: All LLM outputs are treated as untrusted candidates and cannot directly write to database or generate schedules.
+                <div className="p-2.5 rounded-md bg-bg-secondary border border-border-subtle text-[11px] text-text-muted font-mono">
+                  * Design rule: Language model outputs are treated as untrusted drafts and cannot directly write prescriptions or schedule reminders.
                 </div>
               </div>
 
-              {/* Box 2: Where LLMs ARE STRICTLY EXCLUDED */}
-              <div className="p-5 rounded-xl bg-bg-card border-2 border-accent-primary/40 space-y-3 shadow-sm">
+              {/* Box 2: Where Deterministic Rules Are Enforced */}
+              <div className="p-5 rounded-lg bg-bg-primary border border-accent-primary/40 space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
-                  <span className="text-xs font-mono font-bold text-accent-primary flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>🔴 Where LLMs ARE Strictly Excluded (Deterministic Core)</span>
+                  <span className="text-xs font-mono font-medium text-text-primary flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary" />
+                    <span>Rule-Based Validation Layer (Deterministic Checks)</span>
                   </span>
-                  <span className="text-[10px] font-mono text-accent-primary font-bold">
-                    100% Algorithmic
+                  <span className="text-[10px] font-mono text-accent-primary font-medium">
+                    Rule Logic
                   </span>
                 </div>
                 <ul className="space-y-2.5 text-xs text-text-secondary">
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Dosage Range Validation:</strong> Strict deterministic math rules check single-dose &amp; daily cumulative limits against clinical upper thresholds (0% hallucination).</span>
+                    <span><strong>Dosage Range Validation:</strong> Deterministic rules verify single-dose and daily cumulative amounts against predefined upper bounds.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Drug-Drug Interaction Matrix:</strong> Relational contraindication cross-matching tables detect hazardous polypharmacy combinations algorithmically.</span>
+                    <span><strong>Drug-Drug Interaction Table:</strong> Relational queries cross-check active prescriptions against known contraindication matrices.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Intake Timestamp Cron Calculation:</strong> Precise clock arithmetic scheduling daily doses (e.g. 8-hour intervals) without probabilistic drift.</span>
+                    <span><strong>Intake Schedule Math:</strong> Standard calendar calculations compute fixed intervals (e.g., 8-hour windows) without probabilistic drift.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Relational Persistence:</strong> PostgreSQL with relational integrity constraints for immutable adherence audit trails.</span>
+                    <span><strong>Relational Persistence:</strong> PostgreSQL tables with strict constraints maintain immutable adherence records.</span>
                   </li>
                 </ul>
-                <div className="p-2.5 rounded bg-accent-surface border border-accent-primary/20 text-[11px] text-accent-primary font-mono font-medium">
-                  * Clinical Guarantee: The medication engine never relies on a language model for mathematical calculation or contraindication gates.
+                <div className="p-2.5 rounded-md bg-accent-surface border border-accent-primary/20 text-[11px] text-accent-primary font-mono">
+                  * Safety constraint: Medication calculations and contraindication checks are executed by deterministic code, never by a language model.
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Implementation Matrix for MediAssist */}
+          {/* Subsystems for MediAssist */}
           <div className="pt-6 border-t border-border-subtle">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-mono font-bold text-text-primary flex items-center gap-2">
-                <Database className="w-4 h-4 text-accent-primary" />
-                <span>MediAssist Verification Matrix: What is Implemented vs. In Development</span>
-              </span>
-              <span className="text-[11px] font-mono text-text-muted">
-                7 Subsystems Audited
-              </span>
-            </div>
+            <span className="text-xs font-mono text-text-primary block font-medium mb-3">
+              MediAssist Subsystems:
+            </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {mediassist.components?.slice(0, 6).map((comp, idx) => (
-                <div key={idx} className="p-3 rounded-lg bg-bg-card border border-border-subtle text-xs shadow-sm">
+                <div key={idx} className="p-3 rounded-md bg-bg-primary border border-border-subtle text-xs">
                   <div className="flex items-center justify-between gap-1 mb-1">
-                    <span className="font-semibold text-text-primary">{comp.name}</span>
-                    <span className={`text-[9px] font-mono px-2 py-0.2 rounded-full shrink-0 ${getStatusBadgeClass(comp.status)}`}>
+                    <span className="font-medium text-text-primary">{comp.name}</span>
+                    <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
                       {comp.status}
                     </span>
                   </div>
@@ -454,69 +403,74 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Secondary Technical Projects: Clean Compact Grid */}
+        {/* Secondary Technical Projects: Clean Architectural Row Catalog */}
         <div>
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-border-subtle">
-            <h3 className="text-xl font-heading font-bold text-text-primary flex items-center gap-2">
-              <FileCode className="w-5 h-5 text-accent-primary" />
-              <span>Additional Systems &amp; Applied AI Projects</span>
-            </h3>
+            <div className="flex items-center gap-2">
+              <FileCode className="w-4 h-4 text-accent-primary" />
+              <h3 className="text-xl font-heading font-bold text-text-primary">
+                Additional Projects
+              </h3>
+            </div>
             <span className="text-xs font-mono text-text-muted">
-              {secondaryProjects.length} Applied Systems
+              {secondaryProjects.length} projects
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Clean Row-Based Catalog (Breaks the Repetitive Card Grid) */}
+          <div className="divide-y divide-border-subtle border-y border-border-subtle">
             {secondaryProjects.map((project) => (
               <div
                 key={project.id}
-                className="rounded-xl bg-bg-secondary border border-border-subtle p-5 shadow-sm flex flex-col justify-between hover:border-accent-primary/50 transition-colors group"
+                className="py-5 grid grid-cols-1 lg:grid-cols-12 gap-4 items-start"
               >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-mono text-accent-primary font-semibold">
+                {/* Column 1: Title & Category */}
+                <div className="lg:col-span-4 space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono text-accent-primary font-medium">
                       {project.category}
                     </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-bg-subtle text-text-muted border border-border-subtle">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-bg-subtle text-text-muted border border-border-subtle">
                       {project.statusBadge}
                     </span>
                   </div>
-
-                  <h4 className="font-heading font-bold text-base text-text-primary group-hover:text-accent-primary transition-colors">
+                  <h4 className="font-heading font-semibold text-base text-text-primary">
                     {project.title}
                   </h4>
-                  <p className="text-xs font-mono text-text-muted mt-0.5 mb-3">
+                  <p className="text-xs font-mono text-text-muted">
                     {project.subtitle}
-                  </p>
-
-                  <p className="text-xs text-text-secondary leading-relaxed mb-4">
-                    {project.shortDescription}
                   </p>
                 </div>
 
-                <div>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.techStack.map((tech, idx) => (
-                      <span key={idx} className="tech-chip text-[10px]">
+                {/* Column 2: Problem & Approach Description */}
+                <div className="lg:col-span-5 text-xs text-text-secondary leading-relaxed">
+                  <p>{project.shortDescription}</p>
+                </div>
+
+                {/* Column 3: Tech Stack & Repository Link */}
+                <div className="lg:col-span-3 flex flex-col lg:items-end justify-between gap-3">
+                  <div className="flex flex-wrap lg:justify-end gap-1.5">
+                    {project.techStack.slice(0, 4).map((tech, idx) => (
+                      <span key={idx} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-bg-secondary border border-border-subtle text-text-muted">
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="pt-3 border-t border-border-subtle flex items-center justify-between">
+                  <div>
                     {project.isRepoPublic && project.githubUrl ? (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-primary hover:text-accent-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
                       >
                         <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
+                        <span>Source code</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     ) : (
-                      <span className="text-[11px] font-mono text-text-muted">
+                      <span className="text-xs font-mono text-text-muted">
                         {project.repoNotice || "Academic Prototype"}
                       </span>
                     )}

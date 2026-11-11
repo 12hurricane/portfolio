@@ -165,7 +165,7 @@ export default function Contact() {
             {/* Direct Channels */}
             <div className="space-y-3 pt-2">
               {/* Email Card */}
-              <div className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between shadow-sm">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                     <Mail className="w-5 h-5" />
@@ -214,7 +214,7 @@ export default function Contact() {
                 href={personalInfo.linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
+                className="p-4 rounded-lg bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
                 aria-label="Tariq Khattak LinkedIn profile"
               >
                 <div className="flex items-center gap-3">
@@ -238,7 +238,7 @@ export default function Contact() {
                 href={personalInfo.gitHubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
+                className="p-4 rounded-lg bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
                 aria-label="Tariq Khattak GitHub profile"
               >
                 <div className="flex items-center gap-3">
@@ -258,7 +258,7 @@ export default function Contact() {
               </a>
 
               {/* Location Card */}
-              <div className="p-4 rounded-xl bg-bg-secondary border border-border-subtle flex items-center gap-3 shadow-sm">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle flex items-center gap-3 shadow-sm">
                 <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -276,7 +276,7 @@ export default function Contact() {
 
           {/* Right Column: Transparent Message Composer */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 shadow-md">
+            <div className="rounded-lg bg-bg-secondary border border-border-subtle p-6 sm:p-8 shadow-sm">
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-border-subtle">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-accent-primary" />
@@ -449,9 +449,8 @@ export default function Contact() {
                   </button>
                 </div>
 
-                {/* Engineering Notice: No Fake Submission */}
                 <p className="text-[11px] font-mono text-text-muted pt-2">
-                  * Note: Prepares your message directly in your local email client or copies it to your clipboard. No unauthenticated database writes or third-party tracking.
+                  * Note: Opens your default email client with your message prefilled, or copies the draft directly to your clipboard.
                 </p>
               </form>
             </div>

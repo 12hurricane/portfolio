@@ -46,9 +46,9 @@ export default function Skills() {
   const getLevelBadge = (level: string) => {
     switch (level) {
       case "Core":
-        return "text-accent-primary bg-accent-surface border-accent-primary/30 font-semibold";
+        return "text-accent-primary bg-accent-surface border-accent-primary/20 font-medium";
       case "Proficient":
-        return "text-text-primary bg-bg-secondary border-border-subtle";
+        return "text-text-secondary bg-bg-secondary border-border-subtle";
       case "Working Knowledge":
         return "text-text-muted bg-bg-secondary border-border-subtle";
       default:
@@ -63,13 +63,13 @@ export default function Skills() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-mono text-sm text-accent-primary font-semibold">04.</span>
+              <span className="font-mono text-xs text-accent-primary font-medium">04</span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
-                Technical Capabilities Index
+                Technical Capabilities
               </h2>
             </div>
             <p className="text-sm text-text-secondary max-w-2xl leading-relaxed">
-              Code-verified competencies structured by engineering discipline. Concrete, evidence-backed capabilities without arbitrary percentage bars.
+              Competencies structured by discipline, evaluated through project codebases and practical software implementations.
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export default function Skills() {
               placeholder="Filter e.g. Python, FastAPI, YOLO..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-3.5 py-2 rounded-lg bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary shadow-sm"
+              className="w-full pl-10 pr-3.5 py-2 rounded-md bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Skills() {
             onClick={() => setActiveTab("demonstrated")}
             className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
               activeTab === "demonstrated"
-                ? "border-accent-primary text-accent-primary font-semibold"
+                ? "border-accent-primary text-accent-primary font-medium"
                 : "border-transparent text-text-muted hover:text-text-primary"
             }`}
           >
@@ -109,7 +109,7 @@ export default function Skills() {
             onClick={() => setActiveTab("exploring")}
             className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
               activeTab === "exploring"
-                ? "border-accent-primary text-accent-primary font-semibold"
+                ? "border-accent-primary text-accent-primary font-medium"
                 : "border-transparent text-text-muted hover:text-text-primary"
             }`}
           >
@@ -125,19 +125,19 @@ export default function Skills() {
               {filteredDemonstrated.map((group, idx) => (
                 <div
                   key={idx}
-                  className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-start"
+                  className="py-5 grid grid-cols-1 md:grid-cols-12 gap-4 items-start"
                 >
                   {/* Category Title & Icon */}
                   <div className="md:col-span-4 flex items-center gap-2.5">
-                    <span className="p-2 rounded bg-bg-secondary border border-border-subtle shadow-sm">
+                    <span className="p-1.5 rounded-md bg-bg-secondary border border-border-subtle">
                       {categoryIcons[group.category] || <Layers className="w-4 h-4 text-accent-primary" />}
                     </span>
                     <div>
-                      <h3 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
+                      <h3 className="font-heading font-medium text-sm sm:text-base text-text-primary">
                         {group.category}
                       </h3>
                       <span className="text-[11px] font-mono text-text-muted">
-                        {group.skills.length} verified technologies
+                        {group.skills.length} technologies
                       </span>
                     </div>
                   </div>
@@ -147,13 +147,13 @@ export default function Skills() {
                     {group.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors shadow-sm"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors"
                       >
-                        <span className="text-xs font-mono font-medium text-text-primary">
+                        <span className="text-xs font-mono text-text-primary">
                           {skill.name}
                         </span>
                         <span
-                          className={`text-[9px] font-mono px-1.5 py-0.2 rounded border ${getLevelBadge(
+                          className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md border ${getLevelBadge(
                             skill.level
                           )}`}
                         >
@@ -174,11 +174,11 @@ export default function Skills() {
             {filteredExploring.map((exp, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-xl bg-bg-secondary border border-border-subtle space-y-3 shadow-sm"
+                className="p-5 rounded-lg bg-bg-secondary border border-border-subtle space-y-3"
               >
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-accent-primary" />
-                  <h3 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
+                  <h3 className="font-heading font-medium text-sm sm:text-base text-text-primary">
                     {exp.title}
                   </h3>
                 </div>
@@ -196,10 +196,10 @@ export default function Skills() {
           </div>
         )}
 
-        {/* Footnote: Verifiable Standards */}
+        {/* Footnote */}
         <div className="mt-8 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-text-muted gap-2 border-t border-border-subtle">
-          <span>Proficiency Levels: <strong className="text-accent-primary">Core</strong> (production / primary architecture), <strong className="text-text-primary">Proficient</strong> (active codebase integration), <strong className="text-text-muted">Working Knowledge</strong> (functional use).</span>
-          <span className="text-accent-primary font-medium">Evaluated in Source Repos</span>
+          <span>Proficiency definitions: <strong className="text-accent-primary font-medium">Core</strong> (primary architecture &amp; projects), <strong className="text-text-primary font-medium">Proficient</strong> (active integration), <strong className="text-text-muted font-normal">Working Knowledge</strong> (functional use).</span>
+          <span className="text-text-muted">Evaluated in source repositories</span>
         </div>
       </div>
     </section>

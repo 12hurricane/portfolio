@@ -36,8 +36,6 @@ A modern, professional, minimal, and fully responsive personal portfolio website
      - RAG retrieval, drug interaction checker, clinician interface (`In Development`)
      - Multilingual support (`Planned`)
      - Strict safety constraint: Clinical math & interactions are handled exclusively by deterministic rule engines, completely isolating patient safety from stochastic LLM generation.
-   - **Requirements-to-Test Traceability System**:
-     - Decomposing functional requirements into acceptance criteria and test matrices with human-in-the-loop review.
    - **Verified GitHub Projects**:
      - `AI-lab-project` -> Loan eligibility ML classification
      - `movie-recommendation-` -> Content/collaborative recommendation engine

@@ -151,108 +151,93 @@ BT
 
 /F2 8.8 Tf
 0 0 0 rg
-45 348 Td
-(Requirements-to-Test Traceability System) Tj
-/F3 8 Tf
-0.3 0.35 0.38 rg
-330 348 Td
-([Research Prototype]) Tj
-/F1 8.2 Tf
-0.2 0.25 0.28 rg
-45 336 Td
-(- Explored automated extraction of atomic requirements from software specification documents using LLM workflows.) Tj
-45 326 Td
-(- Generated structured acceptance criteria (Given-When-Then) and bidirectional requirements-to-test traceability matrices.) Tj
-
-/F2 8.8 Tf
-0 0 0 rg
-45 311 Td
+45 346 Td
 (Machine Learning & Software Engineering Lab Projects) Tj
 /F3 8 Tf
 0.3 0.35 0.38 rg
-330 311 Td
+330 346 Td
 ([Academic Repositories]) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-45 299 Td
+45 334 Td
 (- AI Loan Eligibility Prediction: Exploratory data analysis, feature engineering, and classification models (github.com/12hurricane/AI-lab-project).) Tj
-45 289 Td
+45 324 Td
 (- Movie Recommendation System: Content-based and collaborative filtering recommendation engine (github.com/12hurricane/movie-recommendation-).) Tj
-45 279 Td
+45 314 Td
 (- Flutter Contact Management App: Clean architecture mobile contact manager with local storage (github.com/12hurricane/flutter-lab-project).) Tj
 ET
 
 0.8 0.82 0.85 rg
-45 268 522 0.75 re f
+45 303 522 0.75 re f
 0 0 0 rg
 
 BT
 /F2 10 Tf
 0.1 0.15 0.18 rg
-45 253 Td
+45 288 Td
 (TECHNICAL SKILLS) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 240 Td
+45 275 Td
 (Programming Languages:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 240 Td
+160 275 Td
 (Python, Dart, C++, JavaScript, HTML, CSS) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 228 Td
+45 263 Td
 (AI & Machine Learning:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 228 Td
+160 263 Td
 (Generative AI, Large Language Models (LLMs), RAG, Machine Learning, Prompt Engineering,) Tj
-160 218 Td
+160 253 Td
 (AI Application Architecture, Agentic AI, Ollama (Local LLMs), OpenAI API, Vector Embeddings) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 206 Td
+45 241 Td
 (Backend & Database:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 206 Td
+160 241 Td
 (FastAPI, Django, Django Channels (WebSockets), RESTful API Design, PostgreSQL, Firebase) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 194 Td
+45 229 Td
 (Mobile Development:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 194 Td
+160 229 Td
 (Flutter, Dart, Android Application Development, Reactive State Management) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 182 Td
+45 217 Td
 (Development & Tools:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 182 Td
+160 217 Td
 (Git, GitHub, VS Code, Docker (Containerization), Linux CLI) Tj
 0 0 0 rg
 /F2 8.2 Tf
-45 170 Td
+45 205 Td
 (Specialization Areas:) Tj
 /F1 8.2 Tf
 0.2 0.25 0.28 rg
-160 170 Td
+160 205 Td
 (Agentic AI, Multi-Agent Systems, MLOps, Distributed Systems, AI Safety & Verification) Tj
 ET
 
 0.8 0.82 0.85 rg
-45 155 522 0.75 re f
+45 190 522 0.75 re f
 0 0 0 rg
 
 BT
 /F3 7.8 Tf
 0.4 0.45 0.48 rg
-45 140 Td
+45 175 Td
 (Note: All information reflects verified academic standing at CECOS University and active engineering internship at TechCitySoft.) Tj
-45 130 Td
+45 165 Td
 (Portfolio & Live Systems: tariqkhattak.dev   |   GitHub: github.com/12hurricane) Tj
 ET
 `;

@@ -301,52 +301,6 @@ export const projects: Project[] = [
     repoNotice: "Research prototype under active iteration. Architecture documentation available in portfolio.",
   },
   {
-    id: "requirements-traceability",
-    title: "Requirements-to-Test Traceability System",
-    subtitle: "AI-Assisted Software Requirements Engineering",
-    category: "AI & LLM",
-    statusBadge: "Project Development / Research",
-    isFlagship: false,
-    shortDescription:
-      "An AI-assisted system exploring the automation of software requirements analysis, acceptance criteria generation, test-case generation, and requirements-to-test traceability.",
-    problemStatement:
-      "Software projects suffer from requirements drift where user stories, acceptance criteria, and unit test suites become disconnected, resulting in orphaned code paths and unverified edge cases.",
-    technicalApproach:
-      "Applies specialized LLM agents to decompose natural language user stories into Gherkin-style acceptance criteria and structured test case schemas, generating a bidirectional traceability matrix with human-in-the-loop review.",
-    safetyArchitectureNote:
-      "AI outputs serve as drafts for QA engineers; system enforces human-in-the-loop sign-off before committing test definitions to requirements repositories.",
-    components: [
-      {
-        name: "Requirements Analyzer & Decomposer",
-        status: "Implemented",
-        description: "Parses functional specification documents and extracts atomic requirement statements.",
-      },
-      {
-        name: "Acceptance Criteria Synthesis",
-        status: "In Development",
-        description: "Generates structured Given-When-Then criteria mapped to requirement IDs.",
-      },
-      {
-        name: "Test Case Generation Pipeline",
-        status: "In Development",
-        description: "Produces test step outlines and verification checkpoints for each criterion.",
-      },
-      {
-        name: "Traceability Matrix Mapping Engine",
-        status: "In Development",
-        description: "Computes links between requirements, tests, and source code files.",
-      },
-      {
-        name: "Orphan & Impact Analysis Engine",
-        status: "Planned",
-        description: "Detects untested requirements and identifies test suites invalidated by requirement updates.",
-      },
-    ],
-    techStack: ["Python", "LLMs", "AI Agents", "Backend APIs", "SQL", "LangChain"],
-    isRepoPublic: false,
-    repoNotice: "Research prototype exploring automated software engineering workflows.",
-  },
-  {
     id: "ai-loan-eligibility",
     title: "AI Loan Eligibility Prediction",
     subtitle: "Academic Machine Learning Classification",

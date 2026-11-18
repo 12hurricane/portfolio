@@ -24,7 +24,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-12">
-          <span className="font-mono text-xs text-accent-primary font-medium">01</span>
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
             Engineering Focus &amp; Background
           </h2>
@@ -73,21 +72,21 @@ export default function About() {
                 <span>Deterministic Gate</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 font-mono text-xs">
-                <div className="p-3 rounded-md bg-bg-primary border border-border-subtle space-y-1">
-                  <span className="text-[10px] text-accent-primary font-medium block">01 / Extraction</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1 font-mono text-xs divide-y sm:divide-y-0 sm:divide-x divide-border-subtle">
+                <div className="space-y-1 sm:pr-4">
+                  <span className="text-xs text-accent-primary font-medium block">Extraction Stage</span>
                   <span className="text-text-primary font-semibold block text-xs">Local LLM</span>
-                  <span className="text-[10px] text-text-muted block">Ollama / Python</span>
+                  <span className="text-xs text-text-muted block">Ollama / Python</span>
                 </div>
-                <div className="p-3 rounded-md bg-bg-primary border border-accent-primary/40 space-y-1">
-                  <span className="text-[10px] text-accent-primary font-medium block">02 / Validation</span>
-                  <span className="text-text-primary font-semibold block text-xs">Pydantic Gate</span>
-                  <span className="text-[10px] text-text-muted block">Strict Schema Rules</span>
+                <div className="space-y-1 pt-2 sm:pt-0 sm:px-4">
+                  <span className="text-xs text-accent-primary font-medium block">Validation Gate</span>
+                  <span className="text-text-primary font-semibold block text-xs">Pydantic Schema</span>
+                  <span className="text-xs text-text-muted block">Strict Type Rules</span>
                 </div>
-                <div className="p-3 rounded-md bg-bg-primary border border-border-subtle space-y-1">
-                  <span className="text-[10px] text-accent-primary font-medium block">03 / State</span>
+                <div className="space-y-1 pt-2 sm:pt-0 sm:pl-4">
+                  <span className="text-xs text-accent-primary font-medium block">Persistence State</span>
                   <span className="text-text-primary font-semibold block text-xs">PostgreSQL</span>
-                  <span className="text-[10px] text-text-muted block">ACID Persistence</span>
+                  <span className="text-xs text-text-muted block">ACID Guarantees</span>
                 </div>
               </div>
             </div>
@@ -114,9 +113,9 @@ export default function About() {
                     <span className="text-accent-primary shrink-0">
                       {iconMap[area.icon] || <Cpu className="w-4 h-4 text-accent-primary" />}
                     </span>
-                    <h4 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
+                    <h3 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
                       {area.title}
-                    </h4>
+                    </h3>
                   </div>
                   <p className="text-xs text-text-secondary pl-6 leading-relaxed">
                     {area.description}

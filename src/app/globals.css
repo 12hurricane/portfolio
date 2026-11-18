@@ -9,12 +9,12 @@
   --bg-card: #FFFFFF;
   --bg-subtle: #EFECE6;
   --border-color: #E2DFD7;
-  --accent-primary: #247F70;
-  --accent-secondary: #1B6559;
+  --accent-primary: #1C6D60;
+  --accent-secondary: #15554B;
   --accent-surface: #DCECE6;
   --text-primary: #202A2A;
-  --text-secondary: #626D6A;
-  --text-muted: #8C9794;
+  --text-secondary: #424E4B;
+  --text-muted: #525E5B;
   --grid-line: rgba(32, 42, 42, 0.06);
   --card-shadow: 0 1px 3px rgba(32, 42, 42, 0.04), 0 1px 2px rgba(32, 42, 42, 0.03);
 }
@@ -30,14 +30,23 @@
   --accent-secondary: #75c9bb;
   --accent-surface: rgba(53, 182, 165, 0.12);
   --text-primary: #f1f5f4;
-  --text-secondary: #a8b5b2;
-  --text-muted: #7a8a87;
+  --text-secondary: #c4d1ce;
+  --text-muted: #9aa8a5;
   --grid-line: rgba(53, 65, 71, 0.25);
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+::selection {
+  background-color: var(--accent-surface);
+  color: var(--accent-primary);
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 body {

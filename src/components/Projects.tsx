@@ -103,7 +103,6 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-mono text-xs text-accent-primary font-medium">03</span>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text-primary tracking-tight">
                 Case Studies &amp; Architecture
               </h2>
@@ -122,7 +121,7 @@ export default function Projects() {
         </div>
 
         {/* CASE STUDY 1: SafeSight-AI */}
-        <div className="mb-20 rounded-xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-sm relative">
+        <div className="mb-20 pt-8 pb-12 border-t border-border-subtle relative">
           {/* Header Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border-subtle">
             <div>
@@ -149,11 +148,11 @@ export default function Projects() {
           {/* Problem & Approach Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 my-8">
             <div className="lg:col-span-7 space-y-5">
-              <div className="border-l-2 border-accent-primary pl-4">
+              <div>
                 <span className="text-xs font-mono font-medium text-accent-primary block mb-1">
                   The Problem Solved
                 </span>
-                <p className="text-sm text-text-primary leading-relaxed">
+                <p className="text-sm text-text-primary leading-relaxed max-w-prose">
                   {safesight.problemStatement}
                 </p>
               </div>
@@ -162,16 +161,16 @@ export default function Projects() {
                 <span className="text-xs font-mono font-medium text-text-primary block mb-1">
                   Technical Approach
                 </span>
-                <p className="text-sm text-text-secondary leading-relaxed">
+                <p className="text-sm text-text-secondary leading-relaxed max-w-prose">
                   {safesight.technicalApproach}
                 </p>
               </div>
 
               {/* Safety Constraint Callout */}
-              <div className="p-4 rounded-lg bg-bg-subtle border border-border-subtle flex items-start gap-3">
+              <div className="py-3 px-4 rounded-md border border-accent-primary/25 bg-accent-surface/35 flex items-start gap-3 max-w-prose">
                 <ShieldAlert className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <span className="text-xs font-mono font-medium text-text-primary block">
+                <div className="space-y-0.5">
+                  <span className="text-xs font-mono font-semibold text-text-primary block">
                     Assistive Scope &amp; Safety Boundary:
                   </span>
                   <p className="text-xs text-text-secondary leading-relaxed">
@@ -192,10 +191,15 @@ export default function Projects() {
 
             {/* Architecture Matrix: Components Status */}
             <div className="lg:col-span-5 flex flex-col justify-between">
-              <div className="rounded-lg bg-bg-primary border border-border-subtle p-5">
-                <span className="text-xs font-mono text-text-primary block font-medium mb-3">
-                  Subsystem implementation status:
-                </span>
+              <div className="space-y-3">
+                <div className="pb-2 border-b border-border-subtle flex items-center justify-between">
+                  <span className="text-xs font-mono text-text-primary font-medium">
+                    Subsystem implementation status:
+                  </span>
+                  <span className="text-xs font-mono text-text-muted">
+                    6 active modules
+                  </span>
+                </div>
                 <div className="divide-y divide-border-subtle">
                   {safesight.components?.map((component, idx) => (
                     <div key={idx} className="py-2.5 first:pt-0 last:pb-0">
@@ -204,11 +208,11 @@ export default function Projects() {
                           {getStatusIcon(component.status)}
                           <span>{component.name}</span>
                         </span>
-                        <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md ${getStatusBadgeClass(component.status)}`}>
+                        <span className={`text-xs font-mono px-2 py-0.5 rounded-md ${getStatusBadgeClass(component.status)}`}>
                           {component.status}
                         </span>
                       </div>
-                      <p className="text-[11px] text-text-secondary pl-5 leading-normal">
+                      <p className="text-xs text-text-secondary pl-5 leading-normal">
                         {component.description}
                       </p>
                     </div>
@@ -242,18 +246,18 @@ export default function Projects() {
                   className={`p-3 rounded-lg border text-left cursor-pointer transition-all duration-200 min-h-[78px] flex flex-col justify-between ${
                     activePerceptionStep === step.id
                       ? "bg-accent-surface border-accent-primary shadow-sm"
-                      : "bg-bg-primary border-border-subtle hover:border-accent-primary"
+                      : "bg-bg-subtle/50 border-border-subtle hover:border-accent-primary"
                   }`}
                 >
                   <div>
-                    <span className="text-[10px] font-mono text-accent-primary block">
+                    <span className="text-xs font-mono text-accent-primary block">
                       {step.badge}
                     </span>
                     <span className="text-xs font-heading font-medium text-text-primary block mt-0.5">
                       {step.title}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-text-muted block mt-1">
+                  <span className="text-xs font-mono text-text-muted block mt-1">
                     {step.status}
                   </span>
                 </div>
@@ -261,13 +265,13 @@ export default function Projects() {
             </div>
 
             {/* Active Step Deep-Dive Inspector */}
-            <div className="p-4 rounded-lg bg-bg-primary border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="p-4 rounded-lg bg-bg-subtle/50 border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-mono font-semibold text-accent-primary">
                     {perceptionSteps[activePerceptionStep].title}
                   </span>
-                  <span className="text-[10px] font-mono text-text-muted px-2 py-0.5 rounded bg-bg-secondary border border-border-subtle">
+                  <span className="text-xs font-mono text-text-muted px-2 py-0.5 rounded bg-bg-secondary border border-border-subtle">
                     {perceptionSteps[activePerceptionStep].tech}
                   </span>
                 </div>
@@ -286,7 +290,7 @@ export default function Projects() {
         </div>
 
         {/* CASE STUDY 2: MediAssist */}
-        <div className="mb-20 rounded-xl bg-bg-secondary border border-border-subtle p-6 sm:p-8 lg:p-10 shadow-sm relative">
+        <div className="mb-20 pt-8 pb-12 border-t border-border-subtle relative">
           {/* Header Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border-subtle">
             <div>
@@ -316,15 +320,15 @@ export default function Projects() {
               Architecture Separation: Language Model Extraction vs. Rule-Based Validation
             </span>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
               {/* Box 1: Where Language Models Are Used */}
-              <div className="p-5 rounded-lg bg-bg-primary border border-border-subtle space-y-3">
+              <div className="p-4 sm:p-5 rounded-lg bg-bg-subtle/30 border border-border-subtle space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
                   <span className="text-xs font-mono font-medium text-text-primary flex items-center gap-1.5">
                     <FileText className="w-4 h-4 text-accent-primary" />
                     <span>Language Model Layer (Text Extraction)</span>
                   </span>
-                  <span className="text-[10px] font-mono text-text-muted">
+                  <span className="text-xs font-mono text-text-muted">
                     Candidate Parsing
                   </span>
                 </div>
@@ -342,19 +346,19 @@ export default function Projects() {
                     <span><strong>Grounded RAG Document Retrieval:</strong> Vector search over verified open pharmaceutical documentation for informational lookups.</span>
                   </li>
                 </ul>
-                <div className="p-2.5 rounded-md bg-bg-secondary border border-border-subtle text-[11px] text-text-muted font-mono">
+                <p className="text-xs text-text-muted font-mono pt-1">
                   * Design rule: Language model outputs are treated as untrusted drafts and cannot directly write prescriptions or schedule reminders.
-                </div>
+                </p>
               </div>
 
               {/* Box 2: Where Deterministic Rules Are Enforced */}
-              <div className="p-5 rounded-lg bg-bg-primary border border-accent-primary/40 space-y-3">
+              <div className="p-4 sm:p-5 rounded-lg bg-accent-surface/25 border border-accent-primary/30 space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
                   <span className="text-xs font-mono font-medium text-text-primary flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-accent-primary" />
                     <span>Rule-Based Validation Layer (Deterministic Checks)</span>
                   </span>
-                  <span className="text-[10px] font-mono text-accent-primary font-medium">
+                  <span className="text-xs font-mono text-accent-primary font-medium">
                     Rule Logic
                   </span>
                 </div>
@@ -376,9 +380,9 @@ export default function Projects() {
                     <span><strong>Relational Persistence:</strong> PostgreSQL tables with strict constraints maintain immutable adherence records.</span>
                   </li>
                 </ul>
-                <div className="p-2.5 rounded-md bg-accent-surface border border-accent-primary/20 text-[11px] text-accent-primary font-mono">
+                <p className="text-xs text-accent-primary font-mono pt-1">
                   * Safety constraint: Medication calculations and contraindication checks are executed by deterministic code, never by a language model.
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -400,17 +404,17 @@ export default function Projects() {
                   <Terminal key="term" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
                 ];
                 return (
-                  <div key={idx} className="p-3.5 rounded-md bg-bg-primary border border-border-subtle text-xs hover:-translate-y-0.5 transition-transform duration-200">
+                  <div key={idx} className="p-3.5 rounded-md bg-bg-subtle/40 border border-border-subtle text-xs hover:border-accent-primary transition-colors">
                     <div className="flex items-center justify-between gap-2 mb-1.5">
                       <div className="flex items-center gap-1.5 font-medium text-text-primary">
                         {subsystemIcons[idx % subsystemIcons.length]}
                         <span>{comp.name}</span>
                       </div>
-                      <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
+                      <span className={`text-xs font-mono px-2 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
                         {comp.status}
                       </span>
                     </div>
-                    <p className="text-[11px] text-text-secondary leading-relaxed">
+                    <p className="text-xs text-text-secondary leading-relaxed">
                       {comp.description}
                     </p>
                   </div>
@@ -455,7 +459,7 @@ export default function Projects() {
                     <span className="text-xs font-mono text-accent-primary font-medium">
                       {project.category}
                     </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-bg-subtle text-text-muted border border-border-subtle">
+                    <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-bg-subtle text-text-muted border border-border-subtle">
                       {project.statusBadge}
                     </span>
                   </div>
@@ -476,7 +480,7 @@ export default function Projects() {
                 <div className="lg:col-span-3 flex flex-col lg:items-end justify-between gap-3">
                   <div className="flex flex-wrap lg:justify-end gap-1.5">
                     {project.techStack.slice(0, 4).map((tech, idx) => (
-                      <span key={idx} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-bg-secondary border border-border-subtle text-text-muted">
+                      <span key={idx} className="px-2 py-0.5 rounded-md text-xs font-mono bg-bg-secondary border border-border-subtle text-text-muted">
                         {tech}
                       </span>
                     ))}

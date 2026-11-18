@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Credits & Year */}
-        <div className="mt-8 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-text-muted gap-2">
+        <div className="mt-8 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-text-muted gap-2">
           <p>© {currentYear} {personalInfo.fullName}. Built with Next.js, TypeScript &amp; Tailwind CSS.</p>
           <p className="text-text-muted">
             Peshawar, Pakistan · UTC+5

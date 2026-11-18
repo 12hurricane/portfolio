@@ -33,7 +33,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-4 text-base text-text-secondary leading-relaxed">
+            <div className="space-y-4 text-base text-text-secondary leading-relaxed max-w-[62ch]">
               {personalInfo.aboutBio.map((paragraph, index) => (
                 <p key={index}>
                   {paragraph}
@@ -64,7 +64,7 @@ export default function About() {
 
             {/* Visual Engineering Architecture Diagram Card (Taste Skill Visual) */}
             <div className="p-5 rounded-lg bg-bg-secondary border border-border-subtle space-y-3 shadow-sm">
-              <div className="flex items-center justify-between pb-2 border-b border-border-subtle font-mono text-[11px] text-text-muted">
+              <div className="flex items-center justify-between pb-2 border-b border-border-subtle font-mono text-xs text-text-muted">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span className="text-text-primary font-medium">pipeline-verification.ts</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { projects, ComponentStatus } from "@/data/portfolioData";
 import {
   ExternalLink,
@@ -16,6 +17,15 @@ import {
   Database,
   Server,
 } from "lucide-react";
+
+const SafeSightModel = dynamic(() => import("./SafeSightModel"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-72 sm:h-96 rounded-xl bg-bg-subtle/30 animate-pulse border border-border-subtle flex items-center justify-center font-mono text-xs text-text-muted">
+      Initializing 3D Hardware Model (Three.js)...
+    </div>
+  ),
+});
 
 export default function Projects() {
   const [activePerceptionStep, setActivePerceptionStep] = useState<number>(2);
@@ -152,7 +162,7 @@ export default function Projects() {
                 <span className="text-xs font-mono font-medium text-accent-primary block mb-1">
                   The Problem Solved
                 </span>
-                <p className="text-sm text-text-primary leading-relaxed max-w-prose">
+                <p className="text-sm text-text-primary leading-relaxed max-w-[58ch]">
                   {safesight.problemStatement}
                 </p>
               </div>
@@ -161,19 +171,19 @@ export default function Projects() {
                 <span className="text-xs font-mono font-medium text-text-primary block mb-1">
                   Technical Approach
                 </span>
-                <p className="text-sm text-text-secondary leading-relaxed max-w-prose">
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
                   {safesight.technicalApproach}
                 </p>
               </div>
 
               {/* Safety Constraint Callout */}
-              <div className="py-3 px-4 rounded-md border border-accent-primary/25 bg-accent-surface/35 flex items-start gap-3 max-w-prose">
+              <div className="py-3 px-4 rounded-md border border-accent-primary/25 bg-accent-surface/35 flex items-start gap-3 max-w-[58ch]">
                 <ShieldAlert className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
                   <span className="text-xs font-mono font-semibold text-text-primary block">
                     Assistive Scope &amp; Safety Boundary:
                   </span>
-                  <p className="text-xs text-text-secondary leading-relaxed">
+                  <p className="text-xs text-text-secondary leading-relaxed max-w-[54ch]">
                     {safesight.safetyArchitectureNote}
                   </p>
                 </div>
@@ -220,6 +230,11 @@ export default function Projects() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* SafeSight 3D Procedural Hardware Prototype Model */}
+          <div className="my-8">
+            <SafeSightModel />
           </div>
 
           {/* SafeSight 5-Stage Spatial Perception Pipeline */}
@@ -275,7 +290,7 @@ export default function Projects() {
                     {perceptionSteps[activePerceptionStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-text-secondary max-w-3xl leading-relaxed">
+                <p className="text-xs text-text-secondary max-w-[58ch] leading-relaxed">
                   {perceptionSteps[activePerceptionStep].description}
                 </p>
               </div>

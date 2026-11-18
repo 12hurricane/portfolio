@@ -170,7 +170,7 @@ export default function Contact() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-text-muted block">
+                    <span className="text-xs font-mono text-text-muted block">
                       Direct Email
                     </span>
                     <a
@@ -221,7 +221,7 @@ export default function Contact() {
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-text-muted block">
+                    <span className="text-xs font-mono text-text-muted block">
                       LinkedIn Profile
                     </span>
                     <span className="text-xs sm:text-sm font-mono text-text-primary group-hover:text-accent-primary transition-colors font-medium">
@@ -245,7 +245,7 @@ export default function Contact() {
                     <Github className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-text-muted block">
+                    <span className="text-xs font-mono text-text-muted block">
                       GitHub Repositories
                     </span>
                     <span className="text-xs sm:text-sm font-mono text-text-primary group-hover:text-accent-primary transition-colors font-medium">
@@ -262,7 +262,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-text-muted block">
+                  <span className="text-xs font-mono text-text-muted block">
                     Location
                   </span>
                   <span className="text-xs sm:text-sm text-text-primary font-medium">
@@ -283,7 +283,7 @@ export default function Contact() {
                     Send a Message
                   </h4>
                 </div>
-                <span className="text-[11px] font-mono text-text-muted">
+                <span className="text-xs font-mono text-text-muted">
                   Direct Dispatch
                 </span>
               </div>
@@ -316,7 +316,7 @@ export default function Contact() {
                     {errors.name && (
                       <p
                         id="name-error"
-                        className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
+                        className="text-xs text-red-500 mt-1 flex items-center gap-1"
                       >
                         <AlertCircle className="w-3 h-3" /> {errors.name}
                       </p>
@@ -348,7 +348,7 @@ export default function Contact() {
                     {errors.email && (
                       <p
                         id="email-error"
-                        className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
+                        className="text-xs text-red-500 mt-1 flex items-center gap-1"
                       >
                         <AlertCircle className="w-3 h-3" /> {errors.email}
                       </p>
@@ -401,7 +401,7 @@ export default function Contact() {
                   {errors.message && (
                     <p
                       id="message-error"
-                      className="text-[11px] text-red-500 mt-1 flex items-center gap-1"
+                      className="text-xs text-red-500 mt-1 flex items-center gap-1"
                     >
                       <AlertCircle className="w-3 h-3" /> {errors.message}
                     </p>
@@ -448,7 +448,7 @@ export default function Contact() {
                   </button>
                 </div>
 
-                <p className="text-[11px] font-mono text-text-muted pt-2">
+                <p className="text-xs font-mono text-text-muted pt-2">
                   * Note: Opens your default email client with your message prefilled, or copies the draft directly to your clipboard.
                 </p>
               </form>

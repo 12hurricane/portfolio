@@ -38,7 +38,7 @@ export default function ExperienceEducation() {
                 {experienceInfo.role}
                 <span className="text-accent-primary font-normal"> @ {experienceInfo.organization}</span>
               </h3>
-              <p className="text-sm text-text-secondary mt-2 leading-relaxed">
+              <p className="text-sm text-text-secondary mt-2 leading-relaxed max-w-[60ch]">
                 {experienceInfo.summary}
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function ExperienceEducation() {
                 {educationInfo.degree}
                 <span className="text-text-muted font-normal"> @ {educationInfo.institution}</span>
               </h3>
-              <p className="text-sm text-text-secondary mt-2 leading-relaxed">
+              <p className="text-sm text-text-secondary mt-2 leading-relaxed max-w-[60ch]">
                 {educationInfo.academicNote}
               </p>
             </div>

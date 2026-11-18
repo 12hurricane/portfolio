@@ -184,7 +184,7 @@ export default function Skills() {
                 <p className="text-xs text-text-secondary leading-relaxed">
                   {exp.description}
                 </p>
-                <div className="pt-3 border-t border-border-subtle text-[11px] font-mono text-text-muted">
+                <div className="pt-3 border-t border-border-subtle text-xs font-mono text-text-muted">
                   <span className="text-accent-primary block font-medium mb-0.5">
                     Current focus:
                   </span>

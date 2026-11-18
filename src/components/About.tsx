@@ -114,9 +114,9 @@ export default function About() {
                     <span className="text-accent-primary shrink-0">
                       {iconMap[area.icon] || <Cpu className="w-4 h-4 text-accent-primary" />}
                     </span>
-                    <h3 className="font-heading font-semibold text-sm text-text-primary">
+                    <h4 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
                       {area.title}
-                    </h3>
+                    </h4>
                   </div>
                   <p className="text-xs text-text-secondary pl-6 leading-relaxed">
                     {area.description}

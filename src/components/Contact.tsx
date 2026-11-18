@@ -312,7 +312,7 @@ export default function Contact() {
                       onChange={(e) => handleInputChange("name", e.target.value)}
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "name-error" : undefined}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
+                      className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                     />
                     {errors.name && (
                       <p
@@ -344,7 +344,7 @@ export default function Contact() {
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-error" : undefined}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
+                      className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                     />
                     {errors.email && (
                       <p
@@ -373,7 +373,7 @@ export default function Contact() {
                     placeholder="e.g. Collaboration on AI Architecture / MediAssist"
                     value={formData.subject}
                     onChange={(e) => handleInputChange("subject", e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
+                    className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg bg-bg-subtle border border-border-subtle text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
                   />
                 </div>
 

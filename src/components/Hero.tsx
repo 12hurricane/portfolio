@@ -64,7 +64,7 @@ export default function Hero() {
   ];
 
   return (
-    <section data-enter className="relative pt-28 sm:pt-36 pb-8 sm:pb-12 min-h-[90vh] flex flex-col justify-between bg-grid-pattern transition-colors duration-200">
+    <section data-enter className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 min-h-[100svh] flex flex-col justify-between bg-grid-pattern transition-colors duration-200">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-between">
         {/* Main Two-Column Editorial Hero Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center my-auto py-6 sm:py-8">
@@ -141,10 +141,6 @@ export default function Hero() {
                 alt="Tariq Khattak - AI Engineer"
                 className="w-full aspect-[4/5] object-cover object-top"
               />
-              <div className="px-4 py-3 border-t border-border-subtle flex items-center justify-between font-mono text-xs text-text-muted bg-bg-secondary">
-                <span className="text-text-primary font-medium">Tariq Khattak</span>
-                <span>Peshawar, PK</span>
-              </div>
             </div>
           </div>
         </div>

@@ -433,7 +433,7 @@ export default function Projects() {
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-border-subtle">
             <div className="flex items-center gap-2">
               <FileCode className="w-4 h-4 text-accent-primary" />
-              <h3 className="text-xl font-heading font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary">
                 Additional Projects
               </h3>
             </div>

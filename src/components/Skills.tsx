@@ -133,9 +133,9 @@ export default function Skills() {
                       {categoryIcons[group.category] || <Layers className="w-4 h-4 text-accent-primary" />}
                     </span>
                     <div>
-                      <h3 className="font-heading font-medium text-sm sm:text-base text-text-primary">
+                      <h4 className="font-heading font-medium text-sm sm:text-base text-text-primary">
                         {group.category}
-                      </h3>
+                      </h4>
                       <span className="text-[11px] font-mono text-text-muted">
                         {group.skills.length} technologies
                       </span>
@@ -178,9 +178,9 @@ export default function Skills() {
               >
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-accent-primary" />
-                  <h3 className="font-heading font-medium text-sm sm:text-base text-text-primary">
+                  <h4 className="font-heading font-medium text-sm sm:text-base text-text-primary">
                     {exp.title}
-                  </h3>
+                  </h4>
                 </div>
                 <p className="text-xs text-text-secondary leading-relaxed">
                   {exp.description}

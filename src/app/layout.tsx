@@ -93,8 +93,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" data-type="software" className="scroll-smooth">
       <head>
+        <meta name="page-type" content="software" />
+        <meta name="site-kind" content="software" />
+        <meta name="taste-kind" content="software" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

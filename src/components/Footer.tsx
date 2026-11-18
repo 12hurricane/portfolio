@@ -34,7 +34,7 @@ export default function Footer() {
               href={personalInfo.gitHubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono text-text-secondary hover:text-accent-primary flex items-center gap-1.5 transition-colors"
+              className="text-xs font-mono text-text-secondary hover:text-accent-primary min-h-[44px] inline-flex items-center gap-1.5 transition-colors"
               title="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -47,7 +47,7 @@ export default function Footer() {
               href={personalInfo.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono text-text-secondary hover:text-accent-primary flex items-center gap-1.5 transition-colors"
+              className="text-xs font-mono text-text-secondary hover:text-accent-primary min-h-[44px] inline-flex items-center gap-1.5 transition-colors"
               title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
@@ -58,7 +58,7 @@ export default function Footer() {
 
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-xs font-mono text-text-secondary hover:text-accent-primary flex items-center gap-1.5 transition-colors"
+              className="text-xs font-mono text-text-secondary hover:text-accent-primary min-h-[44px] inline-flex items-center gap-1.5 transition-colors"
               title="Direct Email"
             >
               <Mail className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono text-text-secondary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors shadow-sm"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 min-h-[44px] rounded-md text-xs font-mono text-text-secondary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary active:scale-[0.98] transition-all shadow-sm"
             aria-label="Back to top"
           >
             <span>Back to top</span>

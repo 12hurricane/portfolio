@@ -43,8 +43,8 @@ export default function About() {
             </div>
 
             {/* Technical Priorities Callouts */}
-            <div className="pt-6 border-t border-border-subtle grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="border-l-2 border-accent-primary pl-4 space-y-1">
+            <div className="pt-6 border-t border-border-subtle grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle space-y-1 hover:-translate-y-0.5 transition-transform duration-200">
                 <span className="font-heading font-semibold text-sm text-text-primary block">
                   Deterministic Boundaries
                 </span>
@@ -53,13 +53,42 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="border-l-2 border-border-subtle pl-4 space-y-1">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle space-y-1 hover:-translate-y-0.5 transition-transform duration-200">
                 <span className="font-heading font-semibold text-sm text-text-primary block">
                   Systems Over Prompts
                 </span>
                 <p className="text-xs text-text-secondary leading-relaxed">
                   Focusing on end-to-end reliability: pipeline orchestration, latency considerations on target devices, and testable components.
                 </p>
+              </div>
+            </div>
+
+            {/* Visual Engineering Architecture Diagram Card (Taste Skill Visual) */}
+            <div className="p-5 rounded-lg bg-bg-secondary border border-border-subtle space-y-3 shadow-sm">
+              <div className="flex items-center justify-between pb-2 border-b border-border-subtle font-mono text-[11px] text-text-muted">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="text-text-primary font-medium">pipeline-verification.ts</span>
+                </div>
+                <span>Deterministic Gate</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 font-mono text-xs">
+                <div className="p-3 rounded-md bg-bg-primary border border-border-subtle space-y-1">
+                  <span className="text-[10px] text-accent-primary font-medium block">01 / Extraction</span>
+                  <span className="text-text-primary font-semibold block text-xs">Local LLM</span>
+                  <span className="text-[10px] text-text-muted block">Ollama / Python</span>
+                </div>
+                <div className="p-3 rounded-md bg-bg-primary border border-accent-primary/40 space-y-1">
+                  <span className="text-[10px] text-accent-primary font-medium block">02 / Validation</span>
+                  <span className="text-text-primary font-semibold block text-xs">Pydantic Gate</span>
+                  <span className="text-[10px] text-text-muted block">Strict Schema Rules</span>
+                </div>
+                <div className="p-3 rounded-md bg-bg-primary border border-border-subtle space-y-1">
+                  <span className="text-[10px] text-accent-primary font-medium block">03 / State</span>
+                  <span className="text-text-primary font-semibold block text-xs">PostgreSQL</span>
+                  <span className="text-[10px] text-text-muted block">ACID Persistence</span>
+                </div>
               </div>
             </div>
           </div>

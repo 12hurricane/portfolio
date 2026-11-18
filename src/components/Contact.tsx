@@ -144,7 +144,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-10">
           <span className="font-mono text-sm text-accent-primary font-semibold">05.</span>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text-primary tracking-tight">
             Get in Touch
           </h2>
           <div className="h-[1px] bg-border-subtle flex-grow ml-4 max-w-xs" />
@@ -186,7 +186,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={handleCopyEmailAddress}
-                  className="px-2.5 py-1.5 rounded bg-bg-subtle border border-border-subtle text-xs font-mono text-text-secondary hover:text-accent-primary hover:border-accent-primary flex items-center gap-1.5 transition-colors shadow-sm"
+                  className="px-3.5 py-2 min-h-[44px] rounded bg-bg-subtle border border-border-subtle text-xs font-mono text-text-secondary hover:text-accent-primary hover:border-accent-primary flex items-center gap-1.5 transition-colors shadow-sm"
                   title="Copy email address"
                   aria-label="Copy email address to clipboard"
                 >
@@ -433,7 +433,7 @@ export default function Contact() {
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs sm:text-sm font-semibold bg-accent-primary text-white hover:bg-accent-secondary transition-colors shadow-sm"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md text-xs sm:text-sm font-semibold bg-accent-primary text-white hover:bg-accent-secondary active:scale-[0.98] transition-all shadow-sm"
                   >
                     <Send className="w-4 h-4" />
                     <span>Open in Email Client</span>
@@ -442,7 +442,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={handleCopyToClipboard}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-xs sm:text-sm font-medium bg-bg-subtle text-text-primary border border-border-subtle hover:border-accent-primary hover:text-accent-primary transition-colors shadow-sm"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] rounded-md text-xs sm:text-sm font-medium bg-bg-subtle text-text-primary border border-border-subtle hover:border-accent-primary hover:text-accent-primary active:scale-[0.98] transition-all shadow-sm"
                   >
                     <Copy className="w-4 h-4" />
                     <span>Copy Formatted Message</span>

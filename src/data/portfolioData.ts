@@ -92,7 +92,7 @@ export const personalInfo: PersonalInfo = {
   aboutBio: [
     "I am a Software Engineering undergraduate at CECOS University and an AI Engineer Intern at TechCitySoft, focused on building practical, reliable software applications with Python, Generative AI, and computer vision.",
     "My hands-on development is focused on practical software systems: SafeSight-AI, an assistive vision prototype exploring computer vision for real-time obstacle awareness, and MediAssist, a medication management system applying language models for symptom extraction paired with deterministic rule checking for dosage limits.",
-    "I prioritize clean backend architectures, reliable data flows, and honest, verifiable engineering over unsubstantiated claims.",
+    "I prioritize modular backend architectures, reliable data pipelines, and verifiable benchmark evaluations.",
   ],
   focusAreas: [
     {
@@ -112,7 +112,7 @@ export const personalInfo: PersonalInfo = {
     },
     {
       title: "Backend Engineering",
-      description: "Developing clean, performant APIs with FastAPI, PostgreSQL, asynchronous tasks, and robust data schemas.",
+      description: "Developing performant RESTful APIs with FastAPI, PostgreSQL, asynchronous worker queues, and typed schema validation.",
       icon: "Server",
     },
     {

@@ -64,7 +64,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-28 sm:pt-36 pb-8 sm:pb-12 min-h-[90vh] flex flex-col justify-between bg-grid-pattern transition-colors duration-200">
+    <section data-enter className="relative pt-28 sm:pt-36 pb-8 sm:pb-12 min-h-[90vh] flex flex-col justify-between bg-grid-pattern transition-colors duration-200">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-between">
         {/* Main Two-Column Editorial Hero Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center my-auto py-6 sm:py-8">
@@ -110,21 +110,21 @@ export default function Hero() {
             </div>
 
             {/* Typewriter Location & Intent Note */}
-            <div className="font-mono text-xs text-text-muted leading-relaxed space-y-0.5 pt-1">
+            <div className="font-mono text-xs text-text-muted leading-relaxed space-y-1 pt-1">
               <div className="flex items-center gap-2 text-text-secondary">
                 <span className="text-accent-primary">→</span>
                 <span>Based in Peshawar, Pakistan</span>
               </div>
-              <div className="pl-4 text-text-muted">
+              <p className="text-text-muted">
                 Software Engineering Undergraduate (CECOS) · AI Intern (TechCitySoft)
-              </div>
+              </p>
             </div>
 
             {/* Recommended CTA: Explore selected projects */}
             <div className="pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-accent-primary text-white hover:bg-accent-secondary text-xs font-mono font-medium transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-accent-primary text-white hover:bg-accent-secondary active:scale-[0.98] text-xs font-mono font-medium transition-all shadow-sm"
               >
                 <span>Explore selected projects</span>
                 <ArrowDownRight className="w-4 h-4" />
@@ -135,7 +135,7 @@ export default function Hero() {
           {/* Right Column: Tariq's Authentic Portrait Photograph */}
           <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center">
             {/* Framed Editorial Portrait Container */}
-            <div className="w-full max-w-sm sm:max-w-md rounded-lg border border-border-subtle bg-bg-secondary overflow-hidden shadow-sm">
+            <div className="w-full max-w-sm sm:max-w-md rounded-lg border border-border-subtle bg-bg-secondary overflow-hidden shadow-sm hover:-translate-y-0.5 transition-transform duration-200">
               <img
                 src="/tariq-portrait.jpg"
                 alt="Tariq Khattak - AI Engineer"
@@ -145,11 +145,6 @@ export default function Hero() {
                 <span className="text-text-primary font-medium">Tariq Khattak</span>
                 <span>Peshawar, PK</span>
               </div>
-            </div>
-
-            {/* Fine Monospace Caption */}
-            <div className="font-mono text-[11px] text-text-muted pt-2 text-left lg:text-right w-full max-w-sm sm:max-w-md">
-              Design &amp; code by Tariq Khattak
             </div>
           </div>
         </div>
@@ -161,7 +156,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+              className="flex items-center gap-2 group cursor-pointer focus:outline-none min-h-[44px] py-1"
               aria-label="Toggle visual theme"
             >
               <div

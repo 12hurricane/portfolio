@@ -64,7 +64,7 @@ export default function Skills() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="font-mono text-xs text-accent-primary font-medium">04</span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text-primary tracking-tight">
                 Technical Capabilities
               </h2>
             </div>
@@ -84,7 +84,7 @@ export default function Skills() {
               placeholder="Filter e.g. Python, FastAPI, YOLO..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-3.5 py-2 rounded-md bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
+              className="w-full pl-10 pr-3.5 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary"
             />
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function Skills() {
           <button
             type="button"
             onClick={() => setActiveTab("demonstrated")}
-            className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
+            className={`pb-2 border-b-2 transition-colors min-h-[44px] flex items-center gap-2 ${
               activeTab === "demonstrated"
                 ? "border-accent-primary text-accent-primary font-medium"
                 : "border-transparent text-text-muted hover:text-text-primary"
@@ -107,7 +107,7 @@ export default function Skills() {
           <button
             type="button"
             onClick={() => setActiveTab("exploring")}
-            className={`pb-2 border-b-2 transition-colors flex items-center gap-2 ${
+            className={`pb-2 border-b-2 transition-colors min-h-[44px] flex items-center gap-2 ${
               activeTab === "exploring"
                 ? "border-accent-primary text-accent-primary font-medium"
                 : "border-transparent text-text-muted hover:text-text-primary"

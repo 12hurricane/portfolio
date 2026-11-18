@@ -13,6 +13,8 @@ import {
   ShieldAlert,
   Terminal,
   FileText,
+  Database,
+  Server,
 } from "lucide-react";
 
 export default function Projects() {
@@ -102,7 +104,7 @@ export default function Projects() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="font-mono text-xs text-accent-primary font-medium">03</span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text-primary tracking-tight">
                 Case Studies &amp; Architecture
               </h2>
             </div>
@@ -112,7 +114,7 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-text-muted">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-bg-secondary border border-border-subtle">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
               <span>2 flagship case studies</span>
             </span>
@@ -135,7 +137,7 @@ export default function Projects() {
                   Computer Vision &amp; Assistive Perception
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary">
                 {safesight.title}
               </h3>
               <p className="text-sm sm:text-base font-mono text-accent-primary mt-1">
@@ -223,28 +225,38 @@ export default function Projects() {
             </span>
 
             {/* Interactive Step Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2" role="tablist" aria-label="Perception Pipeline Steps">
               {perceptionSteps.map((step) => (
-                <button
-                  type="button"
+                <div
+                  role="tab"
+                  tabIndex={0}
                   key={step.id}
+                  aria-selected={activePerceptionStep === step.id}
                   onClick={() => setActivePerceptionStep(step.id)}
-                  className={`p-3 rounded-lg border text-left transition-colors ${
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActivePerceptionStep(step.id);
+                    }
+                  }}
+                  className={`p-3 rounded-lg border text-left cursor-pointer transition-all duration-200 min-h-[78px] flex flex-col justify-between ${
                     activePerceptionStep === step.id
-                      ? "bg-accent-surface border-accent-primary"
+                      ? "bg-accent-surface border-accent-primary shadow-sm"
                       : "bg-bg-primary border-border-subtle hover:border-accent-primary"
                   }`}
                 >
-                  <span className="text-[10px] font-mono text-accent-primary block">
-                    {step.badge}
-                  </span>
-                  <span className="text-xs font-heading font-medium text-text-primary block mt-0.5">
-                    {step.title}
-                  </span>
+                  <div>
+                    <span className="text-[10px] font-mono text-accent-primary block">
+                      {step.badge}
+                    </span>
+                    <span className="text-xs font-heading font-medium text-text-primary block mt-0.5">
+                      {step.title}
+                    </span>
+                  </div>
                   <span className="text-[10px] font-mono text-text-muted block mt-1">
                     {step.status}
                   </span>
-                </button>
+                </div>
               ))}
             </div>
 
@@ -289,7 +301,7 @@ export default function Projects() {
                   Applied LLM &amp; Rule-Based Logic
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary">
                 {mediassist.title}
               </h3>
               <p className="text-sm sm:text-base font-mono text-accent-primary mt-1">
@@ -378,19 +390,32 @@ export default function Projects() {
             </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {mediassist.components?.slice(0, 6).map((comp, idx) => (
-                <div key={idx} className="p-3 rounded-md bg-bg-primary border border-border-subtle text-xs">
-                  <div className="flex items-center justify-between gap-1 mb-1">
-                    <span className="font-medium text-text-primary">{comp.name}</span>
-                    <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
-                      {comp.status}
-                    </span>
+              {mediassist.components?.slice(0, 6).map((comp, idx) => {
+                const subsystemIcons = [
+                  <Database key="db" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  <Server key="srv" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  <FileText key="rag" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  <ShieldCheck key="sc" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  <Clock key="clk" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  <Terminal key="term" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                ];
+                return (
+                  <div key={idx} className="p-3.5 rounded-md bg-bg-primary border border-border-subtle text-xs hover:-translate-y-0.5 transition-transform duration-200">
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <div className="flex items-center gap-1.5 font-medium text-text-primary">
+                        {subsystemIcons[idx % subsystemIcons.length]}
+                        <span>{comp.name}</span>
+                      </div>
+                      <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
+                        {comp.status}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-text-secondary leading-relaxed">
+                      {comp.description}
+                    </p>
                   </div>
-                  <p className="text-[11px] text-text-secondary leading-relaxed">
-                    {comp.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-border-subtle">

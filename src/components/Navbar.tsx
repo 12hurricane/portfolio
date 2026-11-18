@@ -100,7 +100,7 @@ export default function Navbar() {
               {/* Messages / Contact Link */}
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary active:scale-[0.98] transition-all"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-accent-primary" />
                 <span>Contact</span>
@@ -111,7 +111,7 @@ export default function Navbar() {
                 href={personalInfo.gitHubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary active:scale-[0.98] transition-all"
                 aria-label="GitHub Repository"
               >
                 <Github className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="p-2 rounded-md text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors focus:outline-none"
+                className="p-2.5 min-h-[44px] min-w-[44px] rounded-md text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary active:scale-[0.98] transition-all flex items-center justify-center focus:outline-none"
                 aria-label="Open Navigation Drawer"
                 aria-expanded={drawerOpen}
               >

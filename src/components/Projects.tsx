@@ -202,13 +202,26 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Tech Stack Chips */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {safesight.techStack.map((tech, idx) => (
-                  <span key={idx} className="tech-chip text-xs">
-                    {tech}
-                  </span>
-                ))}
+              {/* Categorized Tech Stack by Implementation Status */}
+              <div className="space-y-2 pt-2 text-xs font-mono">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-accent-primary font-medium mr-1">Implemented:</span>
+                  <span className="tech-chip text-xs">Python</span>
+                  <span className="tech-chip text-xs">OpenCV Frame Pipeline</span>
+                  <span className="tech-chip text-xs">YOLO Obstacle Detection</span>
+                  <span className="tech-chip text-xs">Bench Video Ingestion</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-text-secondary font-medium mr-1">In Development:</span>
+                  <span className="tech-chip text-xs border-dashed">Flutter Client</span>
+                  <span className="tech-chip text-xs border-dashed">Geometric Distance Heuristics</span>
+                  <span className="tech-chip text-xs border-dashed">Audio Alert Synthesizer</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-text-muted font-medium mr-1">Planned Hardware:</span>
+                  <span className="tech-chip text-xs border-border-subtle text-text-muted">ESP32 Spectacle Mount</span>
+                  <span className="tech-chip text-xs border-border-subtle text-text-muted">Wireless Camera Streaming</span>
+                </div>
               </div>
             </div>
 
@@ -485,23 +498,23 @@ export default function Projects() {
                 <ul className="space-y-2.5 text-xs text-text-secondary">
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Dosage Range Validation:</strong> Deterministic rules verify single-dose and daily cumulative amounts against predefined upper bounds.</span>
+                    <span><strong>Dosage Range Validation (Implemented):</strong> Deterministic upper-bound rules verify single-dose and daily cumulative amounts against safety thresholds.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Drug-Drug Interaction Table:</strong> Relational queries cross-check active prescriptions against known contraindication matrices.</span>
+                    <span><strong>Intake Schedule Math (Implemented):</strong> Fixed calendar interval logic calculates recurring dosage timestamps without probabilistic drift.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Intake Schedule Math:</strong> Standard calendar calculations compute fixed intervals (e.g., 8-hour windows) without probabilistic drift.</span>
+                    <span><strong>Relational Constraint Persistence (Implemented):</strong> PostgreSQL schemas with strict foreign keys maintain immutable prescription registries.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent-primary font-mono font-bold">✓</span>
-                    <span><strong>Relational Persistence:</strong> PostgreSQL tables with strict constraints maintain immutable adherence records.</span>
+                    <span className="text-amber-500 font-mono font-bold">⏳</span>
+                    <span><strong>Drug-Drug Interaction Table (In Development):</strong> Cross-checking active prescriptions against known contraindication matrices is actively being structured.</span>
                   </li>
                 </ul>
                 <p className="text-xs text-accent-primary font-mono pt-1">
-                  * Safety constraint: Medication calculations and contraindication checks are executed by deterministic code, never by a language model.
+                  * Safety boundary: Dosage bounds and schedule math are evaluated by deterministic code, never by a language model. Drug-drug contraindication lookup is currently in development before clinical rule activation.
                 </p>
               </div>
             </div>
@@ -545,12 +558,28 @@ export default function Projects() {
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-border-subtle">
-            {mediassist.techStack.map((tech, idx) => (
-              <span key={idx} className="tech-chip text-xs">
-                {tech}
-              </span>
-            ))}
+          {/* Categorized Tech Stack by Implementation Status */}
+          <div className="space-y-2 pt-4 mt-4 border-t border-border-subtle text-xs font-mono">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-accent-primary font-medium mr-1">Implemented:</span>
+              <span className="tech-chip text-xs">FastAPI</span>
+              <span className="tech-chip text-xs">Python Asyncio</span>
+              <span className="tech-chip text-xs">PostgreSQL Relational Schema</span>
+              <span className="tech-chip text-xs">Pydantic Schemas</span>
+              <span className="tech-chip text-xs">Deterministic Dosage Math</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-text-secondary font-medium mr-1">In Development:</span>
+              <span className="tech-chip text-xs border-dashed">Ollama Extraction Prompts</span>
+              <span className="tech-chip text-xs border-dashed">RAG Document Retrieval</span>
+              <span className="tech-chip text-xs border-dashed">Drug Interaction Table</span>
+              <span className="tech-chip text-xs border-dashed">LangGraph Workflows</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-text-muted font-medium mr-1">Planned:</span>
+              <span className="tech-chip text-xs border-border-subtle text-text-muted">Flutter Cross-Platform Client</span>
+              <span className="tech-chip text-xs border-border-subtle text-text-muted">Urdu / Pashto Translation Engine</span>
+            </div>
           </div>
         </div>
 
@@ -614,7 +643,7 @@ export default function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-mono text-text-primary hover:text-accent-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary transition-all active:scale-[0.98]"
                       >
                         <Github className="w-3.5 h-3.5" />
                         <span>Source code</span>

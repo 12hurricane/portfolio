@@ -177,7 +177,7 @@ export default function Contact() {
                     </span>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-xs sm:text-sm font-mono text-text-primary hover:text-accent-primary transition-colors font-medium"
+                      className="text-xs sm:text-sm font-mono text-text-primary hover:text-accent-primary transition-colors font-medium min-h-[44px] inline-flex items-center"
                     >
                       {personalInfo.email}
                     </a>

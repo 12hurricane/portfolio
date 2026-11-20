@@ -209,11 +209,10 @@ export const projects: Project[] = [
     ],
     techStack: [
       "Python",
-      "Computer Vision",
+      "OpenCV Pipeline",
       "YOLO Object Detection",
-      "Flutter / Android",
-      "ESP32 & Sensors",
-      "Edge AI",
+      "Flutter (In Dev)",
+      "ESP32 Frame (Planned)",
     ],
     isRepoPublic: false,
     repoNotice: "Academic Final Year Project under active development. Hardware and software verification in progress.",
@@ -286,13 +285,12 @@ export const projects: Project[] = [
       },
     ],
     techStack: [
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Flutter",
-      "LangGraph",
-      "Local LLMs",
-      "RAG & Vectors",
+      "FastAPI (Implemented)",
+      "PostgreSQL (Implemented)",
+      "Pydantic Schemas (Implemented)",
+      "Ollama Prompts (In Dev)",
+      "RAG Search (In Dev)",
+      "LangGraph (In Dev)",
     ],
     isRepoPublic: false,
     repoNotice: "Research prototype under active iteration. Architecture documentation available in portfolio.",
@@ -370,10 +368,7 @@ export const demonstratedSkills: SkillCategory[] = [
     category: "Generative AI & LLM Engineering",
     skills: [
       "Ollama (Local LLM Inference)",
-      "Retrieval-Augmented Generation (RAG)",
       "Structured JSON Extraction",
-      "LangGraph State Workflows",
-      "Embeddings & Vector Indexing",
       "Prompt Architecture & Verification",
     ],
   },
@@ -395,7 +390,6 @@ export const demonstratedSkills: SkillCategory[] = [
       "Dart Architecture",
       "Mobile Client State Management",
       "Android App Development",
-      "Local Persistence (SQLite)",
     ],
   },
   {
@@ -403,7 +397,6 @@ export const demonstratedSkills: SkillCategory[] = [
     skills: [
       "Git & GitHub",
       "Linux CLI & Bash",
-      "Docker Containerization",
       "VS Code",
       "Postman / Thunder Client",
       "Firebase CLI",
@@ -412,6 +405,26 @@ export const demonstratedSkills: SkillCategory[] = [
 ];
 
 export const exploringSkills: { title: string; description: string; currentFocus: string }[] = [
+  {
+    title: "Retrieval-Augmented Generation (RAG) & Vector Indexing",
+    description: "Architecting semantic retrieval pipelines with dense vector embeddings, chunking trade-offs, and hybrid keyword-vector search for domain-specific reference queries.",
+    currentFocus: "Evaluating offline embedding models and semantic retrieval accuracy for MediAssist drug reference lookups.",
+  },
+  {
+    title: "LangGraph State Workflows & Multi-Agent Graphs",
+    description: "Designing cyclic state machines where LLM outputs are deterministically routed through validation gates and error recovery loops.",
+    currentFocus: "Prototyping state transitions and safety guardrail nodes in Python.",
+  },
+  {
+    title: "Mobile Offline Persistence (SQLite)",
+    description: "Implementing local relational storage, schema migrations, and reactive offline-first repositories in Flutter mobile applications.",
+    currentFocus: "Benchmarking sqflite integrations and offline data synchronization patterns.",
+  },
+  {
+    title: "Containerization & Docker",
+    description: "Packaging Python FastAPI microservices and AI model dependencies into lightweight, reproducible container images.",
+    currentFocus: "Authoring multi-stage Docker builds optimized for Python and edge computer vision packages.",
+  },
   {
     title: "Multi-Agent Systems",
     description: "Designing coordinated agent networks where specialized subagents negotiate, verify, and execute complex interdependent tasks.",

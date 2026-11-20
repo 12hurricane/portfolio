@@ -15,38 +15,38 @@ export interface SubsystemInfo {
 const SUBSYSTEMS: SubsystemInfo[] = [
   {
     id: "all",
-    name: "Full Hardware Assembly",
-    badge: "Integrated Rig",
-    description: "Lightweight titanium-acetate frame integrating edge computer vision and spatial distance sensors.",
-    specs: "Weight: 48g · Battery: 4.5h continuous inference",
+    name: "Wearable Frame Design Concept",
+    badge: "Hardware Concept",
+    description: "Conceptual 3D design for an assistive spectacle frame intended to mount miniature cameras, an ultrasonic rangefinder, and an ESP32 microcontroller.",
+    specs: "Status: Planned 3D Concept · Software currently validated on mobile camera feeds",
   },
   {
     id: "cameras",
-    name: "Dual Miniature Vision Sensors",
-    badge: "Stereo Perception",
-    description: "Twin forward-facing 120° FOV micro-cameras delivering low-latency video feed for YOLO obstacle detection.",
-    specs: "1080p @ 30fps · Low-light ISP · 15ms frame capture",
+    name: "Dual Forward Vision Mounts",
+    badge: "Camera Mounts",
+    description: "Target mounting placements for miniature camera modules intended to feed real-time video frames to the host YOLO obstacle detection pipeline.",
+    specs: "Status: Planned Physical Placement · Software pipeline validated on bench video",
   },
   {
     id: "sonar",
-    name: "Ultrasonic Distance Transducer",
-    badge: "Proximity Sensor",
-    description: "Bridge-mounted sonar emitter calculating precise distance (0.1m - 4.0m) to obstacles independent of ambient light.",
-    specs: "40kHz ultrasonic pulse · ±1.5cm spatial resolution",
+    name: "Bridge Sonar Sensor Placement",
+    badge: "Ultrasonic Mount",
+    description: "Planned nose-bridge housing for a low-cost ultrasonic sensor to supply complementary direct distance readings alongside optical heuristics.",
+    specs: "Status: Planned Auxiliary Sensor · Distance heuristics currently evaluated in software",
   },
   {
     id: "compute",
-    name: "ESP32 / Edge Neural Compute Unit",
-    badge: "Edge Processing",
-    description: "Temple-embedded microcontroller and Bluetooth bridge orchestrating real-time sensor fusion and alert dispatch.",
-    specs: "Dual-core 240MHz · BLE 5.0 telemetry · On-device filtering",
+    name: "ESP32 Controller Housing",
+    badge: "Microcontroller Housing",
+    description: "Planned temple enclosure designed to hold an ESP32 microcontroller module for sensor data polling and wireless phone telemetry.",
+    specs: "Status: Planned Hardware Enclosure · Microcontroller code not yet deployed to glasses",
   },
   {
     id: "audio",
-    name: "Bone-Conduction Audio Transducers",
-    badge: "Directional Feedback",
-    description: "Mastoid contact transducers delivering directional audio cues without blocking natural ambient ear perception.",
-    specs: "Directional stereo panning · Frequency: 20Hz - 20kHz",
+    name: "Directional Audio Output Cues",
+    badge: "Audio Cue Output",
+    description: "Planned peripheral transducer placement intended to provide spatial proximity alerts directly to the user.",
+    specs: "Status: Planned Audio Output · Alert dispatch currently logged in software",
   },
 ];
 
@@ -474,7 +474,7 @@ export default function SafeSightModel() {
         <div className="flex items-center gap-2">
           <Box className="w-4 h-4 text-accent-primary" />
           <h4 className="font-heading font-semibold text-sm sm:text-base text-text-primary">
-            Procedural 3D Hardware Model (Three.js)
+            Planned Hardware Enclosure Concept (Three.js 3D Model)
           </h4>
         </div>
         <div className="flex items-center gap-2">
@@ -484,11 +484,11 @@ export default function SafeSightModel() {
           <button
             type="button"
             onClick={handleResetView}
-            className="p-1.5 rounded-md border border-border-subtle text-text-muted hover:text-text-primary hover:border-accent-primary transition-colors min-h-[32px] flex items-center justify-center"
+            className="p-2 rounded-md border border-border-subtle text-text-muted hover:text-text-primary hover:border-accent-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             title="Reset 3D camera angle"
             aria-label="Reset 3D view"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className="w-4 h-4" />
           </button>
         </div>
       </div>

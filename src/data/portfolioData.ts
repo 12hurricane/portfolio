@@ -26,10 +26,7 @@ export interface Project {
 
 export interface SkillCategory {
   category: string;
-  skills: {
-    name: string;
-    level: "Core" | "Proficient" | "Working Knowledge" | "Exploring";
-  }[];
+  skills: string[];
 }
 
 export interface ArticleDraft {
@@ -144,7 +141,7 @@ export const experienceInfo: ExperienceInfo = {
   role: "AI Engineer Intern",
   organization: "TechCitySoft",
   location: "Peshawar, Pakistan",
-  arrangement: "Remote / Hybrid",
+  arrangement: "Remote / Pakistan",
   status: "Active Internship",
   summary:
     "Developing AI features and backend integration pipelines, focusing on modular software components, API design, and reliable application logic.",
@@ -177,7 +174,7 @@ export const projects: Project[] = [
       {
         name: "Object Detection & Spatial Classification (YOLO)",
         status: "Implemented",
-        description: "Lightweight computer vision model identifying common obstacles on live camera feeds and benchmark video clips.",
+        description: "Pre-trained computer vision model identifying common obstacles on live camera feeds and benchmark video clips.",
       },
       {
         name: "Software Vision Pipeline (Python / OpenCV)",
@@ -302,52 +299,52 @@ export const projects: Project[] = [
   },
   {
     id: "ai-loan-eligibility",
-    title: "AI Loan Eligibility Prediction",
-    subtitle: "Academic Machine Learning Classification",
+    title: "Loan Eligibility Analysis Concept",
+    subtitle: "Coursework Machine Learning Study Outline",
     category: "Machine Learning",
-    statusBadge: "Academic ML Project",
+    statusBadge: "Coursework Study Outline",
     isFlagship: false,
     shortDescription:
-      "An academic machine learning project exploring loan eligibility prediction using structured financial data, exploratory data analysis, and classification algorithms.",
+      "An academic study outline analyzing loan approval problem formulation, data preparation requirements, and evaluation concepts for classification models.",
     problemStatement:
-      "Automating financial risk assessment while understanding model feature importance and classification reliability across demographic and economic attributes.",
+      "Understanding data preprocessing steps and evaluation metrics required for automated credit risk assessment.",
     technicalApproach:
-      "Conducted extensive data cleaning, missing value imputation, categorical encoding, and feature scaling, followed by training and evaluating Logistic Regression, Decision Trees, and Random Forests.",
-    techStack: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+      "Explored problem formulation, feature considerations (income, credit history, loan amount), and theoretical classification approaches for tabular data.",
+    techStack: ["Python", "Machine Learning Concepts", "Data Analysis"],
     githubUrl: "https://github.com/12hurricane/AI-lab-project",
     isRepoPublic: true,
   },
   {
     id: "movie-recommendation",
-    title: "Movie Recommendation System",
-    subtitle: "Collaborative & Content-Based Recommendation",
+    title: "Movie Recommendation Concept",
+    subtitle: "Coursework Recommendation Study Outline",
     category: "Machine Learning",
-    statusBadge: "Academic ML Project",
+    statusBadge: "Coursework Study Outline",
     isFlagship: false,
     shortDescription:
-      "A recommendation system project exploring how user preference vectors and movie metadata can be utilized to generate personalized movie recommendations.",
+      "An academic study exploring the conceptual differences between content-based metadata matching and collaborative rating prediction for media discovery.",
     problemStatement:
-      "Addressing the information overload problem in entertainment streaming by matching sparse user preference profiles to relevant media catalogs.",
+      "Investigating algorithmic approaches for handling media catalog discovery and sparse user preferences.",
     technicalApproach:
-      "Implemented content-based filtering using TF-IDF / vector similarity on movie metadata and collaborative filtering algorithms to predict user ratings.",
-    techStack: ["Python", "Machine Learning", "Recommendation Systems", "Cosine Similarity", "Pandas"],
+      "Researched similarity metrics and metadata filtering concepts for ranking media recommendations.",
+    techStack: ["Python", "Recommendation Concepts"],
     githubUrl: "https://github.com/12hurricane/movie-recommendation-",
     isRepoPublic: true,
   },
   {
     id: "flutter-contact-app",
-    title: "Flutter Contact Management Application",
-    subtitle: "Cross-Platform Mobile Application",
+    title: "Flutter Contact List Application",
+    subtitle: "Basic Mobile Contact Viewer Prototype",
     category: "Mobile & Software",
-    statusBadge: "Academic Mobile Project",
+    statusBadge: "Academic Mobile Prototype",
     isFlagship: false,
     shortDescription:
-      "A Flutter-based mobile application demonstrating clean state management, responsive UI design, local persistence, and structured contact management functionality.",
+      "A basic Flutter application developed as coursework to display a list of contacts and add new entries using standard in-memory widget state.",
     problemStatement:
-      "Building a performant, cross-platform mobile interface with seamless offline persistence, fast search indexing, and intuitive CRUD workflows.",
+      "Exploring mobile UI layout and user input handling in Flutter for basic contact record entry.",
     technicalApproach:
-      "Built with Flutter and Dart utilizing clean state management architectures, reactive UI widgets, and local data persistence.",
-    techStack: ["Flutter", "Dart", "Mobile Development", "SQLite / Local Storage", "Clean Architecture"],
+      "Built with Flutter and Dart using stateful widgets to render a scrollable contact list and form inputs for adding new entries in memory.",
+    techStack: ["Flutter", "Dart", "Mobile UI", "Widget State"],
     githubUrl: "https://github.com/12hurricane/flutter-lab-project",
     isRepoPublic: true,
   },
@@ -356,67 +353,60 @@ export const projects: Project[] = [
 export const demonstratedSkills: SkillCategory[] = [
   {
     category: "Programming Languages",
-    skills: [
-      { name: "Python", level: "Core" },
-      { name: "Dart", level: "Proficient" },
-      { name: "C++", level: "Proficient" },
-      { name: "JavaScript", level: "Working Knowledge" },
-      { name: "SQL", level: "Proficient" },
-      { name: "HTML / CSS", level: "Proficient" },
-    ],
+    skills: ["Python", "Dart", "C++", "JavaScript", "SQL", "HTML / CSS"],
   },
   {
     category: "AI & Machine Learning",
     skills: [
-      { name: "Computer Vision", level: "Core" },
-      { name: "YOLO Object Detection", level: "Core" },
-      { name: "OpenCV Pipeline", level: "Core" },
-      { name: "Scikit-Learn", level: "Proficient" },
-      { name: "Classification & Regression", level: "Proficient" },
-      { name: "Feature Engineering & EDA", level: "Proficient" },
+      "Computer Vision",
+      "YOLO Object Detection",
+      "OpenCV Pipeline",
+      "Scikit-Learn",
+      "Classification & Regression",
+      "Feature Engineering & EDA",
     ],
   },
   {
     category: "Generative AI & LLM Engineering",
     skills: [
-      { name: "Ollama (Local LLM Inference)", level: "Core" },
-      { name: "Retrieval-Augmented Generation (RAG)", level: "Core" },
-      { name: "Structured JSON Extraction", level: "Core" },
-      { name: "LangGraph State Workflows", level: "Working Knowledge" },
-      { name: "Embeddings & Vector Indexing", level: "Proficient" },
-      { name: "Prompt Architecture & Verification", level: "Proficient" },
+      "Ollama (Local LLM Inference)",
+      "Retrieval-Augmented Generation (RAG)",
+      "Structured JSON Extraction",
+      "LangGraph State Workflows",
+      "Embeddings & Vector Indexing",
+      "Prompt Architecture & Verification",
     ],
   },
   {
     category: "Backend Development",
     skills: [
-      { name: "FastAPI", level: "Core" },
-      { name: "Python Async / Asyncio", level: "Core" },
-      { name: "RESTful API Architecture", level: "Core" },
-      { name: "PostgreSQL & Relational Schemas", level: "Proficient" },
-      { name: "Deterministic Safety Rules", level: "Core" },
-      { name: "Firebase (Classic Hosting)", level: "Proficient" },
+      "FastAPI",
+      "Python Async / Asyncio",
+      "RESTful API Architecture",
+      "PostgreSQL & Relational Schemas",
+      "Deterministic Safety Rules",
+      "Firebase (Classic Hosting)",
     ],
   },
   {
     category: "Mobile Development",
     skills: [
-      { name: "Flutter", level: "Core" },
-      { name: "Dart Architecture", level: "Core" },
-      { name: "Mobile Client State Management", level: "Proficient" },
-      { name: "Android App Development", level: "Proficient" },
-      { name: "Local Persistence (SQLite)", level: "Proficient" },
+      "Flutter",
+      "Dart Architecture",
+      "Mobile Client State Management",
+      "Android App Development",
+      "Local Persistence (SQLite)",
     ],
   },
   {
     category: "Tools & Platforms",
     skills: [
-      { name: "Git & GitHub", level: "Core" },
-      { name: "Linux CLI & Bash", level: "Proficient" },
-      { name: "Docker Containerization", level: "Working Knowledge" },
-      { name: "VS Code", level: "Core" },
-      { name: "Postman / Thunder Client", level: "Proficient" },
-      { name: "Firebase CLI", level: "Proficient" },
+      "Git & GitHub",
+      "Linux CLI & Bash",
+      "Docker Containerization",
+      "VS Code",
+      "Postman / Thunder Client",
+      "Firebase CLI",
     ],
   },
 ];

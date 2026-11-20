@@ -32,7 +32,7 @@ export default function Skills() {
     .map((category) => ({
       ...category,
       skills: category.skills.filter((s) =>
-        s.name.toLowerCase().includes(searchTerm.toLowerCase())
+        s.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
     .filter((cat) => cat.skills.length > 0);
@@ -42,19 +42,6 @@ export default function Skills() {
       exp.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       exp.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const getLevelBadge = (level: string) => {
-    switch (level) {
-      case "Core":
-        return "text-accent-primary bg-accent-surface border-accent-primary/20 font-medium";
-      case "Proficient":
-        return "text-text-secondary bg-bg-secondary border-border-subtle";
-      case "Working Knowledge":
-        return "text-text-muted bg-bg-secondary border-border-subtle";
-      default:
-        return "text-text-muted bg-bg-secondary border-border-subtle";
-    }
-  };
 
   return (
     <section id="skills" className="py-20 md:py-28 bg-bg-primary relative transition-colors duration-200">
@@ -141,24 +128,15 @@ export default function Skills() {
                     </div>
                   </div>
 
-                  {/* Skills Inline Chips & Badges */}
+                  {/* Skills Inline Chips */}
                   <div className="md:col-span-8 flex flex-wrap gap-2 items-center">
                     {group.skills.map((skill, sIdx) => (
-                      <div
+                      <span
                         key={sIdx}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary transition-colors"
+                        className="inline-flex items-center px-3 py-1.5 rounded-md bg-bg-secondary border border-border-subtle text-xs font-mono text-text-primary hover:border-accent-primary transition-colors"
                       >
-                        <span className="text-xs font-mono text-text-primary">
-                          {skill.name}
-                        </span>
-                        <span
-                          className={`text-xs font-mono px-1.5 py-0.5 rounded-md border ${getLevelBadge(
-                            skill.level
-                          )}`}
-                        >
-                          {skill.level}
-                        </span>
-                      </div>
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -197,8 +175,8 @@ export default function Skills() {
 
         {/* Footnote */}
         <div className="mt-8 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-text-muted gap-2 border-t border-border-subtle">
-          <span>Proficiency definitions: <strong className="text-accent-primary font-medium">Core</strong> (primary architecture &amp; projects), <strong className="text-text-primary font-medium">Proficient</strong> (active integration), <strong className="text-text-muted font-normal">Working Knowledge</strong> (functional use).</span>
-          <span className="text-text-muted">Evaluated in source repositories</span>
+          <span>Demonstrated through coursework, internship features, and open-source prototypes.</span>
+          <span className="text-text-muted">Six core discipline groupings</span>
         </div>
       </div>
     </section>

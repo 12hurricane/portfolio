@@ -4,20 +4,9 @@ import React, { useState, useEffect } from "react";
 import { ArrowDownRight, Clock, FileText } from "lucide-react";
 
 export default function Hero() {
-  const [theme, setTheme] = useState<"editorial" | "dark">("editorial");
   const [timeStr, setTimeStr] = useState<string>("");
 
   useEffect(() => {
-    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    setTheme(isDark ? "dark" : "editorial");
-
-    const handleThemeChange = () => {
-      const dark = document.documentElement.getAttribute("data-theme") === "dark";
-      setTheme(dark ? "dark" : "editorial");
-    };
-
-    window.addEventListener("themeChanged", handleThemeChange);
-
     const updateClock = () => {
       try {
         const formatter = new Intl.DateTimeFormat("en-US", {
@@ -38,23 +27,9 @@ export default function Hero() {
     const timer = setInterval(updateClock, 10000);
 
     return () => {
-      window.removeEventListener("themeChanged", handleThemeChange);
       clearInterval(timer);
     };
   }, []);
-
-  const toggleTheme = () => {
-    const next = theme === "editorial" ? "dark" : "editorial";
-    setTheme(next);
-    if (next === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", "editorial");
-    }
-    window.dispatchEvent(new Event("themeChanged"));
-  };
 
   const genuineSkills = [
     "Python",
@@ -154,35 +129,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom Hero Ticker & Status Row */}
-        <div className="pt-6 sm:pt-8 border-t border-border-subtle flex items-center justify-between w-full">
-          {/* Left: Theme Switcher */}
-          <div className="flex items-center gap-2.5">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="flex items-center gap-2 group cursor-pointer focus:outline-none min-h-[44px] py-1"
-              aria-label="Toggle visual theme"
-            >
-              <div
-                className={`w-8 h-4 rounded-full p-0.5 transition-colors ${
-                  theme === "dark" ? "bg-accent-primary" : "bg-border-subtle"
-                }`}
-              >
-                <div
-                  className={`w-3 h-3 rounded-full bg-white transition-transform ${
-                    theme === "dark" ? "translate-x-4" : "translate-x-0"
-                  }`}
-                />
-              </div>
-              <span className="font-mono text-xs text-text-muted group-hover:text-text-primary transition-colors">
-                {theme === "editorial" ? "Light" : "Dark"}
-              </span>
-            </button>
+        {/* Bottom Hero Status Row */}
+        <div className="pt-6 sm:pt-8 border-t border-border-subtle flex items-center justify-between w-full text-xs font-mono text-text-muted">
+          {/* Left: Availability Status */}
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span>Available for AI Engineering Internships</span>
           </div>
 
           {/* Right: Live Peshawar PKT Clock */}
-          <div className="font-mono text-xs text-text-muted flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-accent-primary" />
             <span>{timeStr || "PKT (UTC+5)"}</span>
           </div>

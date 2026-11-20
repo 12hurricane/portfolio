@@ -176,7 +176,7 @@ export default function Projects() {
                   My Engineering Contribution
                 </span>
                 <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
-                  Trained and evaluated YOLOv8 models on obstacle datasets, engineered OpenCV video frame preprocessing and normalization pipelines, formulated camera geometric ratio heuristics for proximity approximation, and developed the Flutter companion client prototype.
+                  Integrated YOLO-based object detection for obstacle inference, engineered OpenCV video frame preprocessing and stream handling pipelines, formulated camera geometric heuristics for relative proximity estimation, and developed the mobile companion client interface.
                 </p>
               </div>
 

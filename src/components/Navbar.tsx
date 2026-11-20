@@ -152,7 +152,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="p-2.5 min-h-[44px] min-w-[44px] rounded-md text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary active:scale-[0.98] transition-all flex items-center justify-center focus:outline-none"
+                className="lg:hidden p-2.5 min-h-[44px] min-w-[44px] rounded-md text-text-primary hover:text-accent-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary active:scale-[0.98] transition-all flex items-center justify-center focus:outline-none"
                 aria-label="Open Navigation Drawer"
                 aria-expanded={drawerOpen}
               >

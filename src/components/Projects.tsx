@@ -16,6 +16,8 @@ import {
   FileText,
   Database,
   Server,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 const SafeSightModel = dynamic(() => import("./SafeSightModel"), {
@@ -29,6 +31,8 @@ const SafeSightModel = dynamic(() => import("./SafeSightModel"), {
 
 export default function Projects() {
   const [activePerceptionStep, setActivePerceptionStep] = useState<number>(2);
+  const [safesightExpanded, setSafesightExpanded] = useState<boolean>(false);
+  const [mediassistExpanded, setMediassistExpanded] = useState<boolean>(false);
 
   const safesight = projects.find((p) => p.id === "safesight-ai") || projects[0];
   const mediassist = projects.find((p) => p.id === "mediassist") || projects[1];
@@ -114,11 +118,11 @@ export default function Projects() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text-primary tracking-tight">
-                Case Studies &amp; Architecture
+                Selected Projects &amp; Case Studies
               </h2>
             </div>
             <p className="text-sm text-text-secondary max-w-2xl leading-relaxed">
-              Architectural breakdowns of core projects: exploring computer vision for assistive perception, and rule-based safety boundaries for clinical LLM workflows.
+              Engineering case studies with actual contributions, architecture separation, verified status, and technical limitations.
             </p>
           </div>
 
@@ -169,7 +173,16 @@ export default function Projects() {
 
               <div>
                 <span className="text-xs font-mono font-medium text-text-primary block mb-1">
-                  Technical Approach
+                  My Engineering Contribution
+                </span>
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
+                  Trained and evaluated YOLOv8 models on obstacle datasets, engineered OpenCV video frame preprocessing and normalization pipelines, formulated camera geometric ratio heuristics for proximity approximation, and developed the Flutter companion client prototype.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs font-mono font-medium text-text-primary block mb-1">
+                  Core Technical Approach
                 </span>
                 <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
                   {safesight.technicalApproach}
@@ -199,22 +212,48 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Architecture Matrix: Components Status */}
-            <div className="lg:col-span-5 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="pb-2 border-b border-border-subtle flex items-center justify-between">
+            {/* Architecture Matrix: Components Status & Progressive Disclosure */}
+            <div className="lg:col-span-5 flex flex-col justify-start space-y-3">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle space-y-3 shadow-sm">
+                <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
                   <span className="text-xs font-mono text-text-primary font-medium">
-                    Subsystem implementation status:
+                    Implementation Overview
                   </span>
-                  <span className="text-xs font-mono text-text-muted">
-                    6 active modules
+                  <span className="text-xs font-mono text-accent-primary">
+                    Verified Status
                   </span>
                 </div>
-                <div className="divide-y divide-border-subtle">
+                
+                {/* Summary Status Text */}
+                <div className="space-y-1.5 text-xs text-text-secondary leading-relaxed">
+                  <div className="flex items-center justify-between font-mono text-xs">
+                    <span className="text-accent-primary font-medium">Validation Phase:</span>
+                    <span className="text-text-muted">Academic Prototype</span>
+                  </div>
+                  <p>
+                    Frame ingestion and YOLO object detection are validated on bench video feeds. Bounding-box distance heuristics and audio cues are in active development. Wireless hardware streaming and spectacle mounting are planned.
+                  </p>
+                </div>
+
+                {/* Progressive disclosure toggle */}
+                <button
+                  type="button"
+                  onClick={() => setSafesightExpanded(!safesightExpanded)}
+                  className="w-full mt-2 py-2 px-3 rounded-md border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary flex items-center justify-between transition-colors min-h-[44px]"
+                  aria-expanded={safesightExpanded}
+                >
+                  <span>{safesightExpanded ? "Collapse Module Breakdown" : "View Detailed Subsystems (7 Modules)"}</span>
+                  {safesightExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+              </div>
+
+              {/* Expandable Subsystems Drawer */}
+              {safesightExpanded && (
+                <div className="divide-y divide-border-subtle border border-border-subtle rounded-lg bg-bg-secondary p-3 space-y-2">
                   {safesight.components?.map((component, idx) => (
-                    <div key={idx} className="py-2.5 first:pt-0 last:pb-0">
+                    <div key={idx} className="py-2 first:pt-0 last:pb-0">
                       <div className="flex items-center justify-between text-xs mb-1">
-                        <span className="font-medium text-text-primary flex items-center gap-2">
+                        <span className="font-medium text-text-primary flex items-center gap-1.5">
                           {getStatusIcon(component.status)}
                           <span>{component.name}</span>
                         </span>
@@ -228,7 +267,7 @@ export default function Projects() {
                     </div>
                   ))}
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -329,6 +368,72 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Problem & Approach Grid for MediAssist */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 my-8">
+            <div className="lg:col-span-7 space-y-5">
+              <div>
+                <span className="text-xs font-mono font-medium text-accent-primary block mb-1">
+                  The Problem Solved
+                </span>
+                <p className="text-sm text-text-primary leading-relaxed max-w-[58ch]">
+                  {mediassist.problemStatement}
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs font-mono font-medium text-text-primary block mb-1">
+                  My Engineering Contribution
+                </span>
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
+                  Designed asynchronous FastAPI backend endpoints, formulated structured Pydantic extraction schemas for local Ollama models, implemented PostgreSQL database schemas with strict constraints, and isolated clinical safety calculations in deterministic rule modules.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs font-mono font-medium text-text-primary block mb-1">
+                  Core Technical Approach
+                </span>
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[58ch]">
+                  {mediassist.technicalApproach}
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex flex-col justify-start space-y-3">
+              <div className="p-4 rounded-lg bg-bg-secondary border border-border-subtle space-y-3 shadow-sm">
+                <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
+                  <span className="text-xs font-mono text-text-primary font-medium">
+                    Implementation Overview
+                  </span>
+                  <span className="text-xs font-mono text-accent-primary">
+                    Verified Status
+                  </span>
+                </div>
+
+                {/* Summary Status Text */}
+                <div className="space-y-1.5 text-xs text-text-secondary leading-relaxed">
+                  <div className="flex items-center justify-between font-mono text-xs">
+                    <span className="text-accent-primary font-medium">Validation Phase:</span>
+                    <span className="text-text-muted">Research Prototype</span>
+                  </div>
+                  <p>
+                    FastAPI backend services, prescription parsing schemas, deterministic schedule logic, and PostgreSQL persistence are implemented. Vector search and LangGraph state orchestration are in active development.
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setMediassistExpanded(!mediassistExpanded)}
+                  className="w-full mt-2 py-2 px-3 rounded-md border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary flex items-center justify-between transition-colors min-h-[44px]"
+                  aria-expanded={mediassistExpanded}
+                >
+                  <span>{mediassistExpanded ? "Collapse Module Breakdown" : "View Detailed Subsystems (8 Modules)"}</span>
+                  {mediassistExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* THE CORE VISUAL PROOF: WHERE LLM IS USED VS. WHERE RULES GOVERN */}
           <div className="my-8 space-y-4">
             <span className="text-xs font-mono text-accent-primary block font-medium">
@@ -402,48 +507,50 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Subsystems for MediAssist */}
-          <div className="pt-6 border-t border-border-subtle">
-            <span className="text-xs font-mono text-text-primary block font-medium mb-3">
-              MediAssist Subsystems:
-            </span>
+          {/* Subsystems for MediAssist - Progressive Disclosure */}
+          {mediassistExpanded && (
+            <div className="pt-6 border-t border-border-subtle">
+              <span className="text-xs font-mono text-text-primary block font-medium mb-3">
+                MediAssist Subsystem Architecture (All Modules):
+              </span>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {mediassist.components?.slice(0, 6).map((comp, idx) => {
-                const subsystemIcons = [
-                  <Database key="db" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                  <Server key="srv" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                  <FileText key="rag" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                  <ShieldCheck key="sc" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                  <Clock key="clk" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                  <Terminal key="term" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
-                ];
-                return (
-                  <div key={idx} className="p-3.5 rounded-md bg-bg-subtle/40 border border-border-subtle text-xs hover:border-accent-primary transition-colors">
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-1.5 font-medium text-text-primary">
-                        {subsystemIcons[idx % subsystemIcons.length]}
-                        <span>{comp.name}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {mediassist.components?.map((comp, idx) => {
+                  const subsystemIcons = [
+                    <Database key="db" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                    <Server key="srv" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                    <FileText key="rag" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                    <ShieldCheck key="sc" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                    <Clock key="clk" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                    <Terminal key="term" className="w-3.5 h-3.5 text-accent-primary shrink-0" />,
+                  ];
+                  return (
+                    <div key={idx} className="p-3.5 rounded-md bg-bg-secondary border border-border-subtle text-xs hover:border-accent-primary transition-colors shadow-xs">
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <div className="flex items-center gap-1.5 font-medium text-text-primary">
+                          {subsystemIcons[idx % subsystemIcons.length]}
+                          <span>{comp.name}</span>
+                        </div>
+                        <span className={`text-xs font-mono px-2 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
+                          {comp.status}
+                        </span>
                       </div>
-                      <span className={`text-xs font-mono px-2 py-0.5 rounded-md shrink-0 ${getStatusBadgeClass(comp.status)}`}>
-                        {comp.status}
-                      </span>
+                      <p className="text-xs text-text-secondary leading-relaxed">
+                        {comp.description}
+                      </p>
                     </div>
-                    <p className="text-xs text-text-secondary leading-relaxed">
-                      {comp.description}
-                    </p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
+          )}
 
-            <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-border-subtle">
-              {mediassist.techStack.map((tech, idx) => (
-                <span key={idx} className="tech-chip text-xs">
-                  {tech}
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-border-subtle">
+            {mediassist.techStack.map((tech, idx) => (
+              <span key={idx} className="tech-chip text-xs">
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
 

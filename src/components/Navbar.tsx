@@ -18,16 +18,16 @@ import {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [theme, setTheme] = useState<"editorial" | "dark">("editorial");
+  const [theme, setTheme] = useState<"editorial" | "dark">("dark");
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      setTheme("dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
+    if (saved === "editorial") {
       setTheme("editorial");
       document.documentElement.removeAttribute("data-theme");
+    } else {
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
     }
 
     const handleScroll = () => {
@@ -62,10 +62,10 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { number: "01", name: "About", href: "#about" },
+    { number: "01", name: "Projects", href: "#projects" },
     { number: "02", name: "Experience & Education", href: "#experience" },
-    { number: "03", name: "Case Studies", href: "#projects" },
-    { number: "04", name: "Capabilities", href: "#skills" },
+    { number: "03", name: "Skills", href: "#skills" },
+    { number: "04", name: "About", href: "#about" },
     { number: "05", name: "Contact", href: "#contact" },
   ];
 
@@ -89,6 +89,19 @@ export default function Navbar() {
               Tariq Khattak
             </Link>
 
+            {/* Desktop Center Navigation Links */}
+            <nav className="hidden lg:flex items-center space-x-6 text-xs font-mono" aria-label="Main Navigation">
+              {navItems.map((item) => (
+                <a
+                  key={item.number}
+                  href={item.href}
+                  className="text-text-secondary hover:text-accent-primary transition-colors py-1"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+
             {/* Right Action Bar */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Availability Status */}
@@ -97,13 +110,30 @@ export default function Navbar() {
                 <span>Open to opportunities</span>
               </div>
 
-              {/* Messages / Contact Link */}
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary active:scale-[0.98] transition-all"
+              {/* Theme Toggle Button */}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="p-2.5 min-h-[44px] min-w-[44px] rounded-md text-text-secondary hover:text-text-primary bg-bg-secondary border border-border-subtle hover:border-accent-primary active:scale-[0.98] transition-all flex items-center justify-center focus:outline-none"
+                aria-label={theme === "editorial" ? "Switch to dark charcoal theme" : "Switch to warm editorial theme"}
+                title={theme === "editorial" ? "Switch to Dark Charcoal" : "Switch to Warm Editorial"}
               >
-                <MessageSquare className="w-3.5 h-3.5 text-accent-primary" />
-                <span>Contact</span>
+                {theme === "editorial" ? (
+                  <Moon className="w-4 h-4 text-accent-primary" />
+                ) : (
+                  <Sun className="w-4 h-4 text-accent-primary" />
+                )}
+              </button>
+
+              {/* Download CV Link */}
+              <a
+                href="/resume-tariq-khattak.pdf"
+                download="Tariq_Khattak_Resume.pdf"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-accent-surface text-accent-primary border border-accent-primary/20 hover:bg-accent-primary hover:text-accent-contrast text-xs font-mono font-medium transition-all"
+                title="Download Tariq Khattak CV (PDF)"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>CV</span>
               </a>
 
               {/* GitHub Link */}
@@ -111,11 +141,11 @@ export default function Navbar() {
                 href={personalInfo.gitHubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary active:scale-[0.98] transition-all"
-                aria-label="GitHub Repository"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle hover:border-accent-primary text-xs font-mono text-text-primary hover:text-accent-primary active:scale-[0.98] transition-all"
+                aria-label="GitHub Profile"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span>GitHub</span>
+                <span className="hidden xl:inline">GitHub</span>
               </a>
 
               {/* Minimalist Hamburger Button */}
@@ -190,7 +220,7 @@ export default function Navbar() {
                   href="/resume-tariq-khattak.pdf"
                   download="Tariq_Khattak_Resume.pdf"
                   onClick={() => setDrawerOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-xs font-mono font-medium bg-accent-surface text-accent-primary border border-accent-primary/20 hover:bg-accent-primary hover:text-white transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-xs font-mono font-medium bg-accent-surface text-accent-primary border border-accent-primary/20 hover:bg-accent-primary hover:text-accent-contrast transition-colors"
                 >
                   <FileText className="w-4 h-4" />
                   <span>Download CV (PDF)</span>

@@ -12,6 +12,7 @@
   --accent-primary: #1C6D60;
   --accent-secondary: #15554B;
   --accent-surface: #DCECE6;
+  --accent-contrast: #FFFFFF;
   --text-primary: #202A2A;
   --text-secondary: #424E4B;
   --text-muted: #525E5B;
@@ -29,6 +30,7 @@
   --accent-primary: #35b6a5;
   --accent-secondary: #75c9bb;
   --accent-surface: rgba(53, 182, 165, 0.12);
+  --accent-contrast: #121616;
   --text-primary: #f1f5f4;
   --text-secondary: #c4d1ce;
   --text-muted: #9aa8a5;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowDownRight, Clock } from "lucide-react";
+import { ArrowDownRight, Clock, FileText } from "lucide-react";
 
 export default function Hero() {
   const [theme, setTheme] = useState<"editorial" | "dark">("editorial");
@@ -84,17 +84,17 @@ export default function Hero() {
 
             {/* Main Headline & Subtitle */}
             <div className="space-y-2">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-text-primary tracking-tight leading-[0.98]">
-                AI Engineer
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-text-primary tracking-tight leading-[1.05]">
+                AI Engineer Intern
               </h1>
               <p className="text-xl sm:text-2xl font-heading font-medium text-accent-primary tracking-tight">
-                Building intelligent applications.
+                Building practical AI applications with Python.
               </p>
             </div>
 
             {/* Credible, Grounded Narrative */}
-            <p className="text-base text-text-secondary leading-relaxed max-w-xl">
-              I work with Python, Generative AI, computer vision and backend engineering to build practical software systems.
+            <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-xl">
+              Software Engineering undergraduate at CECOS University, focused on Generative AI, computer vision, LLM applications and backend engineering.
             </p>
 
             {/* Genuine Skills Tags */}
@@ -109,7 +109,7 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Typewriter Location & Intent Note */}
+            {/* Location & Institution Note */}
             <div className="font-mono text-xs text-text-muted leading-relaxed space-y-1 pt-1">
               <div className="flex items-center gap-2 text-text-secondary">
                 <span className="text-accent-primary">→</span>
@@ -120,14 +120,23 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Recommended CTA: Explore selected projects */}
-            <div className="pt-2">
+            {/* Primary & Secondary Action Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-accent-primary text-white hover:bg-accent-secondary active:scale-[0.98] text-xs font-mono font-medium transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-accent-primary text-accent-contrast hover:bg-accent-secondary active:scale-[0.98] text-xs font-mono font-medium transition-all shadow-sm"
               >
-                <span>Explore selected projects</span>
+                <span>View Projects</span>
                 <ArrowDownRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href="/resume-tariq-khattak.pdf"
+                download="Tariq_Khattak_Resume.pdf"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] rounded-md bg-bg-secondary border border-border-subtle text-text-primary hover:border-accent-primary hover:text-accent-primary active:scale-[0.98] text-xs font-mono font-medium transition-all shadow-sm"
+              >
+                <FileText className="w-4 h-4 text-accent-primary" />
+                <span>Download CV</span>
               </a>
             </div>
           </div>
@@ -138,7 +147,7 @@ export default function Hero() {
             <div className="w-full max-w-sm sm:max-w-md rounded-lg border border-border-subtle bg-bg-secondary overflow-hidden shadow-sm hover:-translate-y-0.5 transition-transform duration-200">
               <img
                 src="/tariq-portrait.jpg"
-                alt="Tariq Khattak - AI Engineer"
+                alt="Tariq Khattak - AI Engineer Intern"
                 className="w-full aspect-[4/5] object-cover object-top"
               />
             </div>

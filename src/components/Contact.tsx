@@ -13,6 +13,8 @@ import {
   ExternalLink,
   MessageSquare,
   AlertCircle,
+  FileText,
+  Download,
 } from "lucide-react";
 
 export default function Contact() {
@@ -154,10 +156,10 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary leading-snug">
-                Have an AI Project or an Interesting Problem to Solve?
+                Open to AI Engineering &amp; Backend Development Opportunities
               </h3>
-              <p className="mt-3 text-sm text-text-secondary leading-relaxed">
-                I&apos;m interested in connecting with developers, researchers, founders, and organizations working on AI-powered applications and intelligent systems.
+              <p className="mt-3 text-sm text-text-secondary leading-relaxed max-w-prose">
+                Interested in internships and junior engineering opportunities involving Python, Generative AI, computer vision and backend systems.
               </p>
             </div>
 
@@ -207,6 +209,29 @@ export default function Contact() {
                   )}
                 </button>
               </div>
+
+              {/* Download CV Card */}
+              <a
+                href="/resume-tariq-khattak.pdf"
+                download="Tariq_Khattak_Resume.pdf"
+                className="p-4 rounded-lg bg-bg-secondary border border-border-subtle flex items-center justify-between hover:border-accent-primary transition-colors group shadow-sm"
+                aria-label="Download Tariq Khattak Resume PDF"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-bg-subtle border border-border-subtle flex items-center justify-center text-accent-primary">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-text-muted block">
+                      Curriculum Vitae (PDF)
+                    </span>
+                    <span className="text-xs sm:text-sm font-mono text-text-primary group-hover:text-accent-primary transition-colors font-medium">
+                      Download resume-tariq-khattak.pdf
+                    </span>
+                  </div>
+                </div>
+                <Download className="w-4 h-4 text-text-muted group-hover:text-accent-primary" />
+              </a>
 
               {/* LinkedIn Card */}
               <a
@@ -432,7 +457,7 @@ export default function Contact() {
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md text-xs sm:text-sm font-semibold bg-accent-primary text-white hover:bg-accent-secondary active:scale-[0.98] transition-all shadow-sm"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md text-xs sm:text-sm font-semibold bg-accent-primary text-accent-contrast hover:bg-accent-secondary active:scale-[0.98] transition-all shadow-sm"
                   >
                     <Send className="w-4 h-4" />
                     <span>Open in Email Client</span>

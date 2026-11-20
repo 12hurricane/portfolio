@@ -25,7 +25,7 @@ export default function About() {
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-12">
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary tracking-tight">
-            Engineering Focus &amp; Background
+            About Me &amp; Engineering Focus
           </h2>
           <div className="h-[1px] bg-border-subtle flex-grow ml-4 max-w-xs" />
         </div>

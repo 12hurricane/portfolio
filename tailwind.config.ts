@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["selector", '[data-theme="dark"]'],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -23,6 +24,7 @@ const config: Config = {
           primary: "var(--accent-primary)",
           secondary: "var(--accent-secondary)",
           surface: "var(--accent-surface)",
+          contrast: "var(--accent-contrast)",
           glow: "var(--accent-surface)",
         },
         text: {

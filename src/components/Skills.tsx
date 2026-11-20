@@ -22,10 +22,10 @@ export default function Skills() {
   const categoryIcons: Record<string, React.ReactNode> = {
     "Programming Languages": <Code className="w-4 h-4 text-accent-primary" />,
     "AI & Machine Learning": <Brain className="w-4 h-4 text-accent-primary" />,
-    "LLM Technologies & Frameworks": <Cpu className="w-4 h-4 text-accent-primary" />,
+    "Generative AI & LLM Engineering": <Cpu className="w-4 h-4 text-accent-primary" />,
     "Backend Development": <Server className="w-4 h-4 text-accent-primary" />,
     "Mobile Development": <Smartphone className="w-4 h-4 text-accent-primary" />,
-    "Development Tools & Environment": <Wrench className="w-4 h-4 text-accent-primary" />,
+    "Tools & Platforms": <Wrench className="w-4 h-4 text-accent-primary" />,
   };
 
   const filteredDemonstrated = demonstratedSkills
